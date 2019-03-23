@@ -1,20 +1,23 @@
 #[derive(Debug)]
-pub struct Configuration {
-    pub access_token: String,
+pub struct Configuration<'a, 'b> {
+    pub username: &'a str,
+    pub password: &'b str,
 }
 
-impl Configuration {
-    pub fn new() -> Configuration {
+impl<'a, 'b> Configuration<'a, 'b> {
+    pub fn new() -> Configuration<'a, 'b> {
         Configuration {
-            access_token: "".to_string(),
+            username: "",
+            password: "",
         }
     }
 
-    pub fn with_access_token(self, token: &str) -> Configuration {
-        Configuration {
-            access_token: token.to_string(),
-            ..self
-        }
+    pub fn with_username(self, username: &'a str) -> Configuration<'a, 'b> {
+        Configuration { username, ..self }
+    }
+
+    pub fn with_password(self, password: &'b str) -> Configuration<'a, 'b> {
+        Configuration { password, ..self }
     }
 }
 
@@ -25,13 +28,14 @@ mod tests {
     #[test]
     fn default_configuration() {
         let c = Configuration::new();
-        assert_eq!(c.access_token, "".to_string())
+        assert_eq!(c.username, "");
+        assert_eq!(c.password, "");
     }
 
     #[test]
-    fn configuration_with_access_token() {
+    fn configuration_with_username() {
         let c = Configuration::new();
-        let cwa = c.with_access_token("abc");
-        assert_eq!(cwa.access_token, "abc".to_string());
+        let cwa = c.with_username("abc");
+        assert_eq!(cwa.username, "abc");
     }
 }
