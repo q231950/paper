@@ -1,3 +1,4 @@
+pub mod auth;
 pub mod configuration;
 
 use crate::configuration::Configuration;
@@ -14,11 +15,11 @@ impl<'a, 'b> Paper<'a, 'b> {
 
 #[cfg(test)]
 mod tests {
-   use super::*;
-   #[test]
-   fn test_with_config() {
-       let config = Configuration::new();
-       let paper = Paper::with_config(config);
-       assert_eq!(paper.configuration.username, "");
-   }
+    use super::*;
+    #[test]
+    fn test_with_config() {
+        let config = Configuration::new();
+        let paper = Paper::with_config(config);
+        assert_eq!(paper.configuration.username, "");
+    }
 }
