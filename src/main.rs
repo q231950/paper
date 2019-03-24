@@ -1,5 +1,6 @@
 mod paper;
 use crate::paper::configuration::Configuration;
+
 #[macro_use]
 extern crate clap;
 use clap::{App, Arg, ArgMatches};
@@ -28,13 +29,15 @@ fn main() {
 
     if let Some(username) = matches.value_of("username") {
         configuration = configuration.with_username(username);
-        println!("Using usernames: {}", configuration.username);
+        println!("Using username: {}", configuration.username);
     }
 
     if let Some(password) = matches.value_of("password") {
         configuration = configuration.with_password(password);
-        println!("Using usernames: {}", configuration.username);
+        println!("Using password: {}", configuration.password);
     }
+
+    let paper = paper::Paper::with_config(configuration);
 }
 
 fn matches_for_app<'a>(app: App<'a, '_>) -> ArgMatches<'a> {
