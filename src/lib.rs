@@ -11,6 +11,11 @@ impl<'a, 'b> Paper<'a, 'b> {
     pub fn with_config(configuration: Configuration<'a, 'b>) -> Paper<'a, 'b> {
         Paper { configuration }
     }
+
+    pub fn authenticate(&self) {
+        let token = auth::session_token_for_config(&self.configuration);
+        println!("Session Token: {:?}", token);
+    }
 }
 
 #[cfg(test)]

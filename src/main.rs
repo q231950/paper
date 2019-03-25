@@ -39,6 +39,7 @@ fn main() {
     }
 
     let paper = paper::Paper::with_config(configuration);
+    paper.authenticate();
 }
 
 fn matches_for_app<'a>(app: App<'a, '_>) -> ArgMatches<'a> {
