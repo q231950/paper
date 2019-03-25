@@ -1,5 +1,6 @@
-mod paper;
-use crate::paper::configuration::Configuration;
+extern crate paper;
+
+use paper::configuration::Configuration;
 
 #[macro_use]
 extern crate clap;

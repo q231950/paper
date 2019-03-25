@@ -1,6 +1,7 @@
+pub mod auth;
 pub mod configuration;
 
-use crate::paper::configuration::Configuration;
+use crate::configuration::Configuration;
 
 pub struct Paper<'a, 'b> {
     configuration: Configuration<'a, 'b>,
