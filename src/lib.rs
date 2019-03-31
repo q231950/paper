@@ -13,8 +13,13 @@ impl<'a, 'b> Paper<'a, 'b> {
     }
 
     pub fn authenticate(&self) {
-        let token = auth::session_token_for_config(&self.configuration);
-        println!("Session Token: {:?}", token);
+        let authenticator = auth::Authenticator::new();
+        let token_result = authenticator.session_token_for_config(&self.configuration);
+
+        match token_result {
+            Ok(mut r) => println!("Session token {:?}", r.text()),
+            Err(e) => println!("Error: {:?}", e),
+        }
     }
 }
 
