@@ -9,7 +9,6 @@ impl Authenticator {
     pub fn new() -> Authenticator {
         Authenticator {
             client: reqwest::Client::new(),
-            //      x: "a".to_string(),
         }
     }
 
@@ -36,7 +35,7 @@ impl Authenticator {
             .send()
     }
 
-    fn session_token_request_body<'a>(&self, username: &str, password: &str) -> String {
+    fn session_token_request_body(&self, username: &str, password: &str) -> String {
         let x = format!(r#"<?xml version='1.0' encoding='utf-8'?>
         <soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'>
             <soap12:Body>
