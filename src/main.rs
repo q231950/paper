@@ -1,4 +1,5 @@
 extern crate paper;
+extern crate reqwest;
 
 use paper::configuration::Configuration;
 
@@ -7,22 +8,10 @@ extern crate clap;
 use clap::{App, Arg, ArgMatches};
 
 fn main() {
-    let app = App::new("paper")
-        .version(crate_version!())
-        .author(crate_authors!())
-        .about("List paper crashes");
+    let app = app();
     let matches = matches_for_app(app);
 
     let mut configuration = Configuration::new();
-
-    println!(
-        "Debugging mode is: {}",
-        if matches.is_present("debug") {
-            "ON"
-        } else {
-            "OFF"
-        }
-    );
 
     if let Some(config) = matches.value_of("config") {
         println!("Using config: {}", config);
@@ -39,6 +28,14 @@ fn main() {
     }
 
     let paper = paper::Paper::with_config(configuration);
+    let result = paper.authenticate();
+}
+
+fn app<'a, 'b>() -> App<'a, 'b> {
+    App::new("paper")
+        .version(crate_version!())
+        .author(crate_authors!())
+        .about("List paper crashes")
 }
 
 fn matches_for_app<'a>(app: App<'a, '_>) -> ArgMatches<'a> {

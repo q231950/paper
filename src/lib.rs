@@ -11,6 +11,16 @@ impl<'a, 'b> Paper<'a, 'b> {
     pub fn with_config(configuration: Configuration<'a, 'b>) -> Paper<'a, 'b> {
         Paper { configuration }
     }
+
+    pub fn authenticate(&self) {
+        let authenticator = auth::Authenticator::new();
+        let token_result = authenticator.session_token_for_config(&self.configuration);
+
+        match token_result {
+            Ok(mut r) => println!("Session token {:?}", r.text()),
+            Err(e) => println!("Error: {:?}", e),
+        }
+    }
 }
 
 #[cfg(test)]
