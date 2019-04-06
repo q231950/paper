@@ -17,7 +17,7 @@ impl AuthXmlParser {
         AuthXmlParser {}
     }
 
-    pub fn sessionTokenFromXml(&self, xml: impl Read) -> Result<String, &'static str> {
+    pub fn session_token_from_xml(&self, xml: impl Read) -> Result<String, &'static str> {
         println!("Getting session token from xml...");
 
         let mut current_element = "".to_string();
@@ -42,7 +42,7 @@ impl AuthXmlParser {
                 }
                 Ok(XmlEvent::Characters(c)) => {
                     println!("{}{:?}", indent(depth), c);
-                    if (current_element == "sessionId") {
+                    if current_element == "sessionId" {
                         return Ok(c);
                     }
                 }

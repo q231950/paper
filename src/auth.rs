@@ -1,6 +1,5 @@
 use super::configuration::Configuration;
 use super::xml::AuthXmlParser;
-use reqwest::Response;
 use std::result::Result;
 
 pub struct Authenticator {
@@ -10,11 +9,11 @@ pub struct Authenticator {
 impl Authenticator {
     /// Convenience initialiser that returns an `Authenticator` with a default client
     pub fn new() -> Authenticator {
-        Authenticator::authenticatorWithClient(reqwest::Client::new())
+        Authenticator::authenticator_with_client(reqwest::Client::new())
     }
 
     /// Creates an authenticator using the given client
-    fn authenticatorWithClient(client: reqwest::Client) -> Authenticator {
+    fn authenticator_with_client(client: reqwest::Client) -> Authenticator {
         Authenticator { client }
     }
 
@@ -26,7 +25,7 @@ impl Authenticator {
     /// let config = Configuration::new();
     /// let client = Authenticator::ReqwestClientMock::new();
     /// let authenticator = Authenticator::authenticatorWithClient(client);
-    /// if let Ok(mut response) = authenticator.session_token_for_config(&config) {
+    /// if let Ok(response) = authenticator.session_token_for_config(&config) {
     ///     if let Ok(text) = response.text() {
     ///         assert_eq!(text, "abc".to_string());
     ///     }
@@ -49,11 +48,11 @@ impl Authenticator {
             .send();
 
         match response {
-            Ok(mut r) => {
+            Ok(r) => {
                 let parser = AuthXmlParser::new();
-                parser.sessionTokenFromXml(r)
+                parser.session_token_from_xml(r)
             }
-            Err(e) => Err("Error getting session token response"),
+            Err(_) => Err("Error getting session token response"),
         }
     }
 

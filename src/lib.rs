@@ -15,7 +15,7 @@ impl<'a, 'b> Paper<'a, 'b> {
 
     pub fn loans(&self) {
         match self.authenticate() {
-            Ok(mut token) => println!("Loans: {:?}", token),
+            Ok(token) => println!("Loans: {:?}", token),
             Err(e) => println!("Error: {:?}", e),
         }
     }
@@ -25,8 +25,8 @@ impl<'a, 'b> Paper<'a, 'b> {
         let token_result = authenticator.session_token_for_config(&self.configuration);
 
         match token_result {
-            Ok(mut token) => Ok(token),
-            Err(e) => Err("An error occurred when retrieving the session token"),
+            Ok(token) => Ok(token),
+            Err(_) => Err("An error occurred when retrieving the session token"),
         }
     }
 }
