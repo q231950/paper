@@ -28,7 +28,7 @@ fn main() {
     }
 
     let paper = paper::Paper::with_config(configuration);
-    let result = paper.authenticate();
+    let result = paper.loans();
 }
 
 fn app<'a, 'b>() -> App<'a, 'b> {

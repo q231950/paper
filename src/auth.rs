@@ -1,7 +1,7 @@
-extern crate xml;
-
 use super::configuration::Configuration;
-use reqwest::{Response, Result};
+use super::xml::AuthXmlParser;
+use reqwest::Response;
+use std::result::Result;
 
 pub struct Authenticator {
     client: reqwest::Client,
@@ -32,9 +32,13 @@ impl Authenticator {
     ///     }
     /// }
     /// ```
-    pub fn session_token_for_config(&self, configuration: &Configuration) -> Result<Response> {
+    pub fn session_token_for_config(
+        &self,
+        configuration: &Configuration,
+    ) -> Result<String, &'static str> {
         let body = self.session_token_request_body(configuration.username, configuration.password);
-        self.client
+        let response = self
+            .client
             .post("https://zones.buecherhallen.de/app_webuser/WebUserSvc.asmx")
             .header("Content-Type", "application/soap+xml; charset=utf-8")
             .header("Accept", "*/*")
@@ -42,7 +46,15 @@ impl Authenticator {
             .header("Accept-Encoding", "br, gzip, deflate")
             .header("User-Agent", "Buecherhallen/38 CFNetwork/976 Darwin/18.2.0")
             .body(body)
-            .send()
+            .send();
+
+        match response {
+            Ok(mut r) => {
+                let parser = AuthXmlParser::new();
+                parser.sessionTokenFromXml(r)
+            }
+            Err(e) => Err("Error getting session token response"),
+        }
     }
 
     /// Generates the session token request body for the given username and password
@@ -68,3 +80,19 @@ impl Authenticator {
         x
     }
 }
+
+/*
+pub trait Sender {
+fn send() -> Result<Response>;
+}
+
+impl Sender for RequestBuilder {}
+
+struct ReqwestClientMock {}
+
+impl Sender for ReqwestClientMock {
+pub fn send(self) -> reqwest::Result<reqwest::Response> {
+Err("Fake error")
+}
+}
+*/
