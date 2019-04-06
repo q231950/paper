@@ -8,3 +8,4 @@ edition = "2018"
 
 clap = {version = "~2.32.0", features = ["yaml"]}
 reqwest = "0.9.12"
+xml-rs = "0.8.0"
