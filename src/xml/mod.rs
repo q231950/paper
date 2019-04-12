@@ -1,54 +1,7 @@
 extern crate xml;
 
-use std::io::Read;
-use xml::reader::{EventReader, XmlEvent};
+pub use self::account_info::AccountInfoXmlParser;
+mod account_info;
 
-pub struct AuthXmlParser {}
-
-fn indent(size: usize) -> String {
-    const INDENT: &'static str = "    ";
-    (0..size)
-        .map(|_| INDENT)
-        .fold(String::with_capacity(size * INDENT.len()), |r, s| r + s)
-}
-
-impl AuthXmlParser {
-    pub fn new() -> AuthXmlParser {
-        AuthXmlParser {}
-    }
-
-    pub fn session_token_from_xml(&self, xml: impl Read) -> Result<String, &'static str> {
-        println!("Getting session token from xml...");
-
-        let mut current_element = "".to_string();
-        let parser = EventReader::new(xml);
-        let mut depth = 0;
-        for e in parser {
-            match e {
-                Ok(XmlEvent::StartElement {
-                    name, attributes, ..
-                }) => {
-                    current_element = name.to_string();
-                    println!("{}+{}+{:?}", indent(depth), name, attributes);
-                    depth += 1;
-                }
-                Ok(XmlEvent::EndElement { name }) => {
-                    depth -= 1;
-                    println!("{}-{}", indent(depth), name);
-                }
-                Err(e) => {
-                    println!("Error: {}", e);
-                    break;
-                }
-                Ok(XmlEvent::Characters(c)) => {
-                    println!("{}{:?}", indent(depth), c);
-                    if current_element == "sessionId" {
-                        return Ok(c);
-                    }
-                }
-                _ => {}
-            }
-        }
-        Err("Unable to find session token in xml")
-    }
-}
+pub use self::auth::AuthXmlParser;
+mod auth;

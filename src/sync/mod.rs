@@ -1,13 +1,3 @@
-pub struct AccountManager {
-    token: String,
-}
+pub use self::account::AccountManager;
 
-impl AccountManager {
-    pub fn new(token: String) -> AccountManager {
-        AccountManager { token }
-    }
-
-    pub fn account_info(&self) {
-        println!("Getting account info for token: {:?}", self.token.clone());
-    }
-}
+mod account;

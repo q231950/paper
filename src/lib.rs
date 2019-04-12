@@ -1,5 +1,6 @@
 pub mod auth;
 pub mod configuration;
+pub mod model;
 pub mod sync;
 pub mod xml;
 
