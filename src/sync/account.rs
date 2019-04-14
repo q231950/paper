@@ -28,7 +28,7 @@ impl AccountManager {
             .send();
 
         match response {
-            Ok(mut r) => {
+            Ok(r) => {
                 let parser = AccountInfoXmlParser::new();
                 let account_info = parser.account_info_from_xml(r);
                 println!("{:?}", account_info);

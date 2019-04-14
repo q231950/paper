@@ -43,7 +43,7 @@ impl Authenticator {
             .header("Accept", "*/*")
             .header("Accept-Language", "en-us")
             .header("Accept-Encoding", "br, gzip, deflate")
-            .header("User-Agent", "Buecherhallen/38 CFNetwork/976 Darwin/18.2.0")
+            .header("User-Agent", "Flying Penguin")
             .body(body)
             .send();
 

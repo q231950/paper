@@ -29,19 +29,16 @@ impl AuthXmlParser {
                     name, attributes, ..
                 }) => {
                     current_element = name.to_string();
-                    println!("{}+{}+{:?}", indent(depth), name, attributes);
                     depth += 1;
                 }
                 Ok(XmlEvent::EndElement { name }) => {
                     depth -= 1;
-                    println!("{}-{}", indent(depth), name);
                 }
                 Err(e) => {
                     println!("Error: {}", e);
                     break;
                 }
                 Ok(XmlEvent::Characters(c)) => {
-                    println!("{}{:?}", indent(depth), c);
                     if current_element == "sessionId" {
                         return Ok(c);
                     }
