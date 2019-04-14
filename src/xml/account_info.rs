@@ -12,16 +12,12 @@ impl AccountInfoXmlParser {
     pub fn account_info_from_xml(&self, xml: impl Read) -> Result<AccountInfo, &'static str> {
         println!("Creating account info from xml...");
 
-        let mut result: Result<AccountInfo, &'static str>;
         let mut account_info = AccountInfo::new();
         let mut current_element = "".to_string();
         let parser = EventReader::new_with_config(xml, self.parser_config());
-        let mut depth = 0;
         for e in parser {
             match e {
-                Ok(XmlEvent::StartElement {
-                    name, attributes, ..
-                }) => {
+                Ok(XmlEvent::StartElement { name, .. }) => {
                     current_element = name.local_name.to_string();
                 }
                 Err(e) => {
@@ -31,27 +27,27 @@ impl AccountInfoXmlParser {
                 Ok(XmlEvent::Characters(c)) => {
                     let v = Some(c.clone());
                     if current_element == "ReadableFullName" {
-                        account_info.readableFullName = v;
+                        account_info.readable_full_name = v;
                     } else if current_element == "CategoryName" {
-                        account_info.categoryName = v;
+                        account_info.category_name = v;
                     } else if current_element == "AccountBalance" {
-                        account_info.accountBalance = v;
+                        account_info.account_balance = v;
                     } else if current_element == "BadgeReplacementCharge" {
-                        account_info.badgeReplacementCharge = v;
+                        account_info.badge_replacement_charge = v;
                     } else if current_element == "CreditBalance" {
-                        account_info.creditBalance = v;
+                        account_info.credit_balance = v;
                     } else if current_element == "MandatoryCreditBalance" {
-                        account_info.mandatoryCreditBalance = v;
+                        account_info.mandatory_credit_balance = v;
                     } else if current_element == "PseudoForename" {
-                        account_info.pseudoForename = v;
+                        account_info.pseudo_forename = v;
                     } else if current_element == "CreationDate" {
-                        account_info.creationDate = v;
+                        account_info.creation_date = v;
                     } else if current_element == "FullName" {
-                        account_info.fullName = v;
+                        account_info.full_name = v;
                     } else if current_element == "BirthDate" {
-                        account_info.birthDate = v;
+                        account_info.birth_date = v;
                     } else if current_element == "BranchName" {
-                        account_info.branchName = v;
+                        account_info.branch_name = v;
                     } else if current_element == "Amount" {
                         if account_info.amount == None {
                             account_info.amount = v;
@@ -69,12 +65,12 @@ impl AccountInfoXmlParser {
                             account_info.expiry = v;
                         }
                     } else if current_element == "ExpiryMonth" {
-                        if account_info.expiryMonth == None {
-                            account_info.expiryMonth = v;
+                        if account_info.expiry_month == None {
+                            account_info.expiry_month = v;
                         }
                     } else if current_element == "ExpiryYear" {
-                        if account_info.expiryYear == None {
-                            account_info.expiryYear = v;
+                        if account_info.expiry_year == None {
+                            account_info.expiry_year = v;
                         }
                     } else if current_element == "Postcode" {
                         account_info.postcode = v;
@@ -83,11 +79,11 @@ impl AccountInfoXmlParser {
                     } else if current_element == "Forename" {
                         account_info.forename = v;
                     } else if current_element == "EmailAddress" {
-                        account_info.emailAddress = v;
+                        account_info.email_address = v;
                     } else if current_element == "AddressLine1" {
-                        account_info.addressLine1 = v;
+                        account_info.address_line1 = v;
                     } else if current_element == "AddressLine2" {
-                        account_info.addressLine2 = v;
+                        account_info.address_line2 = v;
                     } else if current_element == "Acronym" {
                         account_info.acronym = v;
                     } else {
