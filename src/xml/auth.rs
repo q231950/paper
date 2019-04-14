@@ -17,9 +17,7 @@ impl AuthXmlParser {
         let parser = EventReader::new(xml);
         for e in parser {
             match e {
-                Ok(XmlEvent::StartElement {
-                    name, attributes, ..
-                }) => {
+                Ok(XmlEvent::StartElement { name, .. }) => {
                     current_element = name.to_string();
                 }
                 Err(e) => {

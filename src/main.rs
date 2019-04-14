@@ -28,7 +28,7 @@ fn main() {
     }
 
     let paper = paper::Paper::with_config(configuration);
-    let result = paper.fetch_user();
+    let _result = paper.fetch_user();
 }
 
 fn app<'a, 'b>() -> App<'a, 'b> {

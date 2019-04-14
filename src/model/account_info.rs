@@ -1,57 +1,57 @@
 #[derive(Debug)]
 pub struct AccountInfo {
-    pub readableFullName: Option<String>,
-    pub categoryName: Option<String>,
-    pub accountBalance: Option<String>,
-    pub badgeReplacementCharge: Option<String>,
-    pub creditBalance: Option<String>,
-    pub mandatoryCreditBalance: Option<String>,
-    pub pseudoForename: Option<String>,
-    pub creationDate: Option<String>,
-    pub fullName: Option<String>,
-    pub birthDate: Option<String>,
-    pub branchName: Option<String>,
+    pub readable_full_name: Option<String>,
+    pub category_name: Option<String>,
+    pub account_balance: Option<String>,
+    pub badge_replacement_charge: Option<String>,
+    pub credit_balance: Option<String>,
+    pub mandatory_credit_balance: Option<String>,
+    pub pseudo_forename: Option<String>,
+    pub creation_date: Option<String>,
+    pub full_name: Option<String>,
+    pub birth_date: Option<String>,
+    pub branch_name: Option<String>,
     pub amount: Option<String>, // the monetary amount of the subscription
     pub change: Option<String>, // the last modification date of the subscription
     pub start: Option<String>,  // the start date of the current subscription
     pub expiry: Option<String>, // the expiry date of the current subscription
-    pub expiryMonth: Option<String>, // the month of the next expiration
-    pub expiryYear: Option<String>, // the year of the next expiration
+    pub expiry_month: Option<String>, // the month of the next expiration
+    pub expiry_year: Option<String>, // the year of the next expiration
     pub postcode: Option<String>,
     pub surname: Option<String>,
     pub forename: Option<String>,
-    pub emailAddress: Option<String>,
-    pub addressLine1: Option<String>,
-    pub addressLine2: Option<String>,
+    pub email_address: Option<String>,
+    pub address_line1: Option<String>,
+    pub address_line2: Option<String>,
     pub acronym: Option<String>,
 }
 
 impl AccountInfo {
     pub fn new() -> AccountInfo {
         AccountInfo {
-            readableFullName: None,
-            categoryName: None,
-            accountBalance: None,
-            badgeReplacementCharge: None,
-            creditBalance: None,
-            mandatoryCreditBalance: None,
-            pseudoForename: None,
-            creationDate: None,
-            fullName: None,
-            birthDate: None,
-            branchName: None,
+            readable_full_name: None,
+            category_name: None,
+            account_balance: None,
+            badge_replacement_charge: None,
+            credit_balance: None,
+            mandatory_credit_balance: None,
+            pseudo_forename: None,
+            creation_date: None,
+            full_name: None,
+            birth_date: None,
+            branch_name: None,
             amount: None,
             change: None,
             start: None,
             expiry: None,
-            expiryMonth: None,
-            expiryYear: None,
+            expiry_month: None,
+            expiry_year: None,
             postcode: None,
             surname: None,
             forename: None,
-            emailAddress: None,
-            addressLine1: None,
-            addressLine2: None,
+            email_address: None,
+            address_line1: None,
+            address_line2: None,
             acronym: None,
         }
     }
