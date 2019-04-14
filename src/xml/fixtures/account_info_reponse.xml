@@ -1,0 +1,407 @@
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" 
+    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" 
+    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">
+    <soap:Body>
+        <GetBorrowerSummaryResponse xmlns=\"http://bibliomondo.com/websevices/webuser\">
+            <GetBorrowerSummaryResult>
+                <userId>123456789</userId>
+                <record>
+                    <GetBorrowerRecordResult xmlns=\"http://bibliomondo.com/webservices/webuser\">
+                        <Brwr>123456789</Brwr>
+                        <WantDefault>0</WantDefault>
+                        <WantSummary>1</WantSummary>
+                        <AddType></AddType>
+                        <IsDefault>0</IsDefault>
+                        <BrwrNum>A12 345 678 9</BrwrNum>
+                        <BrwrNumIsEmpty>0</BrwrNumIsEmpty>
+                        <Renumbered>0</Renumbered>
+                        <RecordNum>123456</RecordNum>
+                        <Category>23</Category>
+                        <CategoryCode>LE</CategoryCode>
+                        <CategoryName>Erwachsene &gt;27 Last</CategoryName>
+                        <CategoryType>0</CategoryType>
+                        <Status>0</Status>
+                        <AccountBalance>€ 10,00</AccountBalance>
+                        <BadgeReplacementCharge>€ 2,00</BadgeReplacementCharge>
+                        <CreditBalance>€ 8,00</CreditBalance>
+                        <MandatoryCreditBalance>€ 0,00</MandatoryCreditBalance>
+                        <HaveC210Fields>1</HaveC210Fields>
+                        <InCredit>0</InCredit>
+                        <InDebit>0</InDebit>
+                        <PosAccBal>€ 0,00</PosAccBal>
+                        <PosAccBalAmount>€ 0,00</PosAccBalAmount>
+                        <ShowAmountToRefundPopup>0</ShowAmountToRefundPopup>
+                        <AccBalAsDecimal>0.00</AccBalAsDecimal>
+                        <PosAccBalAsDecimalUnits>0</PosAccBalAsDecimalUnits>
+                        <HyphenatedBrwrNum>A12-345-678-9</HyphenatedBrwrNum>
+                        <NumberOfRes>0</NumberOfRes>
+                        <NextExpiry>
+                            <Type>0</Type>
+                            <Date></Date>
+                            <Locn>0</Locn>
+                            <LocnCode>0</LocnCode>
+                            <LocnName>0</LocnName>
+                        </NextExpiry>
+                        <Register>
+                            <Date>22/02/2014</Date>
+                            <Locn>1</Locn>
+                            <LocnCode>1</LocnCode>
+                            <LocnName>1</LocnName>
+                        </Register>
+                        <Subloc>
+                            <Locn>1</Locn>
+                        </Subloc>
+                        <Route>
+                            <Locn>0</Locn>
+                            <LocnCode></LocnCode>
+                        </Route>
+                        <PseudoForename>Pink</PseudoForename>
+                        <StatChange>
+                            <Date>23/02/2018</Date>
+                            <Locn>20</Locn>
+                            <LocnCode>20</LocnCode>
+                            <LocnName>20</LocnName>
+                        </StatChange>
+                        <LastIssue>
+                            <Date>19/02/2019</Date>
+                            <Locn>63</Locn>
+                            <LocnCode>63</LocnCode>
+                            <LocnName>63</LocnName>
+                        </LastIssue>
+                        <AccUpdate>
+                            <Date>23/02/2018</Date>
+                            <Locn>32</Locn>
+                            <LocnCode>32</LocnCode>
+                            <LocnName>32</LocnName>
+                        </AccUpdate>
+                        <CreditUpdate>
+                            <Date></Date>
+                            <Locn>0</Locn>
+                            <LocnCode>0</LocnCode>
+                            <LocnName>0</LocnName>
+                        </CreditUpdate>
+                        <AllowanceType>0</AllowanceType>
+                        <QuotaGroup>BUE</QuotaGroup>
+                        <ItemsAllowed>
+                            <__Element__ name=\"0\">
+                                <Value>70</Value>
+                                <Name>GESAMT</Name>
+                            </__Element__>
+                            <__Element__ name=\"1\">
+                                <Value>70</Value>
+                                <Name>BUCH Erwachsene</Name>
+                            </__Element__>
+                            <__Element__ name=\"2\">
+                                <Value>70</Value>
+                                <Name>CDs</Name>
+                            </__Element__>
+                            <__Element__ name=\"3\">
+                                <Value>10</Value>
+                                <Name>Videos</Name>
+                            </__Element__>
+                            <__Element__ name=\"4\">
+                                <Value>70</Value>
+                                <Name>CD-ROM</Name>
+                            </__Element__>
+                            <__Element__ name=\"5\">
+                                <Value>70</Value>
+                                <Name>Buch Ki/Ju</Name>
+                            </__Element__>
+                            <__Element__ name=\"6\">
+                                <Value>70</Value>
+                                <Name>MP3</Name>
+                            </__Element__>
+                            <__Element__ name=\"7\">
+                                <Value>10</Value>
+                                <Name>Konsolensp.</Name>
+                            </__Element__>
+                            <__Element__ name=\"8\">
+                                <Value>5</Value>
+                                <Name>Sommerferienprogramm</Name>
+                            </__Element__>
+                            <__Element__ name=\"9\">
+                                <Value>3</Value>
+                                <Name>Gegenstand</Name>
+                            </__Element__>
+                            <__Element__ name=\"10\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"11\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"12\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"13\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"14\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                        </ItemsAllowed>
+                        <ItemsOnLoan>
+                            <__Element__ name=\"0\">
+                                <Value>1</Value>
+                                <Name>GESAMT</Name>
+                            </__Element__>
+                            <__Element__ name=\"1\">
+                                <Value>0</Value>
+                                <Name>BUCH Erwachsene</Name>
+                            </__Element__>
+                            <__Element__ name=\"2\">
+                                <Value>0</Value>
+                                <Name>CDs</Name>
+                            </__Element__>
+                            <__Element__ name=\"3\">
+                                <Value>0</Value>
+                                <Name>Videos</Name>
+                            </__Element__>
+                            <__Element__ name=\"4\">
+                                <Value>0</Value>
+                                <Name>CD-ROM</Name>
+                            </__Element__>
+                            <__Element__ name=\"5\">
+                                <Value>0</Value>
+                                <Name>Buch Ki/Ju</Name>
+                            </__Element__>
+                            <__Element__ name=\"6\">
+                                <Value>0</Value>
+                                <Name>MP3</Name>
+                            </__Element__>
+                            <__Element__ name=\"7\">
+                                <Value>1</Value>
+                                <Name>Konsolensp.</Name>
+                            </__Element__>
+                            <__Element__ name=\"8\">
+                                <Value>0</Value>
+                                <Name>Sommerferienprogramm</Name>
+                            </__Element__>
+                            <__Element__ name=\"9\">
+                                <Value>0</Value>
+                                <Name>Gegenstand</Name>
+                            </__Element__>
+                            <__Element__ name=\"10\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"11\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"12\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"13\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                            <__Element__ name=\"14\">
+                                <Value>0</Value>
+                                <Name></Name>
+                            </__Element__>
+                        </ItemsOnLoan>
+                        <TotalIssues>509</TotalIssues>
+                        <ThisYearIssues>41</ThisYearIssues>
+                        <LastYearIssues>175</LastYearIssues>
+                        <YearBefIssues>110</YearBefIssues>
+                        <OtherIssues>183</OtherIssues>
+                        <RelNumber></RelNumber>
+                        <FullName>Panther, Pink</FullName>
+                        <Notes></Notes>
+                        <SubsEnabled>1</SubsEnabled>
+                        <SubsEnabledInRsp>128</SubsEnabledInRsp>
+                        <LastChange>19/02/2019</LastChange>
+                        <Owner>1</Owner>
+                        <OwnerCode>1</OwnerCode>
+                        <OwnerName>1</OwnerName>
+                        <CreationDate>23/02/2014</CreationDate>
+                        <Flag1>48</Flag1>
+                        <Flag2>0</Flag2>
+                        <RouteNumber>0</RouteNumber>
+                        <HaveC200Fields>1</HaveC200Fields>
+                        <LastReturn>
+                            <Date>19/03/3019</Date>
+                            <Locn>1</Locn>
+                            <LocnCode>1</LocnCode>
+                            <LocnName>1</LocnName>
+                        </LastReturn>
+                        <BirthDate>11/01/1871</BirthDate>
+                        <LastOverdue></LastOverdue>
+                        <CurrentSubs>
+                            <Scheme>6</Scheme>
+                            <Branch>1</Branch>
+                            <BranchCode>1</BranchCode>
+                            <BranchName>  Zentralbibliothek</BranchName>
+                            <Method>0</Method>
+                            <Status>1</Status>
+                            <Amount>€ 60,00</Amount>
+                            <IsCharge>1</IsCharge>
+                            <Change>14/02/2018</Change>
+                            <Start>15/03/2018</Start>
+                            <Expiry>16/03/2019</Expiry>
+                            <StartMonth>12</StartMonth>
+                            <StartYear>2018</StartYear>
+                            <ExpiryMonth>12</ExpiryMonth>
+                            <ExpiryYear>2019</ExpiryYear>
+                            <SchemeName>Normal Jahr Last</SchemeName>
+                            <MethodName>
+                                <ENG>Cash</ENG>
+                                <GER>Barzahlung</GER>
+                                <DUT>Contant</DUT>
+                                <FRE>Monnaie</FRE>
+                            </MethodName>
+                            <StatusName>
+                                <ENG>Paid</ENG>
+                                <GER>Bezahlt</GER>
+                                <DUT>Betaald</DUT>
+                                <FRE>Pay&amp;eacute;</FRE>
+                            </StatusName>
+                        </CurrentSubs>
+                        <NextSubs>
+                            <Scheme>6</Scheme>
+                            <Branch>1</Branch>
+                            <BranchCode>1</BranchCode>
+                            <BranchName>  Zentralbibliothek</BranchName>
+                            <Method>0</Method>
+                            <Status>0</Status>
+                            <Amount>€ 60,00</Amount>
+                            <IsCharge>1</IsCharge>
+                            <Change></Change>
+                            <Start>16/03/2019</Start>
+                            <Expiry>17/03/2020</Expiry>
+                            <StartMonth>03</StartMonth>
+                            <StartYear>2019</StartYear>
+                            <ExpiryMonth>03</ExpiryMonth>
+                            <ExpiryYear>2020</ExpiryYear>
+                            <SchemeName>Normal Jahr Last</SchemeName>
+                            <MethodName>
+                                <ENG>Cash</ENG>
+                                <GER>Barzahlung</GER>
+                                <DUT>Contant</DUT>
+                                <FRE>Monnaie</FRE>
+                            </MethodName>
+                            <StatusName>
+                                <ENG>Not paid</ENG>
+                                <GER>Nicht bezahlt</GER>
+                                <DUT>Niet betaald</DUT>
+                                <FRE>Non pay&amp;eacute;</FRE>
+                            </StatusName>
+                        </NextSubs>
+                        <CurrentExtraSubs>
+                            <TaxRate>0</TaxRate>
+                            <TaxAmount>€ 0,09</TaxAmount>
+                        </CurrentExtraSubs>
+                        <NextExtraSubs>
+                            <TaxRate>0</TaxRate>
+                            <TaxAmount>€ 0,00</TaxAmount>
+                        </NextExtraSubs>
+                        <Sex>1</Sex>
+                        <Nationality>6</Nationality>
+                        <FirstLang>6</FirstLang>
+                        <SecondLang>6</SecondLang>
+                        <Profile>0</Profile>
+                        <School>0</School>
+                        <Residence></Residence>
+                        <Tap>0</Tap>
+                        <ContactMethod>2</ContactMethod>
+                        <DepositAmount>€ 0,00</DepositAmount>
+                        <DepositExpiry></DepositExpiry>
+                        <DepositPaid>01/01/2010</DepositPaid>
+                        <Postcode>12345</Postcode>
+                        <Keys>
+                            <Pay>2</Pay>
+                            <Confirm>2</Confirm>
+                            <Cancel>1</Cancel>
+                            <Amend>2</Amend>
+                            <Undo>1</Undo>
+                        </Keys>
+                        <Surname>Panther</Surname>
+                        <Forename>Pink</Forename>
+                        <Title></Title>
+                        <Prefix></Prefix>
+                        <AccountNumber>DE12345678910111213141</AccountNumber>
+                        <WritingAcNoFromSubs>0</WritingAcNoFromSubs>
+                        <PassportIdNumber>Vep, Irma</PassportIdNumber>
+                        <CommunityRegNumber>POSDEHHYYY</CommunityRegNumber>
+                        <EmailAddress>abc@email.com</EmailAddress>
+                        <JobTitle></JobTitle>
+                        <SchoolNumber></SchoolNumber>
+                        <NumberOfPupils>21</NumberOfPupils>
+                        <Fao></Fao>
+                        <AddressLine1>ABC-Strasse 1</AddressLine1>
+                        <AddressLine2>Hamburg</AddressLine2>
+                        <AddressLine3></AddressLine3>
+                        <AddressLine4></AddressLine4>
+                        <Country></Country>
+                        <TelephoneNumber></TelephoneNumber>
+                        <TelephoneNumberWork></TelephoneNumberWork>
+                        <MobilePhone></MobilePhone>
+                        <FaxNumber></FaxNumber>
+                        <HouseNumber></HouseNumber>
+                        <HouseLetter></HouseLetter>
+                        <BoatNumber></BoatNumber>
+                        <Acronym>PAN11171</Acronym>
+                        <UserDefinedField1></UserDefinedField1>
+                        <UserDefinedField2></UserDefinedField2>
+                        <UserDefinedField3></UserDefinedField3>
+                        <UserDefinedField1Length>9</UserDefinedField1Length>
+                        <UserDefinedField2Length>9</UserDefinedField2Length>
+                        <UserDefinedField3Length>25</UserDefinedField3Length>
+                        <BirthDateMandatory>1</BirthDateMandatory>
+                        <LoanHistoryAllowed>0</LoanHistoryAllowed>
+                        <LoanHistoryRequired>0</LoanHistoryRequired>
+                        <CreditAllowed>1</CreditAllowed>
+                        <CreditMandatory>0</CreditMandatory>
+                        <HouseboundAllowed>0</HouseboundAllowed>
+                        <HouseboundRequired>0</HouseboundRequired>
+                        <UseSecondName>0</UseSecondName>
+                        <UseSecondAddress>0</UseSecondAddress>
+                        <DetailsIncomplete>0</DetailsIncomplete>
+                        <AddressChecked>0</AddressChecked>
+                        <SecondAddressChecked>0</SecondAddressChecked>
+                        <HaveHouseboundDetails>0</HaveHouseboundDetails>
+                        <BorrowerMailingList>0</BorrowerMailingList>
+                        <BorrowerReminders>0</BorrowerReminders>
+                        <BorrowerDueItemsInfo>0</BorrowerDueItemsInfo>
+                        <BorrowNationallyOverride>0</BorrowNationallyOverride>
+                        <BorrowNationallyAllow>0</BorrowNationallyAllow>
+                        <CurrentDate>14/04/2019</CurrentDate>
+                        <CurrentTime>09:12</CurrentTime>
+                        <BranchName>WWW-APP</BranchName>
+                        <ReadableFullName>Pink Panther</ReadableFullName>
+                        <Last5DigitsOfBrwrNum>45678</Last5DigitsOfBrwrNum>
+                        <BirthMonth>11</BirthMonth>
+                        <BirthYear>1871</BirthYear>
+                        <Surname_2></Surname_2>
+                        <Forename_2></Forename_2>
+                        <Title_2></Title_2>
+                        <Prefix_2></Prefix_2>
+                        <Fao_2></Fao_2>
+                        <AddressLine1_2></AddressLine1_2>
+                        <AddressLine2_2></AddressLine2_2>
+                        <AddressLine3_2></AddressLine3_2>
+                        <AddressLine4_2></AddressLine4_2>
+                        <Country_2></Country_2>
+                        <Postcode_2></Postcode_2>
+                        <TelephoneNumber_2></TelephoneNumber_2>
+                        <TelephoneNumberWork_2></TelephoneNumberWork_2>
+                        <MobilePhone_2></MobilePhone_2>
+                        <FaxNumber_2></FaxNumber_2>
+                        <EmailAddress_2></EmailAddress_2>
+                        <JobTitle_2></JobTitle_2>
+                        <HouseNumber_2></HouseNumber_2>
+                        <HouseLetter_2></HouseLetter_2>
+                        <BoatNumber_2></BoatNumber_2>
+                    </GetBorrowerRecordResult>
+                </record>
+            </GetBorrowerSummaryResult>
+        </GetBorrowerSummaryResponse>
+    </soap:Body>
+</soap:Envelope>
