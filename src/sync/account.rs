@@ -1,15 +1,17 @@
 use crate::xml::AccountInfoXmlParser;
+use crate::api::APIClient;
 
 pub struct AccountManager {
     token: String,
-    client: reqwest::Client,
+    api_client: APIClient,
 }
 
 impl AccountManager {
     pub fn new(token: String) -> AccountManager {
+        let network_client = reqwest::Client::new();
         AccountManager {
             token,
-            client: reqwest::Client::new(),
+            api_client: APIClient::new_with_network_client(network_client)
         }
     }
 
@@ -17,15 +19,8 @@ impl AccountManager {
         println!("Getting account info for token: {:?}", self.token.clone());
         let body = self.account_info_request_body(self.token.clone());
         let response = self
-            .client
-            .post("https://zones.buecherhallen.de/app_webuser/WebUserSvc.asmx")
-            .header("Content-Type", "application/soap+xml; charset=utf-8")
-            .header("Accept", "*/*")
-            .header("Accept-Language", "en-us")
-            .header("Accept-Encoding", "br, gzip, deflate")
-            .header("User-Agent", "Flying Penguin")
-            .body(body)
-            .send();
+            .api_client
+            .post(body);
 
         match response {
             Ok(r) => {
