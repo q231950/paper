@@ -107,8 +107,6 @@ impl AccountInfoXmlParser {
 
 #[cfg(test)]
 mod tests {
-    use std::fs;
-
     #[test]
     fn it_parses_account_info_from_xml() {
         //        let contents = fs::read_to_string("src/xml/fixtures/account_info_reponse.xml")
