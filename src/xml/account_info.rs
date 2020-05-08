@@ -10,8 +10,6 @@ impl AccountInfoXmlParser {
     }
 
     pub fn account_info_from_xml(&self, xml: impl Read) -> Result<AccountInfo, &'static str> {
-        println!("Creating account info from xml...");
-
         let mut account_info = AccountInfo::new();
         let mut current_element = "".to_string();
         let parser = EventReader::new_with_config(xml, self.parser_config());

@@ -11,8 +11,6 @@ impl AuthXmlParser {
     }
 
     pub fn session_token_from_xml(&self, xml: impl Read) -> Result<String, &'static str> {
-        println!("Getting session token from xml...");
-
         let mut current_element = "".to_string();
         let parser = EventReader::new(xml);
         for e in parser {

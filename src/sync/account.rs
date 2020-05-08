@@ -17,7 +17,6 @@ impl AccountManager {
     }
 
     pub fn account_info(&self) {
-        println!("Getting account info for token: {:?}", self.token.clone());
         let body = self.account_info_request_body();
         let response = self.api_client.post(body);
 
