@@ -6,6 +6,7 @@ pub mod sync;
 pub mod xml;
 
 use crate::auth::Authenticator;
+use crate::auth::SessionToken;
 use crate::configuration::Configuration;
 use crate::sync::AccountManager;
 
@@ -28,16 +29,16 @@ impl<'a, 'b> Paper<'a, 'b> {
         }
     }
 
-    fn account(&self, token: String) {
+    fn account(&self, token: SessionToken) {
         let account_manager = AccountManager::new(token);
         account_manager.account_info();
     }
 
-    fn loans(&self, token: String) {
+    fn loans(&self, token: SessionToken) {
         println!("Getting loans for token: {:?}", token)
     }
 
-    fn authenticate(&self) -> Result<String, &'static str> {
+    fn authenticate(&self) -> Result<SessionToken, &'static str> {
         let authenticator = Authenticator::new();
         let token_result = authenticator.session_token_for_config(&self.configuration);
 
