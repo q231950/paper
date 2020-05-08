@@ -18,17 +18,17 @@ impl<'a, 'b> Paper<'a, 'b> {
         Paper { configuration }
     }
 
-    pub fn fetch_user(&self) {
+    pub fn fetch_account(&self) {
         match self.authenticate() {
             Ok(token) => {
                 self.loans(token.clone());
-                self.borrower(token.clone());
+                self.account(token.clone());
             }
             Err(e) => println!("Error: {:?}", e),
         }
     }
 
-    fn borrower(&self, token: String) {
+    fn account(&self, token: String) {
         let account_manager = AccountManager::new(token);
         account_manager.account_info();
     }
