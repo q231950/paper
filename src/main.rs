@@ -19,16 +19,14 @@ fn main() {
 
     if let Some(username) = matches.value_of("username") {
         configuration = configuration.with_username(username);
-        println!("Using username: {}", configuration.username);
     }
 
     if let Some(password) = matches.value_of("password") {
         configuration = configuration.with_password(password);
-        println!("Using password: {}", configuration.password);
     }
 
     let paper = paper::Paper::with_config(configuration);
-    let _result = paper.fetch_user();
+    paper.initiate_commands();
 }
 
 fn app<'a, 'b>() -> App<'a, 'b> {

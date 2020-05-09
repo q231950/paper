@@ -3,6 +3,9 @@ use super::xml::AuthXmlParser;
 use crate::api::APIClient;
 use std::result::Result;
 
+/// A session token is used for authentication
+pub type SessionToken = String;
+
 pub struct Authenticator {
     client: APIClient,
 }
@@ -24,7 +27,7 @@ impl Authenticator {
     pub fn session_token_for_config(
         &self,
         configuration: &Configuration,
-    ) -> Result<String, &'static str> {
+    ) -> Result<SessionToken, &'static str> {
         let body = self.session_token_request_body(configuration.username, configuration.password);
         let response = self.client.post(body);
 
@@ -64,5 +67,4 @@ mod tests {
         let body = authenticator.session_token_request_body(&"abc", &"123");
         assert_eq!(body.len(), 480);
     }
-
 }
