@@ -10,30 +10,30 @@ use crate::auth::SessionToken;
 use crate::configuration::Configuration;
 use crate::sync::AccountManager;
 
-pub struct Paper<'a, 'b> {
-    configuration: Configuration<'a, 'b>,
+pub struct Paper {
+    configuration: Configuration,
     token: Option<SessionToken>,
 }
 
-impl<'a, 'b> Paper<'a, 'b> {
-    pub fn with_config(configuration: Configuration<'a, 'b>) -> Paper<'a, 'b> {
+impl<'a, 'b> Paper {
+    pub fn with_config(configuration: Configuration) -> Paper {
         Paper {
             configuration: configuration,
             token: None,
         }
     }
 
-    pub fn initiate_commands(&self) {
+    pub async fn initiate_commands(&self) {
         match self.token.clone() {
-            None => match self.authenticate() {
-                Ok(token) => self.accept_command(token.clone()),
+            None => match self.authenticate().await {
+                Ok(token) => self.accept_command(token.clone()).await,
                 Err(e) => println!("Error: {:?}", e),
             },
-            Some(token) => self.accept_command(token.clone()),
+            Some(token) => self.accept_command(token.clone()).await,
         }
     }
 
-    fn accept_command(&self, token: SessionToken) {
+    async fn accept_command(&self, token: SessionToken) {
         loop {
             println!("{}", self.command_table());
             let mut choice = String::new();
@@ -42,8 +42,8 @@ impl<'a, 'b> Paper<'a, 'b> {
                 .expect("Failed to read the command");
 
             match choice.as_str() {
-                "1\n" => self.account(token.clone()),
-                "2\n" => self.loans(token.clone()),
+                "1\n" => self.account(token.clone()).await,
+                "2\n" => self.loans(token.clone()).await,
                 "3\n" => break,
                 "q\n" => break,
                 _ => (),
@@ -60,21 +60,23 @@ impl<'a, 'b> Paper<'a, 'b> {
         "#
     }
 
-    fn account(&self, token: SessionToken) {
+    async fn account(&self, token: SessionToken) {
         println!("\nGetting your account...\n");
         let account_manager = AccountManager::new(token);
-        account_manager.account_info();
+        account_manager.account_info().await;
         println!("\n---\n");
     }
 
-    fn loans(&self, _token: SessionToken) {
+    async fn loans(&self, _token: SessionToken) {
         println!("\nGetting your loans...\n");
         println!("\n---\n");
     }
 
-    fn authenticate(&self) -> Result<SessionToken, &'static str> {
+    async fn authenticate(&self) -> Result<SessionToken, &'static str> {
         let authenticator = Authenticator::new();
-        let token_result = authenticator.session_token_for_config(&self.configuration);
+        let token_result = authenticator
+            .session_token_for_config(&self.configuration)
+            .await;
 
         match token_result {
             Ok(token) => Ok(token),
@@ -88,8 +90,12 @@ mod tests {
     use super::*;
     #[test]
     fn test_with_config() {
-        let config = Configuration::new();
+        let config = Configuration {
+            username: Some("abc".to_string()),
+            password: Some("123".to_string()),
+        };
         let paper = Paper::with_config(config);
-        assert_eq!(paper.configuration.username, "");
+        assert_eq!(paper.configuration.username, Some("abc".to_string()));
+        assert_eq!(paper.configuration.password, Some("123".to_string()));
     }
 }

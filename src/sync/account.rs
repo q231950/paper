@@ -16,17 +16,20 @@ impl AccountManager {
         }
     }
 
-    pub fn account_info(&self) {
+    pub async fn account_info(&self) {
         let body = self.account_info_request_body();
-        let response = self.api_client.post(body);
+        let response = self.api_client.post(body).await;
 
         match response {
-            Ok(r) => {
-                let parser = AccountInfoXmlParser::new();
-                let account_info = parser.account_info_from_xml(r);
-                println!("{:?}", account_info);
-            }
-            Err(_) => println!("Error getting session token response"),
+            Ok(r) => match r.text().await {
+                Ok(content) => {
+                    let parser = AccountInfoXmlParser::new();
+                    let account_info = parser.account_info_from_xml(content.as_bytes());
+                    println!("{:?}", account_info);
+                }
+                Err(_) => println!("Error getting account response content"),
+            },
+            Err(_) => println!("Error getting account response"),
         }
     }
 

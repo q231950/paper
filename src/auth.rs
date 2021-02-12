@@ -24,17 +24,31 @@ impl Authenticator {
     }
 
     /// Generate a session token for a given configuration
-    pub fn session_token_for_config(
+    pub async fn session_token_for_config(
         &self,
         configuration: &Configuration,
     ) -> Result<SessionToken, &'static str> {
-        let body = self.session_token_request_body(configuration.username, configuration.password);
-        let response = self.client.post(body);
+        let body = self.session_token_request_body(
+            configuration
+                .username
+                .as_ref()
+                .unwrap_or(&"".to_string())
+                .as_str(),
+            configuration
+                .password
+                .as_ref()
+                .unwrap_or(&"".to_string())
+                .as_str(),
+        );
+        let response = self.client.post(body).await;
 
         match response {
             Ok(r) => {
                 let parser = AuthXmlParser::new();
-                parser.session_token_from_xml(r)
+                match r.text().await {
+                    Ok(content) => parser.session_token_from_xml(content.as_bytes()),
+                    Err(_) => Err("Error reading session token response body"),
+                }
             }
             Err(_) => Err("Error getting session token response"),
         }
