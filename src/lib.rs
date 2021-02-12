@@ -90,8 +90,12 @@ mod tests {
     use super::*;
     #[test]
     fn test_with_config() {
-        let config = Configuration::new();
+        let config = Configuration {
+            username: Some("abc".to_string()),
+            password: Some("123".to_string()),
+        };
         let paper = Paper::with_config(config);
-        assert_eq!(paper.configuration.username, "");
+        assert_eq!(paper.configuration.username, Some("abc".to_string()));
+        assert_eq!(paper.configuration.password, Some("123".to_string()));
     }
 }

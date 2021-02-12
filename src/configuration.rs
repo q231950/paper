@@ -9,9 +9,9 @@ impl Configuration {
     ///
     /// ```
     /// use crate::paper::configuration::Configuration;
-    /// let c = Configuration::new();
-    /// let cwa = c.with_username("abc");
-    /// assert_eq!(cwa.username, "abc");
+    /// let c = Configuration {username: Some("abc".to_string()), password: None};
+    /// let cwa = c.with_username(Some("abc".to_string()));
+    /// assert_eq!(cwa.username, Some("abc".to_string()));
     /// ```
     pub fn with_username(self, username: Option<String>) -> Configuration {
         Configuration { username, ..self }
@@ -21,9 +21,9 @@ impl Configuration {
     ///
     /// ```
     /// use crate::paper::configuration::Configuration;
-    /// let c = Configuration::new();
-    /// let cwa = c.with_password("123".toString());
-    /// assert_eq!(cwa.password, "123");
+    /// let c = Configuration {username: None, password: Some("123".to_string())};
+    /// let cwa = c.with_password(Some("123".to_string()));
+    /// assert_eq!(cwa.password, Some("123".to_string()));
     /// ```
     pub fn with_password(self, password: Option<String>) -> Configuration {
         Configuration { password, ..self }
