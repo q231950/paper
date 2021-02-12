@@ -7,26 +7,30 @@ use paper::configuration::Configuration;
 extern crate clap;
 use clap::{App, Arg, ArgMatches};
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let app = app();
     let matches = matches_for_app(app);
 
-    let mut configuration = Configuration::new();
+    let mut configuration = Configuration {
+        username: None,
+        password: None,
+    };
 
     if let Some(config) = matches.value_of("config") {
         println!("Using config: {}", config);
     }
 
     if let Some(username) = matches.value_of("username") {
-        configuration = configuration.with_username(username);
+        configuration = configuration.with_username(Some(username.to_string()));
     }
 
     if let Some(password) = matches.value_of("password") {
-        configuration = configuration.with_password(password);
+        configuration = configuration.with_password(Some(password.to_string()));
     }
 
     let paper = paper::Paper::with_config(configuration);
-    paper.initiate_commands();
+    paper.initiate_commands().await;
 }
 
 fn app<'a, 'b>() -> App<'a, 'b> {

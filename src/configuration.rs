@@ -1,25 +1,10 @@
 #[derive(Debug)]
-pub struct Configuration<'a, 'b> {
-    pub username: &'a str,
-    pub password: &'b str,
+pub struct Configuration {
+    pub username: Option<String>,
+    pub password: Option<String>,
 }
 
-impl<'a, 'b> Configuration<'a, 'b> {
-    /// The default Configuration for paper
-    ///
-    /// ```
-    /// use crate::paper::configuration::Configuration;
-    /// let c = Configuration::new();
-    /// assert_eq!(c.username, "");
-    /// assert_eq!(c.password, "");
-    /// ```
-    pub fn new() -> Configuration<'a, 'b> {
-        Configuration {
-            username: "",
-            password: "",
-        }
-    }
-
+impl Configuration {
     /// Create a configuration from an existing configuration and a username
     ///
     /// ```
@@ -28,7 +13,7 @@ impl<'a, 'b> Configuration<'a, 'b> {
     /// let cwa = c.with_username("abc");
     /// assert_eq!(cwa.username, "abc");
     /// ```
-    pub fn with_username(self, username: &'a str) -> Configuration<'a, 'b> {
+    pub fn with_username(self, username: Option<String>) -> Configuration {
         Configuration { username, ..self }
     }
 
@@ -37,10 +22,10 @@ impl<'a, 'b> Configuration<'a, 'b> {
     /// ```
     /// use crate::paper::configuration::Configuration;
     /// let c = Configuration::new();
-    /// let cwa = c.with_password("123");
+    /// let cwa = c.with_password("123".toString());
     /// assert_eq!(cwa.password, "123");
     /// ```
-    pub fn with_password(self, password: &'b str) -> Configuration<'a, 'b> {
+    pub fn with_password(self, password: Option<String>) -> Configuration {
         Configuration { password, ..self }
     }
 }
