@@ -9,6 +9,22 @@ use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
 use crate::sync::AccountManager;
+use libc::size_t;
+
+#[repr(C)]
+pub struct RustByteSlice {
+    pub bytes: *const u8,
+    pub len: size_t,
+}
+
+#[no_mangle]
+pub extern "C" fn get_string_from_rust() -> RustByteSlice {
+    let s = "123";
+    RustByteSlice {
+        bytes: s.as_ptr(),
+        len: s.len() as size_t,
+    }
+}
 
 pub struct Paper {
     configuration: Configuration,
