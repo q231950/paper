@@ -1,4 +1,7 @@
-#[derive(Debug)]
+use serde::{Deserialize, Serialize};
+use serde_json::Result;
+
+#[derive(Serialize, Deserialize)]
 pub struct AccountInfo {
     pub readable_full_name: Option<String>,
     pub category_name: Option<String>,
@@ -53,6 +56,14 @@ impl AccountInfo {
             address_line1: None,
             address_line2: None,
             acronym: None,
+        }
+    }
+
+    pub fn to_json(&self) -> Result<String> {
+        let account = serde_json::to_string_pretty(&self);
+        match account {
+            Ok(json) => Ok(format!("account: {}", json.as_str())),
+            Err(err) => Err(err),
         }
     }
 }

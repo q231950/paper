@@ -1,5 +1,4 @@
 extern crate paper;
-extern crate reqwest;
 
 use paper::configuration::Configuration;
 
