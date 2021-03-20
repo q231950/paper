@@ -1,6 +1,7 @@
 use crate::api::APIClient;
 use crate::auth::SessionToken;
 use crate::xml::AccountInfoXmlParser;
+use crate::model::AccountInfo;
 
 pub struct AccountManager {
     token: SessionToken,
@@ -16,25 +17,18 @@ impl AccountManager {
         }
     }
 
-    pub async fn account_info(&self) {
+    pub async fn account_info(&self) -> Result<AccountInfo, &str>{
         let response = self.api_client.account_info(&self.token).await;
 
         match response {
             Ok(r) => match r.text().await {
                 Ok(content) => {
                     let parser = AccountInfoXmlParser::new();
-                    let account_info = parser.account_info_from_xml(content.as_bytes());
-                    match account_info {
-                        Ok(account) => match account.to_json() {
-                            Ok(json) => println!("{}", json),
-                            Err(_) => (),
-                        },
-                        Err(_) => (),
-                    }
+                    parser.account_info_from_xml(content.as_bytes())
                 }
-                Err(_) => println!("Error getting account response content"),
+                Err(_) => Err("Error getting account response content"),
             },
-            Err(_) => println!("Error getting account response"),
+            Err(_) => Err("Error getting account response"),
         }
     }
 }
