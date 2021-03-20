@@ -5,10 +5,16 @@ pub mod model;
 pub mod sync;
 pub mod xml;
 
+use std::fmt;
+
 use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
 use crate::sync::AccountManager;
+
+extern crate indicatif;
+use dialoguer::{theme::ColorfulTheme, Select};
+use indicatif::ProgressBar;
 
 pub struct Paper {
     configuration: Configuration,
@@ -35,41 +41,53 @@ impl<'a, 'b> Paper {
 
     async fn accept_command(&self, token: SessionToken) {
         loop {
-            println!("{}", self.command_table());
-            let mut choice = String::new();
-            std::io::stdin()
-                .read_line(&mut choice)
-                .expect("Failed to read the command");
+            let selections = &["account", "loans", "help"];
 
-            match choice.as_str() {
-                "1\n" => self.account(token.clone()).await,
-                "2\n" => self.loans(token.clone()).await,
-                "3\n" => break,
-                "q\n" => break,
-                _ => (),
+            let selection = Select::with_theme(&ColorfulTheme::default())
+                .with_prompt("Pick an item")
+                .default(0)
+                .items(&selections[..])
+                .interact_opt()
+                .unwrap();
+
+            if let Some(selection) = selection {
+                match selections[selection] {
+                    "account" => self.account(token.clone()).await,
+                    "loans" => self.loans(token.clone()).await,
+                    "help" => self.help(),
+                    _ => (),
+                }
+            } else {
+                break;
             }
         }
     }
 
-    fn command_table(&self) -> &str {
-        r#"
-        Please select a command:
-        1. show account 👩🏻‍💼👨🏼‍💼
-        2. show loans
-        3. quit (q)
-        "#
-    }
-
     async fn account(&self, token: SessionToken) {
-        println!("\nGetting your account...\n");
+        let pb = ProgressBar::new_spinner();
+        pb.enable_steady_tick(5);
+        pb.set_message("Fetching account.");
         let account_manager = AccountManager::new(token);
-        account_manager.account_info().await;
-        println!("\n---\n");
+        let account_info = account_manager.account_info().await;
+        match account_info {
+            Ok(account) => match account.to_json() {
+                Ok(json) => {
+                    let s = fmt::format(format_args!("{}", json));
+                    pb.finish_with_message(s.as_str());
+                }
+                Err(_) => (),
+            },
+            Err(_) => (),
+        }
     }
 
     async fn loans(&self, _token: SessionToken) {
-        println!("\nGetting your loans...\n");
-        println!("\n---\n");
+        // let sp = Spinner::new(Spinners::Dots, "Getting your loans.".into());
+        // sp.stop();
+    }
+
+    fn help(&self) {
+        println!("Help: hit `esc` to quit")
     }
 
     async fn authenticate(&self) -> Result<SessionToken, &'static str> {
