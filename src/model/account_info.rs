@@ -1,5 +1,10 @@
+use std::fmt::format;
+
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
+
+use comfy_table::presets::UTF8_FULL;
+use comfy_table::*;
 
 #[derive(Serialize, Deserialize)]
 pub struct AccountInfo {
@@ -65,5 +70,82 @@ impl AccountInfo {
             Ok(json) => Ok(format!("account: {}", json.as_str())),
             Err(err) => Err(err),
         }
+    }
+
+    pub fn as_table(&self) -> String {
+        let mut table = Table::new();
+        let account_balance_string_color = if self.account_balance_string().contains("-") { Color::Red } else { Color::Green};
+        table.load_preset(UTF8_FULL)
+        .set_content_arrangement(ContentArrangement::Dynamic)
+        .set_table_width(80)
+        .add_row(vec![
+            Cell::new("Name").add_attribute(Attribute::Bold),
+            Cell::new(self.human_readable_name_string()),
+        ])
+        .add_row(vec![
+            Cell::new("Address").add_attribute(Attribute::Bold),
+            Cell::new(self.address()),
+        ])
+        .add_row(vec![
+            Cell::new("Email").add_attribute(Attribute::Bold),
+            Cell::new(self.email_string()),
+        ])
+        .add_row(vec![
+            Cell::new("Membership").add_attribute(Attribute::Bold),
+            Cell::new(format!("{} - {}", self.creation_date_string(), self.expiry_date_string())),
+        ])
+        .add_row(vec![
+            Cell::new("Annual Fee").add_attribute(Attribute::Bold),
+            Cell::new(format!("{} ({})", self.fee_string(), self.membership_category_string())),
+        ])
+        .add_row(vec![
+            Cell::new("Account Balance").add_attribute(Attribute::Bold),
+            Cell::new(self.account_balance_string()).fg( account_balance_string_color ),
+        ])
+        .add_row(vec![
+            Cell::new("Account Credit").add_attribute(Attribute::Bold),
+            Cell::new(self.account_credit_string()),
+        ]);
+
+        format!("\n{}", table)
+    }
+
+    fn address(&self) -> String {
+        let line1 = self.address_line1.to_owned().unwrap_or("".to_string());
+        let post_code = self.postcode.to_owned().unwrap_or("".to_string());
+        let line2 = self.address_line2.to_owned().unwrap_or("".to_string());
+        format!("{}\n{} {}", line1, post_code, line2)
+    }
+
+    fn email_string(&self) -> String {
+        self.email_address.to_owned().unwrap_or("".to_string())
+    }
+
+    fn fee_string(&self) -> String {
+        self.amount.to_owned().unwrap_or("".to_string())
+    }
+
+    fn human_readable_name_string(&self) -> String {
+        self.readable_full_name.to_owned().unwrap_or("".to_string())
+    }
+
+    fn membership_category_string(&self) -> String {
+        self.category_name.to_owned().unwrap_or("".to_string())
+    }
+
+    fn account_balance_string(&self) -> String {
+        self.account_balance.to_owned().unwrap_or("".to_string())
+    }
+
+    fn account_credit_string(&self) -> String {
+        self.credit_balance.to_owned().unwrap_or("".to_string())
+    }
+
+    fn creation_date_string(&self) -> String {
+        self.creation_date.to_owned().unwrap_or("".to_string())
+    }
+
+    fn expiry_date_string(&self) -> String {
+        self.expiry.to_owned().unwrap_or("".to_string())
     }
 }
