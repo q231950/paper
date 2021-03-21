@@ -13,12 +13,13 @@ use crate::configuration::Configuration;
 use crate::sync::AccountManager;
 
 extern crate indicatif;
+use console::{style, Term};
 use dialoguer::{theme::ColorfulTheme, Select};
 use indicatif::ProgressBar;
-
 pub struct Paper {
     configuration: Configuration,
     token: Option<SessionToken>,
+    term: Term,
 }
 
 impl<'a, 'b> Paper {
@@ -26,10 +27,13 @@ impl<'a, 'b> Paper {
         Paper {
             configuration: configuration,
             token: None,
+            term: Term::stdout(),
         }
     }
 
     pub async fn initiate_commands(&self) {
+        self.term.set_title("Paper");
+
         match self.token.clone() {
             None => match self.authenticate().await {
                 Ok(token) => self.accept_command(token.clone()).await,
@@ -41,7 +45,7 @@ impl<'a, 'b> Paper {
 
     async fn accept_command(&self, token: SessionToken) {
         loop {
-            let selections = &["account", "loans", "help"];
+            let selections = &["👩🏻‍💼👨🏼‍💼 account", "📚 loans", "❓ help"];
 
             let selection = Select::with_theme(&ColorfulTheme::default())
                 .with_prompt("Pick an item")
@@ -51,10 +55,10 @@ impl<'a, 'b> Paper {
                 .unwrap();
 
             if let Some(selection) = selection {
-                match selections[selection] {
-                    "account" => self.account(token.clone()).await,
-                    "loans" => self.loans(token.clone()).await,
-                    "help" => self.help(),
+                match selection {
+                    0 => self.account(token.clone()).await, // account
+                    1 => self.loans(token.clone()).await,   // loans
+                    2 => self.help(),                       // help
                     _ => (),
                 }
             } else {
@@ -70,24 +74,22 @@ impl<'a, 'b> Paper {
         let account_manager = AccountManager::new(token);
         let account_info = account_manager.account_info().await;
         match account_info {
-            Ok(account) => match account.to_json() {
-                Ok(json) => {
-                    let s = fmt::format(format_args!("{}", json));
-                    pb.finish_with_message(s.as_str());
-                }
-                Err(_) => (),
+            Ok(account) => {
+                    pb.finish_with_message(account.as_table().as_str());
             },
             Err(_) => (),
         }
     }
 
     async fn loans(&self, _token: SessionToken) {
-        // let sp = Spinner::new(Spinners::Dots, "Getting your loans.".into());
-        // sp.stop();
+        let _ = self.term.write_line("Getting your loans.");
     }
 
     fn help(&self) {
-        println!("Help: hit `esc` to quit")
+        let _ = self.term.write_line(&format!(
+            "help: hit {} to quit",
+            style(" esc ").white().on_black()
+        ));
     }
 
     async fn authenticate(&self) -> Result<SessionToken, &'static str> {
