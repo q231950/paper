@@ -1,5 +1,3 @@
-use std::fmt::format;
-
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
 

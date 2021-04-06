@@ -5,8 +5,6 @@ pub mod model;
 pub mod sync;
 pub mod xml;
 
-use std::fmt;
-
 use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
