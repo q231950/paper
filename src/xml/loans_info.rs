@@ -1,5 +1,4 @@
 use crate::model::LoansInfo;
-use crate::model::Loan;
 use crate::model::LoanBuilder;
 use std::io::Read;
 use xml::reader::{EventReader, XmlEvent};

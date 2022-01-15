@@ -18,13 +18,12 @@ impl LoansInfo {
     }
 
     pub fn add_loan(&mut self, loan: Loan) {
-        println!("Adding loan: {:?}", loan.title);
         self.loans.push(loan);
     }
 
     pub fn to_json(&self) -> Result<String> {
-        let loansInfo = serde_json::to_string_pretty(&self);
-        match loansInfo {
+        let loans_info = serde_json::to_string_pretty(&self);
+        match loans_info {
             Ok(json) => Ok(format!("loansInfo: {}", json.as_str())),
             Err(err) => Err(err),
         }
