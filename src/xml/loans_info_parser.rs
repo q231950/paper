@@ -29,10 +29,11 @@ impl LoansInfoXmlParser {
                     let v = Some(c.clone());
                     if current_element == "LoanDetail" {
                         loan_builder.clear();
-                    } if current_element == "Title" {
+                    } else if current_element == "Title" {
                         loan_builder.title = v;
-                    }
-                    else {
+                    } else if current_element == "Author" {
+                        loan_builder.author = v;
+                    } else {
                         //println!("Unhandled value: {:?}{:?}", current_element, c);
                     }
                 }

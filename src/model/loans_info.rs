@@ -34,12 +34,13 @@ impl LoansInfo {
         let mut table = Table::new();
         table.load_preset(UTF8_FULL)
         .set_content_arrangement(ContentArrangement::Dynamic)
-        .set_table_width(80);
+        .set_table_width(80)
+        .set_header(vec!["Author", "Title"]);
 
         for loan in self.loans.iter() {
             table.add_row(vec![
-                Cell::new("Title").add_attribute(Attribute::Bold),
-                Cell::new(loan.title.to_owned()),
+                loan.author.to_owned(),
+                loan.title.to_owned(),
             ]);
         }
         
