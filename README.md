@@ -1,6 +1,8 @@
 # Paper
 
-A cli to manage your library account.
+A cli to manage your library account in _Stiftung Hamburger Öffentliche Bücherhallen_.
+
+**To be clear, this repository is neither owned nor endorsed by _Stiftung Hamburger Öffentliche Bücherhallen_.**
 
 ## Usage
 
@@ -30,5 +32,17 @@ cargo run -- -u A123456789 -p 1234
   📚 loans
   ❓ help
 
-...
+✔ Pick an item · 📚 loans
+  
+┌───────────────────┬─────────────────────────────────────────┐
+│ Author            ┆ Title                                   │
+╞═══════════════════╪═════════════════════════════════════════╡
+│ Metzger, Wolfgang ┆ Wer arbeitet auf der Baustelle?         │
+├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
+│ Henkel, Christine ┆ Tiere im Wald                           │
+├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
+│ Kein Autor        ┆ Dinosaurier                             │
+├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
+│ Egerkrans, Johan  ┆ Dinosaurier und andere Wesen der Urzeit │
+└───────────────────┴─────────────────────────────────────────┘
 ```
