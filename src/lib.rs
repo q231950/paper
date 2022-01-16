@@ -9,6 +9,7 @@ use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
 use crate::sync::AccountManager;
+use crate::sync::LoansManager;
 
 extern crate indicatif;
 use console::{style, Term};
@@ -79,8 +80,18 @@ impl<'a, 'b> Paper {
         }
     }
 
-    async fn loans(&self, _token: SessionToken) {
-        let _ = self.term.write_line("Getting your loans.");
+    async fn loans(&self, token: SessionToken) {
+        let pb = ProgressBar::new_spinner();
+        pb.enable_steady_tick(5);
+        pb.set_message("Fetching loans.");
+
+        let loans_manager = LoansManager::new(token); 
+        let loans = loans_manager.loans().await;
+        match loans {
+            Ok(info) => pb.finish_with_message(info.as_table().as_str()),
+            _ => (),
+        }
+       
     }
 
     fn help(&self) {

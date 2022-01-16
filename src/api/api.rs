@@ -51,6 +51,27 @@ impl APIClient {
             token
         )
     }
+
+    pub async fn loans_info(&self, token: &SessionToken) -> Result<Response, Error> {
+        let body = self.loans_info_request_body(token);
+        self.post(body).await
+    }
+
+    fn loans_info_request_body(&self, token: &SessionToken) -> String {
+        format!(
+            r#"<?xml version='1.0' encoding='utf-8'?>
+        <soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+    xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'>
+            <soap12:Body>
+                <GetBorrowerLoans xmlns='http://bibliomondo.com/websevices/webuser'>
+                    <sessionId>{}</sessionId>
+                </GetBorrowerLoans>
+            </soap12:Body>
+        </soap12:Envelope>"#,
+            token
+        )
+    }
 }
 
 #[cfg(test)]
