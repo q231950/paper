@@ -9,3 +9,7 @@ mod loan;
 
 pub use self::loan_builder::LoanBuilder;
 mod loan_builder;
+
+pub use self::resource::Resource;
+pub use self::resource::LoansInfoResource;
+mod resource;

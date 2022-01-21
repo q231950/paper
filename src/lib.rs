@@ -9,7 +9,9 @@ use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
 use crate::sync::AccountManager;
-use crate::sync::LoansManager;
+use crate::sync::SyncManager;
+use crate::model::LoansInfoResource;
+use crate::model::LoansInfo;
 
 extern crate indicatif;
 use console::{style, Term};
@@ -56,13 +58,28 @@ impl<'a, 'b> Paper {
             if let Some(selection) = selection {
                 match selection {
                     0 => self.account(token.clone()).await, // account
-                    1 => self.loans(token.clone()).await,   // loans
+                    1 => self.x(token.clone()).await,   // loans
                     2 => self.help(),                       // help
                     _ => (),
                 }
             } else {
                 break;
             }
+        }
+    }
+
+    async fn x(&self, token: SessionToken) {
+        let pb = ProgressBar::new_spinner();
+        pb.enable_steady_tick(5);
+        pb.set_message("Fetching loans.");
+        
+        let resource = LoansInfoResource { session_token: token };
+        let sync_manager = SyncManager::<LoansInfo, LoansInfoResource>::new(resource);
+        let loans = sync_manager.sync().await;
+        
+        match loans {
+            Ok(info) => pb.finish_with_message(info.as_table().as_str()),
+            _ => (),
         }
     }
 
@@ -78,20 +95,6 @@ impl<'a, 'b> Paper {
             },
             Err(_) => (),
         }
-    }
-
-    async fn loans(&self, token: SessionToken) {
-        let pb = ProgressBar::new_spinner();
-        pb.enable_steady_tick(5);
-        pb.set_message("Fetching loans.");
-
-        let loans_manager = LoansManager::new(token); 
-        let loans = loans_manager.loans().await;
-        match loans {
-            Ok(info) => pb.finish_with_message(info.as_table().as_str()),
-            _ => (),
-        }
-       
     }
 
     fn help(&self) {
