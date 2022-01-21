@@ -1,5 +1,5 @@
 pub use self::account::AccountManager;
 mod account;
 
-pub use self::sync_manager::SyncManager;
-mod sync_manager;
+pub use self::resource_loader::ResourceLoader;
+mod resource_loader;

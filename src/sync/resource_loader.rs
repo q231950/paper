@@ -4,18 +4,18 @@ use crate::model::Resource;
 
 use std::marker::PhantomData;
 
-pub struct SyncManager<P, R: Resource<P>> {
+pub struct ResourceLoader<P, R: Resource<P>> {
     api_client: APIClient,
     resource: R,
     session_token: SessionToken,
     phantom: PhantomData<P>
 }
 
-impl<P, R: Resource<P>> SyncManager<P, R> {
-    
-    pub fn new(resource: R, token: SessionToken) -> SyncManager<P, R> {
+impl<P, R: Resource<P>> ResourceLoader<P, R> {
+
+    pub fn new(resource: R, token: SessionToken) -> ResourceLoader<P, R> {
         let network_client = reqwest::Client::new();
-        SyncManager {
+        ResourceLoader {
             api_client: APIClient::new_with_network_client(network_client),
             resource: resource,
             session_token: token,
@@ -34,5 +34,5 @@ impl<P, R: Resource<P>> SyncManager<P, R> {
             },
             Err(_) => Err("Error getting loans info response"),
         }
-    } 
+    }
 }

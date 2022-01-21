@@ -9,7 +9,7 @@ use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
 use crate::sync::AccountManager;
-use crate::sync::SyncManager;
+use crate::sync::ResourceLoader;
 use crate::model::LoansInfoResource;
 use crate::model::LoansInfo;
 
@@ -58,7 +58,7 @@ impl<'a, 'b> Paper {
             if let Some(selection) = selection {
                 match selection {
                     0 => self.account(token.clone()).await, // account
-                    1 => self.x(token.clone()).await,   // loans
+                    1 => self.loans(token.clone()).await,   // loans
                     2 => self.help(),                       // help
                     _ => (),
                 }
@@ -68,15 +68,15 @@ impl<'a, 'b> Paper {
         }
     }
 
-    async fn x(&self, token: SessionToken) {
+    async fn loans(&self, token: SessionToken) {
         let pb = ProgressBar::new_spinner();
         pb.enable_steady_tick(5);
         pb.set_message("Fetching loans.");
-        
+
         let resource = LoansInfoResource {};
-        let sync_manager = SyncManager::<LoansInfo, LoansInfoResource>::new(resource, token);
+        let sync_manager = ResourceLoader::<LoansInfo, LoansInfoResource>::new(resource, token);
         let loans = sync_manager.sync().await;
-        
+
         match loans {
             Ok(info) => pb.finish_with_message(info.as_table().as_str()),
             _ => (),
