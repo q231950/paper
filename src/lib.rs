@@ -73,8 +73,8 @@ impl<'a, 'b> Paper {
         pb.enable_steady_tick(5);
         pb.set_message("Fetching loans.");
         
-        let resource = LoansInfoResource { session_token: token };
-        let sync_manager = SyncManager::<LoansInfo, LoansInfoResource>::new(resource);
+        let resource = LoansInfoResource {};
+        let sync_manager = SyncManager::<LoansInfo, LoansInfoResource>::new(resource, token);
         let loans = sync_manager.sync().await;
         
         match loans {

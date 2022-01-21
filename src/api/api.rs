@@ -33,8 +33,8 @@ impl APIClient {
 
 impl APIClient {
 
-    pub async fn load_resource<P, R: Resource<P>>(&self, resource: &R) -> Result<Response, Error> {
-        self.post(resource.request_body()).await
+    pub async fn load_resource<P, R: Resource<P>>(&self, resource: &R, token: &SessionToken) -> Result<Response, Error> {
+        self.post(resource.request_body(token)).await
     }
 
     pub async fn account_info(&self, token: &SessionToken) -> Result<Response, Error> {
