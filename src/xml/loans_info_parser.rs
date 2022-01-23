@@ -33,8 +33,14 @@ impl LoansInfoXmlParser {
                         loan_builder.title = v;
                     } else if current_element == "Author" {
                         loan_builder.author = v;
-                    } else {
-                        //println!("Unhandled value: {:?}{:?}", current_element, c);
+                    } else if current_element == "CanRenew" {
+                        loan_builder.can_renew = Some(v.unwrap_or("".to_string()) == "1");
+                    } else if current_element == "DateDue" {
+                        loan_builder.date_due = v;
+                    }  else if current_element == "ItemNumber" {
+                        loan_builder.item_number = v;
+                    }else {
+                        // println!("Unhandled value: {:?}{:?}", current_element, c);
                     }
                 }
                 Ok(XmlEvent::EndElement { name }) => {
