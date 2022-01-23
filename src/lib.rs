@@ -2,19 +2,23 @@ pub mod api;
 pub mod auth;
 pub mod configuration;
 pub mod model;
-pub mod sync;
+pub mod resource;
 pub mod xml;
 
 use crate::auth::Authenticator;
-use crate::auth::SessionToken;
+use crate::model::SessionToken;
 use crate::configuration::Configuration;
-use crate::sync::AccountManager;
-use crate::sync::LoansManager;
+use crate::model::AccountInfo;
+use crate::model::LoansInfo;
+use crate::resource::AccountInfoResource;
+use crate::resource::LoansInfoResource;
+use crate::resource::ResourceLoader;
 
 extern crate indicatif;
 use console::{style, Term};
 use dialoguer::{theme::ColorfulTheme, Select};
 use indicatif::ProgressBar;
+
 pub struct Paper {
     configuration: Configuration,
     token: Option<SessionToken>,
@@ -42,6 +46,11 @@ impl<'a, 'b> Paper {
         }
     }
 
+    async fn authenticate(&self) -> Result<SessionToken, &'static str> {
+        let authenticator = Authenticator {};
+        authenticator.authenticate(&self.configuration).await
+    }
+
     async fn accept_command(&self, token: SessionToken) {
         loop {
             let selections = &["👩🏻‍💼👨🏼‍💼 account", "📚 loans", "❓ help"];
@@ -66,51 +75,43 @@ impl<'a, 'b> Paper {
         }
     }
 
-    async fn account(&self, token: SessionToken) {
-        let pb = ProgressBar::new_spinner();
-        pb.enable_steady_tick(5);
-        pb.set_message("Fetching account.");
-        let account_manager = AccountManager::new(token);
-        let account_info = account_manager.account_info().await;
-        match account_info {
-            Ok(account) => {
-                    pb.finish_with_message(account.as_table().as_str());
-            },
-            Err(_) => (),
-        }
-    }
-
     async fn loans(&self, token: SessionToken) {
         let pb = ProgressBar::new_spinner();
         pb.enable_steady_tick(5);
         pb.set_message("Fetching loans.");
 
-        let loans_manager = LoansManager::new(token); 
-        let loans = loans_manager.loans().await;
+        let resource = LoansInfoResource {token: token};
+        let resource_loader = ResourceLoader::<LoansInfo, LoansInfoResource>::new(resource);
+
+        let loans = resource_loader.load().await;
+
         match loans {
             Ok(info) => pb.finish_with_message(info.as_table().as_str()),
             _ => (),
         }
-       
+    }
+
+    async fn account(&self, token: SessionToken) {
+        let pb = ProgressBar::new_spinner();
+        pb.enable_steady_tick(5);
+        pb.set_message("Fetching account.");
+
+        let resource = AccountInfoResource {token: token};
+        let resource_loader = ResourceLoader::<AccountInfo, AccountInfoResource>::new(resource);
+        let account_info = resource_loader.load().await;
+        match account_info {
+            Ok(account) => {
+                pb.finish_with_message(account.as_table().as_str());
+            },
+            Err(_) => (),
+        }
     }
 
     fn help(&self) {
         let _ = self.term.write_line(&format!(
-            "help: hit {} to quit",
-            style(" esc ").white().on_black()
-        ));
-    }
-
-    async fn authenticate(&self) -> Result<SessionToken, &'static str> {
-        let authenticator = Authenticator::new();
-        let token_result = authenticator
-            .session_token_for_config(&self.configuration)
-            .await;
-
-        match token_result {
-            Ok(token) => Ok(token),
-            Err(_) => Err("An error occurred when retrieving the session token"),
-        }
+                "help: hit {} to quit",
+                style(" esc ").white().on_black()
+                ));
     }
 }
 
