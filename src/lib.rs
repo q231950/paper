@@ -8,15 +8,17 @@ pub mod xml;
 use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
-use crate::sync::AccountManager;
-use crate::sync::ResourceLoader;
 use crate::model::LoansInfoResource;
 use crate::model::LoansInfo;
+use crate::model::AccountInfoResource;
+use crate::model::AccountInfo;
+use crate::sync::ResourceLoader;
 
 extern crate indicatif;
 use console::{style, Term};
 use dialoguer::{theme::ColorfulTheme, Select};
 use indicatif::ProgressBar;
+
 pub struct Paper {
     configuration: Configuration,
     token: Option<SessionToken>,
@@ -87,11 +89,13 @@ impl<'a, 'b> Paper {
         let pb = ProgressBar::new_spinner();
         pb.enable_steady_tick(5);
         pb.set_message("Fetching account.");
-        let account_manager = AccountManager::new(token);
-        let account_info = account_manager.account_info().await;
+
+        let resource = AccountInfoResource {};
+        let sync_manager = ResourceLoader::<AccountInfo, AccountInfoResource>::new(resource, token);
+        let account_info = sync_manager.sync().await;
         match account_info {
             Ok(account) => {
-                    pb.finish_with_message(account.as_table().as_str());
+                pb.finish_with_message(account.as_table().as_str());
             },
             Err(_) => (),
         }
@@ -99,9 +103,9 @@ impl<'a, 'b> Paper {
 
     fn help(&self) {
         let _ = self.term.write_line(&format!(
-            "help: hit {} to quit",
-            style(" esc ").white().on_black()
-        ));
+                "help: hit {} to quit",
+                style(" esc ").white().on_black()
+                ));
     }
 
     async fn authenticate(&self) -> Result<SessionToken, &'static str> {
