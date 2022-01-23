@@ -2,17 +2,17 @@ pub mod api;
 pub mod auth;
 pub mod configuration;
 pub mod model;
-pub mod sync;
+pub mod resource;
 pub mod xml;
 
 use crate::auth::Authenticator;
 use crate::auth::SessionToken;
 use crate::configuration::Configuration;
-use crate::model::LoansInfoResource;
-use crate::model::LoansInfo;
-use crate::model::AccountInfoResource;
 use crate::model::AccountInfo;
-use crate::sync::ResourceLoader;
+use crate::model::LoansInfo;
+use crate::resource::AccountInfoResource;
+use crate::resource::LoansInfoResource;
+use crate::resource::ResourceLoader;
 
 extern crate indicatif;
 use console::{style, Term};

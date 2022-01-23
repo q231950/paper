@@ -1,5 +1,5 @@
 use crate::auth::SessionToken;
-use crate::model::Resource;
+use crate::resource::Resource;
 use reqwest::Error;
 use reqwest::Response;
 

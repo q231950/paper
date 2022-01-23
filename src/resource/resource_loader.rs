@@ -1,6 +1,6 @@
 use crate::api::APIClient;
 use crate::auth::SessionToken;
-use crate::model::Resource;
+use crate::resource::Resource;
 
 use std::marker::PhantomData;
 
