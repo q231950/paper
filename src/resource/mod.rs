@@ -9,3 +9,6 @@ mod account_resource;
 
 pub use self::loans_resource::LoansInfoResource;
 mod loans_resource;
+
+pub use self::authentication_resource::AuthenticationResource;
+mod authentication_resource;

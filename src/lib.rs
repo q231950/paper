@@ -6,7 +6,7 @@ pub mod resource;
 pub mod xml;
 
 use crate::auth::Authenticator;
-use crate::auth::SessionToken;
+use crate::model::SessionToken;
 use crate::configuration::Configuration;
 use crate::model::AccountInfo;
 use crate::model::LoansInfo;
@@ -46,6 +46,11 @@ impl<'a, 'b> Paper {
         }
     }
 
+    async fn authenticate(&self) -> Result<SessionToken, &'static str> {
+        let authenticator = Authenticator {};
+        authenticator.authenticate(&self.configuration).await
+    }
+
     async fn accept_command(&self, token: SessionToken) {
         loop {
             let selections = &["👩🏻‍💼👨🏼‍💼 account", "📚 loans", "❓ help"];
@@ -75,9 +80,10 @@ impl<'a, 'b> Paper {
         pb.enable_steady_tick(5);
         pb.set_message("Fetching loans.");
 
-        let resource = LoansInfoResource {};
-        let sync_manager = ResourceLoader::<LoansInfo, LoansInfoResource>::new(resource, token);
-        let loans = sync_manager.sync().await;
+        let resource = LoansInfoResource {token: token};
+        let resource_loader = ResourceLoader::<LoansInfo, LoansInfoResource>::new(resource);
+
+        let loans = resource_loader.load().await;
 
         match loans {
             Ok(info) => pb.finish_with_message(info.as_table().as_str()),
@@ -90,9 +96,9 @@ impl<'a, 'b> Paper {
         pb.enable_steady_tick(5);
         pb.set_message("Fetching account.");
 
-        let resource = AccountInfoResource {};
-        let sync_manager = ResourceLoader::<AccountInfo, AccountInfoResource>::new(resource, token);
-        let account_info = sync_manager.sync().await;
+        let resource = AccountInfoResource {token: token};
+        let resource_loader = ResourceLoader::<AccountInfo, AccountInfoResource>::new(resource);
+        let account_info = resource_loader.load().await;
         match account_info {
             Ok(account) => {
                 pb.finish_with_message(account.as_table().as_str());
@@ -106,18 +112,6 @@ impl<'a, 'b> Paper {
                 "help: hit {} to quit",
                 style(" esc ").white().on_black()
                 ));
-    }
-
-    async fn authenticate(&self) -> Result<SessionToken, &'static str> {
-        let authenticator = Authenticator::new();
-        let token_result = authenticator
-            .session_token_for_config(&self.configuration)
-            .await;
-
-        match token_result {
-            Ok(token) => Ok(token),
-            Err(_) => Err("An error occurred when retrieving the session token"),
-        }
     }
 }
 

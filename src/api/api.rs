@@ -1,4 +1,4 @@
-use crate::auth::SessionToken;
+use crate::model::SessionToken;
 use crate::resource::Resource;
 use reqwest::Error;
 use reqwest::Response;
@@ -33,8 +33,8 @@ impl APIClient {
 
 impl APIClient {
 
-    pub async fn load_resource<P, R: Resource<P>>(&self, resource: &R, token: &SessionToken) -> Result<Response, Error> {
-        self.post(resource.request_body(token)).await
+    pub async fn load_resource<P, R: Resource<P>>(&self, resource: &R) -> Result<Response, Error> {
+        self.post(resource.request_body()).await
     }
 }
 

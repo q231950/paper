@@ -1,5 +1,4 @@
 use crate::api::APIClient;
-use crate::auth::SessionToken;
 use crate::resource::Resource;
 
 use std::marker::PhantomData;
@@ -7,25 +6,23 @@ use std::marker::PhantomData;
 pub struct ResourceLoader<P, R: Resource<P>> {
     api_client: APIClient,
     resource: R,
-    session_token: SessionToken,
     phantom: PhantomData<P>
 }
 
 impl<P, R: Resource<P>> ResourceLoader<P, R> {
 
-    pub fn new(resource: R, token: SessionToken) -> ResourceLoader<P, R> {
+    pub fn new(resource: R) -> ResourceLoader<P, R> {
         let network_client = reqwest::Client::new();
         ResourceLoader {
             api_client: APIClient::new_with_network_client(network_client),
             resource: resource,
-            session_token: token,
             phantom: PhantomData
         }
     }
 
-    pub async fn sync(&self ) -> Result<P, &'static str> {
+    pub async fn load(&self ) -> Result<P, &'static str> {
 
-        let response = self.api_client.load_resource(&self.resource, &self.session_token).await;
+        let response = self.api_client.load_resource(&self.resource).await;
 
         match response {
             Ok(r) => match r.text().await {

@@ -1,11 +1,13 @@
-use crate::auth::SessionToken;
 use crate::model::LoansInfo;
+use crate::model::SessionToken;
 use crate::resource::Resource;
 use crate::xml::LoansInfoXmlParser;
 
 use std::io::Read;
 
-pub struct LoansInfoResource {}
+pub struct LoansInfoResource {
+    pub token: SessionToken
+}
 
 impl Resource<LoansInfo> for LoansInfoResource {
 
@@ -15,7 +17,7 @@ impl Resource<LoansInfo> for LoansInfoResource {
     }
 
 
-    fn request_body(&self, token: &SessionToken) -> String {
+    fn request_body(&self) -> String {
         format!(
             r#"<?xml version='1.0' encoding='utf-8'?>
         <soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
@@ -27,7 +29,7 @@ impl Resource<LoansInfo> for LoansInfoResource {
                 </GetBorrowerLoans>
             </soap12:Body>
         </soap12:Envelope>"#,
-        token
+        self.token
         )
     }
 }

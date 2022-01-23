@@ -10,3 +10,6 @@ mod loan;
 pub use self::loan_builder::LoanBuilder;
 mod loan_builder;
 
+pub use self::session_token::SessionToken;
+mod session_token;
+
