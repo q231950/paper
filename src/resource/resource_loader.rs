@@ -27,9 +27,9 @@ impl<P, R: Resource<P>> ResourceLoader<P, R> {
         match response {
             Ok(r) => match r.text().await {
                 Ok(content) => self.resource.parse(content.as_bytes()),
-                Err(_) => Err("Error getting loans info response content"),
+                Err(_) => Err("Error getting resource response content"),
             },
-            Err(_) => Err("Error getting loans info response"),
+            Err(_) => Err("Error getting resource response"),
         }
     }
 }
