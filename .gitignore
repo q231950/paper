@@ -1,0 +1,20 @@
+/target
+**/*.rs.bk
+
+# macOS
+.DS_Store
+
+# vim
+*.swp
+
+xcuserdata/
+paper/paper-package/.swiftpm
+paper/paper-package/PaperFFI.xcframework
+paper/Paper
+paper/generated
+paper/paper-package/RustFramework.xcframework
+.build
+.swiftpm/xcode/xcshareddata
+.swiftpm
+.aider*
+.env
