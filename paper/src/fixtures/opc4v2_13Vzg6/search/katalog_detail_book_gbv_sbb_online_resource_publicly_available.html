@@ -1,0 +1,907 @@
+
+<HTML>
+<HEAD>
+
+<!-- ***************** script fuer cookie-warner  *****************   -->
+<link rel="stylesheet" type="text/css" href="/cookieconsent.min.css" />
+<script src="/cookieconsent.min.js" ></script>
+<script>
+window.addEventListener("load", function(){ window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#dbdbdb"
+    },
+    "button": {
+      "background": "#9e9e9e"
+    }
+  },
+  "theme": "classic",
+  "content": {
+    "message": '',
+    "dismiss": '',
+    "link": '',
+    "href": ''
+  }
+})});
+</script>
+<!-- ***************** Ende: script fuer cookie-warner  *****************   -->
+
+    <TITLE>Campus-Katalog Hamburg - results/titledata</TITLE>
+    <BASE HREF="https://kataloge.hh.gbv.de/DB=1/SET=1/TTL=13/">
+<!-- mit dem Zusatz DB=1 - Cache fno-unabhaengig   -->
+    <link rel="stylesheet" media="print" href="https://kataloge.hh.gbv.de/FORCETT=HTML/DB=1/STYLESHEET_P">
+    <link rel="stylesheet" href="https://kataloge.hh.gbv.de/FORCETT=HTML/DB=1/STYLESHEET">
+<link rel="stylesheet" href="https://kataloge.hh.gbv.de/local/custom.css">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://kataloge.hh.gbv.de/img_psi/2.0/favicons/favicon_BS.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://kataloge.hh.gbv.de/img_psi/2.0/favicons/favicon_BS.ico">
+    <link rel="search" type="application/opensearchdescription+xml" title="Campus-Katalog Hamburg" href="https://kataloge.hh.gbv.de/DB=1/SET=1/TTL=13/XML=1.0/SEARCHPLUGIN?NAME=Campus-Katalog+Hamburg&FAVICON=https%3A%2F%2Fkataloge.hh.gbv.de%2Fimg_psi%2F2.0%2Ffavicons%2Ffavicon_BS.ico">
+    <script type="text/javascript" src="//kataloge.hh.gbv.de/vzg_opc4/jquery.min.js"></script>
+    <script type="text/javascript" src="//kataloge.hh.gbv.de/vzg_opc4/loan4.js" defer></script>
+    <script type="text/javascript">window.onload = function() { opc4js.init("/LBS_WS/availability", "1", "1022", "DU", "https://kataloge.hh.gbv.de") }</script>
+    <!------- Matomo ------->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+     var re1 = /DB=(?<db>\d.?\d{0,2})\/.+\/CMD\?ACT=SRCHA.+?$/;
+     var re2 = /DB=(?<db>\d.?\d{0,2})\/.+\/CMD\?ACT=SRCHM.+?$/;
+     var re3 = /DB=(?<db>\d.?\d{0,2})\/.+\/SHW(\?.+)?$/;
+     var re4 = /DB=(?<db>\d.?\d{0,2})\/.+\/NXT(\?.+)?$/;
+     var re5 = /DB=(?<db>\d.?\d{0,2})\/.+\/HELP.+?$/;
+     var re6 = /DB=(?<db>\d.?\d{0,2})\/.+\/HIST.?$/;
+     var doc = document.documentURI
+     if (re1.test(doc)) {
+        // Simple_Searches & Searches_Platform
+        var groups = doc.match(re1).groups
+        _paq.push(['trackEvent', 'COUNTER5', 'Simple_Searches', groups.db]);
+        _paq.push(['trackEvent', 'COUNTER5', 'Searches_Platform', groups.db]);
+      } else if (re2.test(doc)) {
+        // Advanced_Searches & Searches_Platform
+        var groups = doc.match(re2).groups
+        _paq.push(['trackEvent', 'COUNTER5', 'Advanced_Searches', groups.db]);
+        _paq.push(['trackEvent', 'COUNTER5', 'Searches_Platform', groups.db]);
+      } else if (re3.test(doc)) {
+        // Total_Item_Investigations
+        var groups = doc.match(re3).groups
+        _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Investigations', groups.db]);
+      } else if (re4.test(doc)) {
+        // Shortlist
+        var groups = doc.match(re4).groups
+        _paq.push(['trackEvent', 'COUNTER5', 'Shortlist', groups.db]);
+      } else if (re5.test(doc)) {
+        // Help_Pages
+        var groups = doc.match(re5).groups
+        _paq.push(['trackEvent', 'COUNTER5', 'Help_Pages', groups.db]);
+      } else if (re6.test(doc)) {
+        // Search_History
+        var groups = doc.match(re6).groups
+        _paq.push(['trackEvent', 'COUNTER5', 'Search_History', groups.db]);
+      }
+      (function() {
+        var u="https://matomo.uni-hamburg.de/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '264']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="https://matomo.uni-hamburg.de/matomo.php?idsite=264&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!----- End Matomo ----->
+</HEAD>
+<BODY marginwidth="0" marginheight="0" background="https://kataloge.hh.gbv.de/img_psi/2.0/gui/bg.gif">
+<table summary="Main layout" width="100%"
+       cellpadding="0" cellspacing="0" border="0">
+<tr>
+
+
+    <td class="lng" height="20" width="120"><center><table summary="Language switch"
+       cellpadding="0" cellspacing="0" border="0">
+<tr><td width="4"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="4"
+	height="1"
+	border="0"></td>
+
+	<td><img
+    alt="Deutsch"
+    title="Deutsch"
+    src="https://kataloge.hh.gbv.de/img_psi/2.0/flags/du-.gif"
+    width="16" height="10" border="0"></td>
+	<td width="4"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="4"
+	height="1"
+	border="0"></td>
+	<td><a
+		href="/DB=1/SET=1/TTL=13/LNG=EN/SHW?FRST=13"><img
+    alt="Englisch"
+    title="Englisch"
+    src="https://kataloge.hh.gbv.de/img_psi/2.0/flags/en.gif"
+    width="16" height="10" border="0"></a></td>
+	<td width="4"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="4"
+	height="1"
+	border="0"></td>
+    </tr>
+</table></center></td>
+    <td bgcolor="#cccccc" width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/white.gif"
+	width="1"
+	height="20"
+	border="0"></td>
+    <td class="nav" width="100%"><table summary="Navigation bar" width="100%"
+       border="0" cellpadding="0" cellspacing="0">
+<tr><td width="35"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="35"
+	height="20"
+	border="0"></td>
+
+<td class="nav0" nowrap>&nbsp;<SCRIPT language="Javascript" type="text/javascript">
+var ah=screen.availHeight-100;
+var aw=screen.availWidth-50;
+document.write('<a class="nav0" href="START_WELCOME">Suchen</a>');
+</SCRIPT>
+<NOSCRIPT>
+    <a class="nav0"
+    href="START_WELCOME" >Suchen</a>
+</NOSCRIPT>
+
+&nbsp;</td>
+<td width="10" class="navbar">&nbsp;|&nbsp;</td>
+<td class="nav1" nowrap>&nbsp;Suchergebnis&nbsp;</td>
+<td width="10" class="navbar">&nbsp;|&nbsp;</td>
+<td class="nav0" nowrap>&nbsp;<SCRIPT language="Javascript" type="text/javascript">
+var ah=screen.availHeight-100;
+var aw=screen.availWidth-50;
+document.write('<a class="nav0" href="ADVANCED_SEARCHFILTER">Erweiterte Suche</a>');
+</SCRIPT>
+<NOSCRIPT>
+    <a class="nav0"
+    href="ADVANCED_SEARCHFILTER" >Erweiterte Suche</a>
+</NOSCRIPT>
+
+&nbsp;</td>
+<td width="10" class="navbar">&nbsp;|&nbsp;</td>
+<td class="nav0" nowrap>&nbsp;<SCRIPT language="Javascript" type="text/javascript">
+var ah=screen.availHeight-100;
+var aw=screen.availWidth-50;
+document.write('<a class="nav0" href="ERROR_MYSHELF_EMPTY">Zwischenablage</a>');
+</SCRIPT>
+<NOSCRIPT>
+    <a class="nav0"
+    href="ERROR_MYSHELF_EMPTY" >Zwischenablage</a>
+</NOSCRIPT>
+
+&nbsp;</td>
+<td width="10" class="navbar">&nbsp;|&nbsp;</td>
+<td class="nav0" nowrap>&nbsp;<SCRIPT language="Javascript" type="text/javascript">
+var ah=screen.availHeight-100;
+var aw=screen.availWidth-50;
+document.write('<a class="nav0" href="javascript:void(0)" onclick="javascript:window.open(\'https://kataloge.hh.gbv.de/LBS_WEB/borrower/borrower.htm?USR=1022&BES=1&LAN=DU\',\'loan\',\'scrollbars=yes,top=10,left=10,height='+ah+',width='+aw+',resizable=yes,toolbar=no,location=no,status=no,menubar=no\')">Bibliothekskonto</a>');
+</SCRIPT>
+<NOSCRIPT>
+    <a class="nav0"
+    href="https://kataloge.hh.gbv.de/LBS_WEB/borrower/borrower.htm?USR=1022&BES=1&LAN=DU" target="_blank">Bibliothekskonto</a>
+</NOSCRIPT>
+
+&nbsp;</td>
+<td width="10" class="navbar">&nbsp;|&nbsp;</td>
+<td class="nav0" nowrap>&nbsp;<SCRIPT language="Javascript" type="text/javascript">
+var ah=screen.availHeight-100;
+var aw=screen.availWidth-50;
+document.write('<a class="nav0" href="HELP_SEARCH">Hilfe</a>');
+</SCRIPT>
+<NOSCRIPT>
+    <a class="nav0"
+    href="HELP_SEARCH" >Hilfe</a>
+</NOSCRIPT>
+
+&nbsp;</td>
+
+    <td class="copy" align="right" width="100%" nowrap><a
+		target="_blank"
+		href=""
+		title="&copy;&nbsp;1998-2025&nbsp;OCLC&nbsp;PICA opc4 v2.13-vzg6"
+		class="copy">&copy;</a></td>
+    <td width="10"
+	bgcolor="#cccccc"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="10"
+	height="1"
+	border="0"></td>
+    </tr>
+</table></td>
+
+    </tr>
+
+<tr class="logo"><td height="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/white.gif"
+	width="120"
+	height="1"
+	border="0"></td></tr>
+
+<tr class="logo">
+
+    <td height="90" align="center" bgcolor="#eeeeee"><A
+	href="https://kataloge.hh.gbv.de/LNG=DU/DB=1/"><img
+
+    	src="https://kataloge.hh.gbv.de/img_psi/2.0/logos/campus.gif"
+	alt="Campus-Katalog Hamburg"
+    	height="90" width="120" border="0"></a></td>
+    <td bgcolor="#eeeeee"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/white.gif"
+	width="1"
+	height="90"
+	border="0"></td>
+    <td class="cmd"><!-- begin #CMD# -->
+<table summary="Search window"
+       cellpadding="0" cellspacing="0" border="0">
+<tr><td><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="35"
+	height="90"
+	border="0"></td>
+    <td><form action="CMD"
+          class="form"
+          name="SearchForm"
+          method="GET"><table
+    border="0" cellpadding="0" cellspacing="0" width="100%" summary="layout">
+<tr><td align="left"><table summary="layout"
+                            cellpadding="0" cellspacing="0" border="0">
+    <tr><td class="form"><select name="ACT">
+	    <OPTION VALUE="SRCH">suchen [oder]
+	    <OPTION VALUE="SRCHA" SELECTED>suchen [und]
+
+		<OPTION value="AND">eingrenzen
+		<OPTION value="OR">erweitern
+		<OPTION value="NOT">ausgenommen
+		<OPTION value="RLV">neu ordnen
+
+	    <OPTION value="BRWS">Index bl&auml;ttern
+	    </select></td>
+	<td width="5"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="5"
+	height="1"
+	border="0"></td>
+	<td class="form"><select name="IKT">
+
+		<OPTION value="1016" selected>
+		[ALL] Alle Wörter</OPTION>
+
+		<OPTION value="5041">
+		[THM] Alle Themen</OPTION>
+
+		<OPTION value="4">
+		[TIT] Titel (Stichwort)</OPTION>
+
+		<OPTION value="1004">
+		[PER] Person (FE)</OPTION>
+
+		<OPTION value="8062">
+		[TPR] Titel (Phrase)</OPTION>
+
+		<OPTION value="1005">
+		[KOR] Körperschaft, Konferenz, Geografikum (Stichwort)</OPTION>
+
+		<OPTION value="5">
+		[SER] Serie, Zeitschrift, MTM (Stichwort)</OPTION>
+
+		<OPTION value="8310">
+		[SWW] Schlagwort</OPTION>
+
+		<OPTION value="1007">
+		[NUM] Nummern (allgemein)</OPTION>
+
+		<OPTION value="5004">
+		[BKL] Basisklassifikation</OPTION>
+
+		<OPTION value="3010">
+		[SYS] Systematiken</OPTION>
+
+		<OPTION value="2140">
+		[SGN] Signatur (ohne Blanks und ohne Sonderzeichen)</OPTION>
+
+		<OPTION value="2100">
+		[VER] Veröffentlichungsangaben</OPTION>
+
+		<OPTION value="2134">
+		[SST] Sonderstandort</OPTION>
+
+            </select></td><td>
+<!-- GBV kontextsensitive Hilfe -->
+<SCRIPT LANGUAGE="JavaScript">
+pu="";
+popup="";
+function PU(URL,w,h,NAME) {
+    var v=parseInt(navigator.appVersion);
+    if (v>="3") {
+        if (typeof NAME == 'undefined' || NAME == "") {
+          NAME="_blank";
+        }
+        WINDOW='top=10,left=10,width='+w+',height='+h+',scrollbars=1,resizable=1,status=0,toolbar=0';
+        popup=window.open(URL,NAME,WINDOW);
+        popup.focus();
+        if (pu!=popup) {
+            pu=popup;
+        }
+    } else {
+        window.location.href=URL;
+    }
+}
+function gbvhelpselect() {
+  var x = document.SearchForm.IKT.selectedIndex;
+  var help_docs = new Array(
+        "gbv-1016.html","gbv-5041.html","gbv-4.html","gbv-1004.html","gbv-8062.html","gbv-1005.html","gbv-5.html","gbv-8310.html","gbv-1007.html","gbv-5004.html","gbv-3010.html","gbv-2140.html","gbv-2100.html","gbv-2134.html","gbv-9999.html");
+  var help_url = 'https://kataloge.hh.gbv.de/hermes/gbvhelp/du/'+help_docs[x];
+  var w=window.open(help_url,'hilfe','scrollbars=yes,height=500,width=800,resizable=yes,toolbar=no,location=no,status=no,menubar=no');
+}
+document.write('<a href="javascript:gbvhelpselect();"><IMG name=gbvhelp src="https://kataloge.hh.gbv.de/img_psi/2.0/icons/icon_gbvhelp.gif" hspace=0 vspace=0 border=0 alt="Hilfe zum gew&auml;hlten Suchschl&uuml;ssel"></a>&nbsp;');
+</SCRIPT>
+<!-- Ende GBV kontextsensitive Hilfe -->
+        </td></tr>
+    </table></td>
+
+    <td align="right" class="form">&nbsp;sortiert nach
+	<select name="SRT" size="1">
+
+	    <option value="YOP" selected>
+	    Erscheinungsjahr
+	    </option>
+	    <option value="RLV">
+	    Relevanz
+	    </option>
+	    <option value="LST_aty">
+	    Autor
+	    </option>
+	    <option value="LST_tay">
+	    Titel
+	    </option>
+	</select></td>
+
+
+    <td align="right" class="form">&nbsp;unscharfe Suche&nbsp;</td>
+    <td align="right" class="form"><input type="checkbox" name="FUZZY" value="Y"></td>
+
+
+    </tr>
+<tr><td height="4"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="4"
+	border="0"></td></tr>
+
+<tr><td colspan="2"><table summary="layout"
+	cellpadding="0" cellspacing="0" border="0">
+    <tr><td class="form"><input type="text"
+	    name="TRM" value="tiger" size="50"></td>
+	<td width="5"></td>
+	<td><input type="submit" class="button"
+		   value=" Suchen "></td>
+	<td width="2"></td>
+	</tr>
+    </table></td>
+    </tr>
+
+
+
+  </table></form></td>
+</tr></table>
+<!-- end #CMD# --></td>
+<!-- /td moved one line up [MM] -->
+    </tr>
+
+<tr class="logo"><td height="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/white.gif"
+	width="120"
+	height="1"
+	border="0"></td></tr>
+
+<tr class="logo">
+
+    <td height="20" bgcolor="#577FBB"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    <td bgcolor="#577FBB"><img
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/white.gif" alt="" width="1" height="20"></td>
+    <td colspan="1"
+        bgcolor="#577FBB" align="center" nowrap><center>
+<table summary="Tab bar"
+       cellpadding="0" cellspacing="0" border="0">
+<tr><td bgcolor="#577FBB"
+    height="1" colspan="5"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td><td bgcolor="#577FBB"
+    height="1" colspan="5"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td><td bgcolor="#577FBB"
+    height="1" colspan="5"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td></tr>
+<tr>    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    <td class="tabbar" nowrap><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/tableft.gif"
+	width="11" height="18"></td>
+
+    <td class="tab0" height="18"><a class="tab0" href="HIST">Suchgeschichte</a></td>
+
+    <td class="tabbar" nowrap><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/tabright.gif"
+	width="11" height="18"></td>
+    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    <td class="tabbar" nowrap><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/tableft.gif"
+	width="11" height="18"></td>
+
+    <td class="tab0" height="18"><a class="tab0" href="NXT?FRST=13">Kurzliste</a></td>
+
+    <td class="tabbar" nowrap><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/tabright.gif"
+	width="11" height="18"></td>
+    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    <td class="tabbar" nowrap><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/tableft.gif"
+	width="11" height="18"></td>
+
+    <td class="tab1" height="18">Titeldaten</td>
+
+    <td class="tabbar" nowrap><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/tabright.gif"
+	width="11" height="18"></td>
+    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+</tr>
+<tr>
+    <td bgcolor="#577FBB"
+	height="1" colspan="5"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+
+    <td bgcolor="#577FBB"
+	height="1" colspan="5"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+
+    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    <td bgcolor="white"
+	height="1" colspan="3"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    <td width="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+
+    <td><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    </tr>
+</table>
+</center></td>
+    </tr>
+
+<tr class="logo"><td height="1"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/white.gif"
+	width="120"
+	height="1"
+	border="0"></td></tr>
+
+<tr>
+
+    <td class="mnu" valign="top"><table summary="Menu layout" width="100%"
+       border="0" cellpadding="0" cellspacing="0">
+<TR><TD class="mnu"><p class="mnu"><a
+    class="mnu"
+    href="RESULTS_SAVEINFO_LONG?FRST=13&LAST=13&HITS=1783&PPN=189018375X">Speichern</a></TD>
+    </TR><SCRIPT type="text/javascript" language="javascript">
+document.write('<TR><TD class="mnu"><p class="mnu"><a class="mnu" href="EXIT?DEST=https%3A%2F%2Fkataloge.hh.gbv.de%2FDB%3D1%2FLNG%3DDU%2F">Abmelden</A></TD></TR>');
+</SCRIPT>
+<NOSCRIPT>
+
+<TR><TD class="mnu"><p class="mnu"><a class="mnu" href="EXIT?DEST=https%3A%2F%2Fkataloge.hh.gbv.de%2FDB%3D1%2FLNG%3DDU%2F">Abmelden</A></TD></TR>
+</NOSCRIPT>
+<TR><TD class="mnu"><p class="mnu"><a
+    class="mnu"
+    href="ADIGRP?IKT=9001&SET=1">Trefferanalyse</A></TD>
+</TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+
+<!---- Menubutton11 ---->
+  <TR><TD class="mnu"><p class="mnu"><a class="mnu" href="https://kataloge.hh.gbv.de/opcmenu/?lang=de"
+     title="Weitere Bibliothekskataloge"
+     target="Weitere Bibliothekskataloge"
+     >Weitere Bibliothekskataloge</a>
+  </TD></TR>
+
+<!---- Menubutton13 ---->
+  <TR><TD class="mnu"><p class="mnu"><a class="mnu" href="https://kxp.k10plus.de/DB=2.1/LNG=DU/"
+     title="GBV/Fernleihe"
+     target="GBV/Fernleihe"
+     >GBV/Fernleihe</a>
+  </TD></TR>
+
+<!---- Menubutton14 ---->
+  <TR><TD class="mnu"><p class="mnu"><a class="mnu" href="https://www.sub.uni-hamburg.de/service/fragen-sie-uns/fragen-zum-campus-katalog.html"
+     title="Fragen Sie die Stabi"
+
+     >Fragen Sie die Stabi</a>
+  </TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+
+<!---- DSGVO ---->
+  <TR><TD class="mnu"><p class="mnu"><a class="mnu" href="https://www.sub.uni-hamburg.de/datenschutzerklaerung.html" target="dsgvo">Datenschutz-erkl&auml;rung</a></TD></TR>
+
+<!---- Impressum ---->
+  <TR><TD class="mnu"><p class="mnu"><a class="mnu" href="https://www.sub.uni-hamburg.de/impressum.html" target="dsgvo">Impressum</a></TD></TR>
+
+  <tr><td><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="300"
+	border="0"></td></tr>
+</table></td>
+    <td><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></td>
+    <td colspan="1"
+	class="cnt" valign="top"><TABLE summary="content layout" width="100%"
+       cellpadding="0" cellspacing="0" border="0">
+<TR><TD align="left" valign="top">
+<TABLE summary="Result header" width="100%"
+    cellpadding="0" cellspacing="0" border="0">
+<TR><TD width="35" height="10"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="35"
+	height="10"
+	border="0"></TD>
+    <TD colspan="4" width="100%"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></TD>
+    </TR>
+<TR><TD colspan="3"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="3"
+	border="0"></TD>
+
+
+<TD class="h2" rowspan="2"
+    align="center" valign="top" nowrap><strong class="pages">13&nbsp;von&nbsp;1783</strong><br><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="15"
+	border="0"><a
+	href="SHW?FRST=12"><img
+	alt="vorheriges Dokument"
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/pageprev.gif" width="10" height="11"
+	border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+	href="SHW?FRST=14"><img
+	alt="n&auml;chstes Dokument"
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/pagenext.gif" width="10" height="11"
+	border="0"></a></TD>
+    <TD rowspan="2" width="10"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="10"
+	height="1"
+	border="0"></TD></TR>
+<TR><TD align="right" valign="top"><img
+	alt="*"
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/h2.gif"
+	width="19" height="12" border="0"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="4"
+	height="1"
+	border="0"></TD>
+    <TD class="h2" valign="top" nowrap><strong class="h2">Ihre Aktion</strong></TD>
+    <TD class="h2" valign="top" width="100%">&nbsp;suchen [und]&nbsp;([ALL] Alle Wörter)&nbsp;<strong class="key">tiger</strong><br></TD>
+</TR>
+</TABLE></TD></TR>
+<TR><TD align="left" valign="top">
+
+</TD></TR>
+<TR><TD align="left" valign="top"><TABLE
+    summary="Body separator" width="100%"
+    cellpadding="0" cellspacing="0" border="0">
+    <TR><TD><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="5"
+	border="0"></TD></TR>
+    <TR><TD class="bodysep" colspan="2"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></TD></TR>
+    <TR><TD><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="10"
+	border="0"></TD></TR>
+    </TABLE></TD>
+</TR>
+<TR><TD align="left" valign="top"><TABLE
+	    summary="layout" width="100%"
+	    cellpadding="0" cellspacing="0" border="0"><TR><TD width="35" align="center" valign="top"><TABLE
+        summary="presentation switch" width="100%"
+        cellpadding="0" cellspacing="0" border="0">
+    <TR><TD width="35" align="center" valign="top"><img
+    id="maticon"
+    src="https://kataloge.hh.gbv.de/img_psi/2.0/icons/book.gif"
+    alt="B&uuml;cher"
+    title="B&uuml;cher"
+    width="20" height="20" border="0"></TD>
+	</TR>
+    <TR><TD><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="10"
+	border="0"></TD></TR>
+    <TR><TD><A href="PRS=PP%7F/SHW?FRST=13"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="35"
+	height="20"
+	border="0"></A></TD>
+    </TR>
+
+    </TABLE></TD>
+    <TD align="left" valign="top"><table cellpadding="0" cellspacing="0" border="0"><tr><td valign="top" class="preslabel"><strong><div>PPN:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div>189018375X &ensp;<A href="https://kataloge.hh.gbv.de/DB=1/XMLPRS=N/PPN?PPN=189018375X" target="_blank"><img src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/permalink_du.gif" border="0" alt="&Uuml;ber den Zitierlink k&ouml;nnen Sie diesen Titel als Lesezeichen ablegen oder weiterleiten" title="&Uuml;ber den Zitierlink k&ouml;nnen Sie diesen Titel als Lesezeichen ablegen oder weiterleiten"></A></div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Titel:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div><a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=Kennwort">Kennwort</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=%22Jessica%22">"Jessica"</a> : <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=was">was</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=uns">uns</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=fehlt,">fehlt,</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=ist">ist</a> ein <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=neuer">neuer</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=Vati">Vati</a> / <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=Roman">Roman</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=von">von</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=Anne">Anne</a> <a href="MAT=/NOMAT=T/CLK?IKT=1016&TRM=Alexander">Alexander</a></div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Person/en:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div><a href="MAT=/NOMAT=T/CLK?IKT=1004&TRM=Alexander,Anne">Alexander, Anne [VerfasserIn]</a> ; <a href="MAT=/NOMAT=T/CLK?IKT=1004&TRM=Clausen,Bettina">Clausen, Bettina [VerfasserIn]</a></div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Sprache/n:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div>Deutsch</div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Veröffentlichungsangabe:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div>Hamburg : Kelter, [2024?]</div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Umfang:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div>66, 66, 66 Seiten</div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Schriftenreihe:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div><a href="MAT=/NOMAT=T/CLK?IKT=8312&TRM=862229944">Sophienlust. 3 Romane. - Hamburg : Martin Kelter Verlag, [2016]- ; ZDB-ID: 2860289-4 ; Nr. 105</a></div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Anmerkung:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div>Archivierung/Langzeitarchivierung gewährleistet 2024 (Rechtsgrundlage Pflichtexemplar Hamburg) . SUB Hamburg</div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Mehr&#xA0;zum&#xA0;Titel:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div>Wo ist <strong>Tiger?</strong> : Felicias und Christian sorgen sich um ihren besten Freund / Roman von Bettina Clausen</div><div>Ein Herz voll Liebe für Melissa : ... sollte ein Missverständnis alles zerstören? / Roman von Anne Alexander</div></td></tr><tr><td valign="top" class="preslabel"><strong><div>&#xA0;</div></strong></td><td valign="bottom" class="presvalue"></td></tr><tr><td valign="top" class="preslabel"><strong><div>Standort:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div><a href="https://www.sub.uni-hamburg.de/bibliotheken/hamburger-bibliotheksfuehrer/details.html?avonis_sub[library]=2" target=_blank>Staats- und Universit&auml;tsbibliothek</a></div></td></tr><tr><td valign="top" class="preslabel"><strong><div>Signatur:&#xA0;</div></strong></td><td valign="bottom" class="presvalue"><div><b>A/825608</b></div></td></tr><tr><td valign="top" class="preslabel"><strong><div class="lbs-holding" data-ppn="189018375X" data-epn="453123023X"> <div class="loader" ></div>  </div></strong></td><td valign="bottom" class="presvalue"></td></tr><tr><td valign="top" class="preslabel"><strong></strong></td><td valign="bottom" class="presvalue"><div><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/GBV:LBS&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.btitle=Kennwort+%22Jessica%22+%3A+was+uns+fehlt,+ist+ein+neuer+Vati&amp;rft.date=[2024?]&amp;rft.pages=66&amp;rft.series=Sophienlust.+3+Romane&amp;rft.place=Hamburg&amp;rft.pub=Kelter&amp;rft.ppn=189018375X"></span></div></td></tr><tr><td valign="top" class="preslabel"><strong><div>&#xA0;</div><div>&#xA0;</div><div>&#xA0;</div></strong></td><td valign="bottom" class="presvalue"></td></tr></table></TD>
+    <TD width="10"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="10"
+	height="1"
+	border="0"></TD>
+    </TR>
+    <TR><TD></TD><TD class="presvalue"></TD>
+        <TD></TD>
+    </TR>
+    </TABLE></TD>
+    </TR>
+
+
+
+    <TR><TD><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="16"
+	border="0"></TD></TR>
+    <TR><TD class="bodysep" colspan="2"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="1"
+	border="0"></TD></TR>
+    <TR><TD><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="8"
+	border="0"></TD></TR>
+<TR><TD><TABLE summary="Query spec layout" width="100%"
+	cellpadding="0" cellspacing="0" border="0">
+	<TR><TD width="10"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="10"
+	height="1"
+	border="0"></TD>
+
+
+<TD class="h2" rowspan="1"
+    align="center" valign="top" nowrap><strong class="pages">13&nbsp;von&nbsp;1783</strong><br><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="15"
+	border="0"><a
+	href="SHW?FRST=12"><img
+	alt="vorheriges Dokument"
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/pageprev.gif" width="10" height="11"
+	border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+	href="SHW?FRST=14"><img
+	alt="n&auml;chstes Dokument"
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/pagenext.gif" width="10" height="11"
+	border="0"></a></TD>
+	    <TD width="10"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="10"
+	height="1"
+	border="0"></TD>
+	    <TD class="refs" width="100%" valign="top">
+<TABLE summary="layout"
+       cellspacing="0" cellpading="0" border="0" width="100%">
+<TR>
+    <TD class="refs" valign="top"><A href="https://kataloge.hh.gbv.de/DB=1/XMLPRS=N/PPN?PPN=189018375X" target="_blank"><img src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/permalink_du.gif" border="0" alt="&Uuml;ber den Zitierlink k&ouml;nnen Sie diesen Titel als Lesezeichen ablegen oder weiterleiten" title="&Uuml;ber den Zitierlink k&ouml;nnen Sie diesen Titel als Lesezeichen ablegen oder weiterleiten"></A></TD>
+</TR>
+<TR>
+                   <!-- cnt link -->
+                   <!-- cna link -->
+                  <!-- cna2 link -->
+                   <!-- goo link -->
+
+
+  <TD class="refs" valign="top" nowrap>    <A href=FAM?PPN=189018375X>zugeh&ouml;rige Publikationen</A></TD>
+
+               <!-- fam link -->
+    	      <!-- relntlink -->
+
+
+               <!-- rel link -->
+                   <!-- epd link -->
+                   <!-- afm link -->
+
+           <!-- issues link -->
+
+    <TD width="100%" valign="top" align="center">&nbsp;</TD>
+    </TR>
+</TABLE></TD>
+	    <TD width="20"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="20"
+	height="1"
+	border="0"></TD>
+
+
+<TD class="h2" rowspan="1"
+    align="center" valign="top" nowrap><strong class="pages">13&nbsp;von&nbsp;1783</strong><br><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="15"
+	border="0"><a
+	href="SHW?FRST=12"><img
+	alt="vorheriges Dokument"
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/pageprev.gif" width="10" height="11"
+	border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+	href="SHW?FRST=14"><img
+	alt="n&auml;chstes Dokument"
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/pagenext.gif" width="10" height="11"
+	border="0"></a></TD>
+	    <TD width="10"><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="10"
+	height="1"
+	border="0"></TD>
+	</TR>
+	</TABLE></TD>
+    </TR>
+</TABLE>
+	    </td>
+    </tr>
+<TR><TD><img
+	alt=""
+	src="https://kataloge.hh.gbv.de/img_psi/2.0/gui/empty.gif"
+	width="1"
+	height="20"
+	border="0"></TD>
+    </TR>
+</table>
+<script type="text/javascript" >
+var coverLink = document.getElementById('coverLink');
+var coverUrl  = document.getElementById('coverUrl');
+if (coverUrl) coverUrl = coverUrl.attributes.href.value;
+if (coverUrl && coverLink) {
+  var a = document.createElement('a');
+  a.setAttribute('href',coverUrl);
+  a.setAttribute('target','_blank');
+  coverLink.appendChild(a);
+  var img = document.createElement('img');
+  img.addEventListener('load', function() { a.appendChild(img); });
+  if (coverUrl.match(/(gbv\.de\/dms.+cov\/[0-9X]+)\.jpg$/)) {
+    coverUrl = coverUrl.replace(/(cov\/[0-9X]+)\.jpg/,'$1,400,400.jpg');
+  }
+  img.src = coverUrl.replace(/^https?:/,'');
+}
+</script>
+</BODY>
+</HTML>

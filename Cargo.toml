@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2" # Use rustup rustc version installed on machine. https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+
+members = ["paper", "paper-bin", "uniffi-bindgen"]
+
+default-members = ["paper-bin"]
+
+[profile.release]
+codegen-units = 1 # Reduce number of codegen units to increase optimizations.
+lto = true        # Enable Link Time Optimization
+opt-level = 3     # All optimizations # https://doc.rust-lang.org/cargo/reference/profiles.html#opt-level
+panic = 'abort'   # Abort on panic
+debug = true      # Enable debug symbols. For example, we can use `dwarfdump` to check crash traces.
+strip = "symbols"
+
+[workspace.dependencies]
+uniffi = { version = "0.27" }
+uniffi_bindgen = { version = "0.27" }

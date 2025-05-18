@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RESULT>
+    <SESSION>
+        <SESSIONVAR name="LNG">EN</SESSIONVAR>
+        <SESSIONVAR name="DB">1</SESSIONVAR>
+        <SESSIONVAR name="SID">b09a1119-0</SESSIONVAR>
+        <SESSIONVAR name="SET">1</SESSIONVAR>
+
+        <SESSIONVAR name="TITLE"
+            >Campus-Catalogue+Hamburg+(SUB+and+University)</SESSIONVAR
+        >
+    </SESSION>
+    <SET nr="1" type="0" hits="1765">
+        <SHORTTITLE
+            nr="1"
+            PPN="1909924415"
+            matstring="MAT_O"
+            matcode="Oax"
+            format="text"
+            available="yes"
+            >Original and uncollected stories
+            <br />
+            / Saki. - Cambridge : Open Book Publishers, [2024]</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="2"
+            PPN="1909865184"
+            matstring="MAT_O"
+            matcode="Oax"
+            format="text"
+            available="yes"
+            >Metaphors of ANGER across Languages : Universality and Variation :
+            8.1, Metaphors of ANGER across Languages: Universality and Variation
+            ; Volume 1: From Akan to Italian
+            <br />
+            / Aver Vanin, Aline. - Berlin : De Gruyter Mouton,
+            [2024]</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="3"
+            PPN="190986482X"
+            matstring="MAT_O"
+            matcode="Oax"
+            format="text"
+            available="yes"
+            >Derivatives Theory and Practice : An Emerging Markets Perspective
+            <br />
+            / Parameswaran, Sunil Kumar. - Berlin : De Gruyter,
+            [2024]</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="4"
+            PPN="1907576169"
+            matstring="MAT_O"
+            matcode="Oau"
+            format="text"
+            available="yes"
+            >Feeding the Tigers : Remittances and Conflict in Sri Lanka
+            <br />
+            / Bonadio, Barthélémy. - Cambridge, Mass : National Bureau of
+            Economic Research, October 2024</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="5"
+            PPN="1904874037"
+            matstring="MAT_O"
+            matcode="Oax"
+            format="text"
+            available="yes"
+            >Ireland&apos;s Long Economic Boom : The Celtic Tiger Economy,
+            1986–2007
+            <br />
+            / O&apos;Malley, Eoin. - Cham : Springer Nature, 2024</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="6"
+            PPN="1904861601"
+            matstring="MAT_O"
+            matcode="Oax"
+            format="text"
+            available="yes"
+            >A Global Humanities Approach to the United Nations’ Sustainable
+            Development Goals : Understanding Planet, People, and Prosperity
+            <br />
+            / Comfort, Kelly. - [Erscheinungsort nicht ermittelbar] : Taylor
+            &amp;#38; Francis, 2024</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="7"
+            PPN="1902221656"
+            matstring="MAT_O"
+            matcode="Oau"
+            format="text"
+            available="yes"
+            >Kurt Tucholsky Neuschnee : Ergänzungen zur Gesamtausgabe : Texte
+            und Briefe
+            <br />
+            / Berelsmann, Stephan. - Würzburg : Konigshausen &amp;#38; Neumann,
+            [2024]</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="8"
+            PPN="1897903170"
+            matstring="MAT_O"
+            matcode="Oax"
+            format="text"
+            available="yes"
+            >Food Safety and Quality in the Global South
+            <br />
+            / Ogwu, Matthew Chidozie. - 1st ed. 2024. - Singapore : Springer
+            Nature Singapore, 2024</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="9"
+            PPN="1896223214"
+            matstring="MAT_O"
+            matcode="Oau"
+            format="text"
+            available="yes"
+            >Einfluss von ASXL1-Mutationen auf das Therapieansprechen bei
+            Patienten mit chronischer myeloischer Leukämie
+            <br />
+            / Schönfeld, Lioba *1994-*. - Jena, [2024?]</SHORTTITLE
+        >
+
+        <SHORTTITLE
+            nr="10"
+            PPN="1894774973"
+            matstring="MAT_O"
+            matcode="Oax"
+            format="text"
+            available="yes"
+            >Parallel C++ : Efficient and Scalable High-Performance Parallel
+            Programming Using HPX
+            <br />
+            / Diehl, Patrick. - 1st ed. 2024. - Cham : Springer International
+            Publishing, 2024</SHORTTITLE
+        >
+    </SET>
+</RESULT>
