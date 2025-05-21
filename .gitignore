@@ -18,3 +18,4 @@ paper/paper-package/RustFramework.xcframework
 .swiftpm
 .aider*
 .env
+paper/paper-package/Sources/Paper/Paper.swift
