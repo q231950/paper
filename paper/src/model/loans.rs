@@ -1,6 +1,6 @@
 use super::Loan;
 
-#[derive(Debug, uniffi::Record)]
+#[derive(Debug, PartialEq, uniffi::Record)]
 pub struct Loans {
     pub loans: Vec<Loan>,
 }

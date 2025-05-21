@@ -100,17 +100,13 @@ impl PublicHamburgAuthenticator {
         let result = self
             .authenticate_public_hamburg_via_cookies(
                 &client,
-                request_token,
+                request_token.clone(),
                 self.configuration.clone(),
             )
             .await;
 
         return match result {
-            Ok(html) => {
-                let renewal_token_parser = RenewalTokenParser::new();
-
-                return renewal_token_parser.parse(html);
-            }
+            Ok(_) => Ok(request_token),
             _ => Err(PaperError::GeneralError),
         };
     }

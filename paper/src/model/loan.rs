@@ -1,6 +1,6 @@
 use super::SearchResultDetail;
 
-#[derive(Debug, uniffi::Record)]
+#[derive(Debug, PartialEq, uniffi::Record)]
 pub struct Loan {
     pub title: String,
     pub author: String,

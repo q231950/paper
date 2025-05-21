@@ -9,11 +9,12 @@ pub mod scrapers;
 pub mod token_scraper;
 
 use crate::configuration::Configuration;
-use crate::model::Account;
+use crate::model::{Account, SearchResultList, SearchResultListItem};
 
 extern crate indicatif;
+use crate::scrapers::public_hamburg::HamburgPublicSearchScraper;
 use console::{style, Term};
-use dialoguer::{theme::ColorfulTheme, Select};
+use dialoguer::{theme::ColorfulTheme, Input, Select};
 use indicatif::ProgressBar;
 use scrapers::LibraryScraper;
 
@@ -53,7 +54,13 @@ impl Paper {
 
     async fn accept_command(&self, account: Account) {
         loop {
-            let selections = &["👩🏻‍💼👨🏼‍💼 account", "📚 loans", "🏦 balance", "❓ help"];
+            let selections = &[
+                "👩🏻‍💼👨🏼‍💼 account",
+                "📚 loans",
+                "🏦 balance",
+                "🔎 search",
+                "❓ help",
+            ];
 
             let selection = Select::with_theme(&ColorfulTheme::default())
                 .with_prompt("Pick an item")
@@ -67,7 +74,8 @@ impl Paper {
                     0 => self.account(&account).await, // account
                     1 => self.loans(&account).await,   // loans
                     2 => self.balance(&account).await, // balance
-                    3 => self.help(),                  // help
+                    3 => self.search().await,          // search
+                    4 => self.help(),                  // help
                     _ => (),
                 }
             } else {
@@ -77,10 +85,6 @@ impl Paper {
     }
 
     async fn loans(&self, account: &Account) {
-        let pb = ProgressBar::new_spinner();
-        pb.enable_steady_tick(5);
-        pb.set_message("Fetching loans.");
-
         println!("account: {:?}", account.loans);
     }
 
@@ -90,6 +94,60 @@ impl Paper {
 
     async fn account(&self, account: &Account) {
         println!("{:?}", account.name)
+    }
+
+    async fn search(&self) {
+        let input: String = Input::with_theme(&ColorfulTheme::default())
+            .with_prompt("Search")
+            .interact_text()
+            .unwrap();
+
+        let search = HamburgPublicSearchScraper {};
+
+        match search.search_on_current_runtime(&input, None).await {
+            Ok(result) => Self::print_search_result(result),
+            Err(err) => println!("Failed to search: {:?}", err),
+        }
+    }
+
+    fn print_search_result(result: SearchResultList) {
+        println!(
+            "Found {} items while searching for '{}'. Showing the first {} items",
+            result.result_count,
+            result.text,
+            result.items.len()
+        );
+
+        for (
+            index,
+            SearchResultListItem {
+                identifier,
+                title,
+                subtitle,
+                item_number,
+                detail_url,
+                cover_image_url,
+            },
+        ) in result.items.into_iter().enumerate()
+        {
+            println!("Item {index}:");
+            println!(" ID: {identifier}");
+            if let Some(title) = title {
+                println!(" Title: {}", title);
+            }
+            if let Some(subtitle) = subtitle {
+                println!(" Subtitle: {}", subtitle);
+            }
+            if let Some(item_number) = item_number {
+                println!(" Item number: {}", item_number);
+            }
+            if let Some(detail_url) = detail_url {
+                println!(" Details: {}", detail_url);
+            }
+            if let Some(cover_image_url) = cover_image_url {
+                println!(" Cover: {}", cover_image_url);
+            }
+        }
     }
 
     fn help(&self) {

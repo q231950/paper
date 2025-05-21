@@ -1,6 +1,6 @@
 use super::availability::Availability;
 
-#[derive(Debug, uniffi::Record)]
+#[derive(Debug, PartialEq, uniffi::Record)]
 pub struct ItemAvailability {
     pub availabilities: Vec<Availability>,
 }
