@@ -18,6 +18,22 @@ impl HamburgPublicSearchScraper {
         text: &str,
         next_page_url: Option<String>,
     ) -> Result<SearchResultList, PaperError> {
+        let runtime = Builder::new_multi_thread()
+            .worker_threads(5)
+            .thread_name("search")
+            .enable_io()
+            .enable_time()
+            .build()?;
+
+        return runtime
+            .block_on(async { self.search_on_current_runtime(text, next_page_url).await });
+    }
+
+    pub(crate) async fn search_on_current_runtime(
+        &self,
+        text: &str,
+        next_page_url: Option<String>,
+    ) -> Result<SearchResultList, PaperError> {
         let next_page_url = next_page_url.or_else(|| {
             Some(format!(
                 "katalog-suchergebnisse.html?suchbegriff={text}&seite-m37=1"
@@ -28,22 +44,13 @@ impl HamburgPublicSearchScraper {
         let api_client =
             APIClient::new_with_network_client(client, "https://www.buecherhallen.de".to_string());
 
-        let runtime = Builder::new_multi_thread()
-            .worker_threads(5)
-            .thread_name("search")
-            .enable_io()
-            .enable_time()
-            .build()?;
+        if let Some(next_page_url) = next_page_url {
+            let html = api_client.get_html_at_path(next_page_url).await?;
 
-        return runtime.block_on(async {
-            if let Some(next_page_url) = next_page_url {
-                let html = api_client.get_html_at_path(next_page_url).await?;
+            return self.search_result_list_from(text.to_string(), html).await;
+        }
 
-                return self.search_result_list_from(text.to_string(), html).await;
-            }
-
-            return Err(PaperError::SearchFailed);
-        });
+        return Err(PaperError::SearchFailed);
     }
 }
 

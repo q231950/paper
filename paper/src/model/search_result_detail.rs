@@ -1,6 +1,6 @@
 use super::{DataEntry, ItemAvailability};
 
-#[derive(Debug, uniffi::Record)]
+#[derive(Debug, PartialEq, uniffi::Record)]
 pub struct SearchResultDetail {
     pub(crate) medium_title: Option<String>,
     pub(crate) medium_author: Option<String>,

@@ -1,6 +1,6 @@
 use super::location::Location;
 
-#[derive(Debug, uniffi::Enum)]
+#[derive(Debug, PartialEq, uniffi::Enum)]
 pub enum Availability {
     Available(Location),
     NotAvailable(Location),

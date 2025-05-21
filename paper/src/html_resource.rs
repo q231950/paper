@@ -16,20 +16,11 @@ impl HTMLResource {
     }
 
     pub fn get_text_from_element(elem: ElementRef) -> String {
-        let re = Regex::new(r"(\n)+\s*\W").expect("Regex must always be correct");
+        let duplicated_whitespaces = Regex::new(r"\s\s+").expect("Regex must always be correct");
 
-        let mut output_string = String::new();
-        for text in elem.text() {
-            if re.is_match(text) {
-                output_string.push_str("");
-            } else if text == "" {
-                output_string.push_str(" ");
-            } else {
-                output_string.push_str(text);
-                output_string.push_str(" ");
-                output_string = output_string.replace("  ", " ");
-            }
-        }
-        output_string.trim_start().trim_end().to_string()
+        let element_text = elem.text().collect::<String>();
+        let rendered_text = duplicated_whitespaces.replace_all(element_text.trim(), " ");
+
+        rendered_text.into_owned()
     }
 }
