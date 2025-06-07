@@ -20,7 +20,7 @@ impl Recommender {
     }
 
     pub async fn get_recommendations(&self, titles: Vec<String>, api_key: String) -> Result<Vec<String>, PaperError> {
-        std::env::set_var("OPENAI_API_KEY", api_key);
+        let client = Client::with_config(async_openai::config::OpenAIConfig::new().with_api_key(api_key));
         let recommendations = future::join_all(titles.into_iter().map(|title| async {
             let messages = vec![
                 ChatCompletionRequestMessage {
