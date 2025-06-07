@@ -59,20 +59,21 @@ impl Recommender {
 
                     match value.chat().create(request).await {
                         Ok(response) => {
-                            if let Some(choice) = response.choices.first() {
-                                if let Some(content) = &choice.message.content {
-                                    Ok(content.trim().to_string())
-                                } else {
-                                    println!("&choice.message.content");
-                                    Err(PaperError::GeneralError)
-                                }
-                            } else {
-                                println!("response.choices.first()");
+                            let choices: Vec<String> = response.choices
+                                .into_iter()
+                                .filter_map(|choice| choice.message.content)
+                                .map(|content| content.trim().to_string())
+                                .collect();
+                            
+                            if choices.is_empty() {
+                                println!("No valid choices returned");
                                 Err(PaperError::GeneralError)
+                            } else {
+                                Ok(choices.join("\n"))
                             }
                         }
                         Err(e) => {
-                            println!("not ok {}", e);
+                            println!("API error: {}", e);
                             Err(PaperError::GeneralError)
                         }
                     }
