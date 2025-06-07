@@ -1,6 +1,9 @@
 use crate::error::PaperError;
 use async_openai::{
-    types::{ChatCompletionRequestMessage, CreateChatCompletionRequestArgs, Role},
+    types::{
+        ChatCompletionRequestSystemMessage, ChatCompletionRequestSystemMessageArgs,
+        ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs,
+    },
     Client,
 };
 use futures::future;
@@ -22,41 +25,41 @@ impl Recommender {
     ) -> Result<Vec<String>, PaperError> {
         let client =
             Client::with_config(async_openai::config::OpenAIConfig::new().with_api_key(api_key));
-        let recommendations = future::join_all(titles.into_iter().map(|title| async {
-            let messages = vec![
-                async_openai::types::ChatCompletionRequestSystemMessage {
-                    content: "You are a helpful librarian making book recommendations.".into(),
-                    name: None,
-                    role: Role::System,
-                },
-                async_openai::types::ChatCompletionRequestUserMessage {
-                    content: async_openai::types::ChatCompletionRequestUserMessageContent::Text(
-                        format!("Suggest one similar book to '{}' and return just the title.", title)
-                    ),
-                    name: None,
-                    role: Role::User,
-                },
-            ];
+        let recommendations = future::join_all(titles.into_iter().map(|title| {
+            let value = client.clone();
+            async move {
+                let request = CreateChatCompletionRequestArgs::default()
+                    .model("gpt-4o")
+                    .max_tokens(50_u16)
+                    .messages([
+                        ChatCompletionRequestSystemMessageArgs::default()
+                            .content("You are a helpful librarian making book recommendations.")
+                            .build()
+                            .expect("msg")
+                            .into(),
+                        ChatCompletionRequestUserMessageArgs::default()
+                            .content(format!("Recommend books similar to '{}'.", title))
+                            .build()
+                            .expect("msg")
+                            .into(),
+                    ])
+                    .build()
+                    .expect("msg");
 
-            let request = CreateChatCompletionRequestArgs::default()
-                .model("gpt-3.5-turbo")
-                .messages(messages)
-                .max_tokens(50_u16)
-                .build()?;
-
-            match client.chat().create(request).await {
-                Ok(response) => {
-                    if let Some(choice) = response.choices.first() {
-                        if let Some(content) = &choice.message.content {
-                            Ok(content.trim().to_string())
+                match value.chat().create(request).await {
+                    Ok(response) => {
+                        if let Some(choice) = response.choices.first() {
+                            if let Some(content) = &choice.message.content {
+                                Ok(content.trim().to_string())
+                            } else {
+                                Err(PaperError::GeneralError)
+                            }
                         } else {
                             Err(PaperError::GeneralError)
                         }
-                    } else {
-                        Err(PaperError::GeneralError)
                     }
+                    Err(_) => Err(PaperError::GeneralError),
                 }
-                Err(_) => Err(PaperError::GeneralError),
             }
         }))
         .await;
