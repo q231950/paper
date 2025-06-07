@@ -19,7 +19,8 @@ impl Recommender {
         }
     }
 
-    pub async fn get_recommendations(&self, titles: Vec<String>) -> Result<Vec<String>, PaperError> {
+    pub async fn get_recommendations(&self, titles: Vec<String>, api_key: String) -> Result<Vec<String>, PaperError> {
+        std::env::set_var("OPENAI_API_KEY", api_key);
         let recommendations = future::join_all(titles.into_iter().map(|title| async {
             let messages = vec![
                 ChatCompletionRequestMessage {
