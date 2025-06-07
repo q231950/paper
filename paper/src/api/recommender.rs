@@ -23,8 +23,16 @@ impl Recommender {
         titles: Vec<String>,
         api_key: String,
     ) -> Result<Vec<String>, PaperError> {
-        let client =
-            Client::with_config(async_openai::config::OpenAIConfig::new().with_api_key(api_key));
+        let runtime = tokio::runtime::Builder::new_multi_thread()
+            .worker_threads(4)
+            .thread_name("recommendations")
+            .enable_io()
+            .enable_time()
+            .build()?;
+
+        runtime.block_on(async {
+            let client =
+                Client::with_config(async_openai::config::OpenAIConfig::new().with_api_key(api_key));
         let recommendations = future::join_all(titles.into_iter().map(|title| {
             let value = client.clone();
             async move {
@@ -65,5 +73,6 @@ impl Recommender {
         .await;
 
         recommendations.into_iter().collect()
+        })
     }
 }
