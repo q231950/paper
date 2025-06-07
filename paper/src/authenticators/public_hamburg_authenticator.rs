@@ -1,9 +1,9 @@
 use super::{LoginResult, RawLoansPage};
+use crate::configuration::Configuration;
 use crate::error::PaperError;
 use crate::model::Loans;
 use crate::scrapers::public_hamburg::LoansScraper;
 use crate::token_scraper::TokenScraper;
-use crate::{configuration::Configuration};
 use reqwest::{
     header::{HeaderMap, HeaderValue},
     Client,
