@@ -8,7 +8,7 @@ pub struct Authenticator {
     pub(crate) configuration: Configuration,
 }
 
-#[uniffi::export]
+#[uniffi::export(async_runtime = "tokio")]
 impl Authenticator {
     #[uniffi::constructor]
     fn new(configuration: Configuration) -> Self {
@@ -35,9 +35,7 @@ impl Authenticator {
                     configuration: self.configuration.clone(),
                 };
                 let client = reqwest::ClientBuilder::new().cookie_store(true).build()?;
-                let result = opac_authenticator
-                    .verify_credentials_opc4vs2_13vzg6(&client)
-                    .await;
+                let result = opac_authenticator.authenticate(&client).await;
                 return match result {
                     Ok(signed_in) => Ok(if signed_in {
                         ValidationStatus::Valid

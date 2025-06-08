@@ -14,5 +14,5 @@ debug = true      # Enable debug symbols. For example, we can use `dwarfdump` to
 strip = "symbols"
 
 [workspace.dependencies]
-uniffi = { version = "0.27" }
+uniffi = { version = "0.27", features = ["tokio"] }
 uniffi_bindgen = { version = "0.27" }

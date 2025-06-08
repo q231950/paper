@@ -6,35 +6,24 @@ use crate::model::Location;
 use crate::model::SearchResultDetail;
 use crate::scrapers::text_provider::TextProvider;
 use scraper::Selector;
+use std::future::Future;
 
 #[derive(uniffi::Object)]
 pub(crate) struct HamburgPublicSearchDetailScraper {}
 
 impl HamburgPublicSearchDetailScraper {
-    pub(crate) async fn search_result_detail_from(
+    pub(crate) fn search_result_detail_from(
         document: scraper::Html,
-    ) -> Option<SearchResultDetail> {
+    ) -> impl Future<Output = SearchResultDetail> + Send {
         let mut detail = SearchResultDetail::new();
 
         detail.medium_title = document.get_text(r#".medium-detail-title"#);
         detail.medium_author = document.get_text(r#".medium-detail-author > a"#);
 
-        if let Some(url1) =
-            document.get_attribute("data-src", r#"img[class="b-lazy img-lazyload"]"#)
-        {
-            match APIClient::ping_url(url1.as_str()).await {
-                Ok(status) => match status {
-                    200 => {
-                        detail.small_image_url = Some(url1);
-                    }
-                    _ => {
-                        detail.small_image_url = document
-                            .get_attribute("data-alt-src", r#"img[class="b-lazy img-lazyload"]"#);
-                    }
-                },
-                Err(e) => println!("Error checking site: {}", e),
-            }
-        }
+        let image_url = APIClient::test_urls([
+            document.get_attribute("data-src", r#"img[class="b-lazy img-lazyload"]"#),
+            document.get_attribute("data-alt-src", r#"img[class="b-lazy img-lazyload"]"#),
+        ]);
 
         if let Ok(detail_data_selector) =
             Selector::parse(r#"div[class="medium-detail-data medium-detail-data-cols"] > ul > li"#)
@@ -81,7 +70,13 @@ impl HamburgPublicSearchDetailScraper {
             let availabilities = HamburgPublicSearchDetailScraper::parse_availabilities(document);
             detail.availability = ItemAvailability::with(availabilities);
         }
-        Some(detail)
+
+        async move {
+            // run the network request last, such that document was already dropped since it is not Send
+            detail.small_image_url = image_url.await;
+
+            detail
+        }
     }
 
     fn parse_availabilities(html: scraper::Html) -> Vec<Availability> {
@@ -134,9 +129,7 @@ mod tests {
         .expect("Something went wrong reading the file");
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_detail =
-            HamburgPublicSearchDetailScraper::search_result_detail_from(document)
-                .await
-                .unwrap();
+            HamburgPublicSearchDetailScraper::search_result_detail_from(document).await;
 
         assert_eq!(
             search_result_detail.medium_title,
@@ -156,9 +149,7 @@ mod tests {
         .expect("Something went wrong reading the file");
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_detail =
-            HamburgPublicSearchDetailScraper::search_result_detail_from(document)
-                .await
-                .unwrap();
+            HamburgPublicSearchDetailScraper::search_result_detail_from(document).await;
         assert_eq!(
             search_result_detail.small_image_url,
             Some("https://www.hugendubel.info/annotstream/9783836961592/COP".to_string())

@@ -23,6 +23,28 @@ impl APIClient {
         Ok(response.status().as_u16())
     }
 
+    /// Performs a HEAD request to the specified URLs to check its availability and returns the
+    /// first one that returns a status code 200
+    ///
+    /// # Arguments
+    /// * `urls` - The URLs to ping
+    ///
+    /// # Returns
+    /// * `Option<String>` - The first URL that returned 200 or None
+    pub(crate) async fn test_urls(
+        urls: impl IntoIterator<Item = Option<String>>,
+    ) -> Option<String> {
+        for url in urls {
+            if let Some(url) = url {
+                if matches!(APIClient::ping_url(&url).await, Ok(200)) {
+                    return Some(url);
+                }
+            }
+        }
+
+        None
+    }
+
     pub fn new_with_network_client(network_client: reqwest::Client, base_url: String) -> APIClient {
         APIClient {
             network_client,

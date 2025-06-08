@@ -1,20 +1,17 @@
-use std::sync::Arc;
-
 use crate::authenticators::{OpacAuthenticator, PublicHamburgAuthenticator};
 use crate::{
     configuration::Configuration, error::PaperError,
     scrapers::public_hamburg::PublicHamburgAccountScraper, scrapers::BalanceScraper,
 };
+use std::sync::Arc;
 
+use super::opc4v2_13vzg6::Opc4v2_13Vzg6AccountScraper;
+use super::SearchDetailScraper;
 use crate::model::Loan;
 use crate::model::Loans;
 use futures::future;
 use reqwest::cookie::Jar;
 use reqwest::ClientBuilder;
-use tokio::runtime::Builder;
-
-use super::opc4v2_13vzg6::Opc4v2_13Vzg6AccountScraper;
-use super::SearchDetailScraper;
 
 use crate::model::Account;
 
@@ -27,7 +24,7 @@ pub struct LibraryScraper {
     configuration: Configuration,
 }
 
-#[uniffi::export]
+#[uniffi::export(async_runtime = "tokio")]
 impl LibraryScraper {
     #[uniffi::constructor]
     pub fn new(configuration: Configuration) -> Self {
@@ -43,29 +40,21 @@ impl LibraryScraper {
             .cookie_store(true)
             .cookie_provider(cookie_store.clone())
             .build()?;
-        let runtime = Builder::new_multi_thread()
-            .worker_threads(4)
-            .thread_name("fetch account")
-            .enable_io()
-            .enable_time()
-            .build()?;
 
-        return runtime.block_on(async {
-            match self.configuration.api_configuration.api {
-                crate::model::API::HamburgPublic => {
-                    self.public_hamburg_fetch_on_current_runtime(&client).await
-                }
-                crate::model::API::Opc4v2_13Vzg6 => {
-                    client
-                        .get(self.configuration.session_url())
-                        .query(&[("USR", "1022"), ("LAN", "DU"), ("BES", "1")])
-                        .send()
-                        .await?;
-
-                    self.opc4v2_13vzg6_fetch_on_current_runtime(&client).await
-                }
+        match self.configuration.api_configuration.api {
+            crate::model::API::HamburgPublic => {
+                self.public_hamburg_fetch_on_current_runtime(&client).await
             }
-        });
+            crate::model::API::Opc4v2_13Vzg6 => {
+                client
+                    .get(self.configuration.session_url())
+                    .query(&[("USR", "1022"), ("LAN", "DU"), ("BES", "1")])
+                    .send()
+                    .await?;
+
+                self.opc4v2_13vzg6_fetch_on_current_runtime(&client).await
+            }
+        }
     }
 }
 

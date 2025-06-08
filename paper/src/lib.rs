@@ -104,7 +104,7 @@ impl Paper {
 
         let search = HamburgPublicSearchScraper {};
 
-        match search.search_on_current_runtime(&input, None).await {
+        match search.search(&input, None).await {
             Ok(result) => Self::print_search_result(result),
             Err(err) => println!("Failed to search: {:?}", err),
         }

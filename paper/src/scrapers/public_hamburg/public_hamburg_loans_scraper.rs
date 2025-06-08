@@ -105,9 +105,9 @@ impl LoansScraper {
 
 #[cfg(test)]
 mod tests {
-    use std::fs;
-    use crate::model::{ItemAvailability, Loan, Loans, SearchResultDetail};
     use super::LoansScraper;
+    use crate::model::{ItemAvailability, Loan, Loans, SearchResultDetail};
+    use std::fs;
 
     #[test]
     fn it_parses_loans_from_login_success() {
@@ -142,7 +142,9 @@ mod tests {
                                 availabilities: vec![],
                             },
                         },
-                        search_result_detail_url: Some("suchergebnis-detail/medium/T020062902.html".to_string()),
+                        search_result_detail_url: Some(
+                            "suchergebnis-detail/medium/T020062902.html".to_string()
+                        ),
                     },
                     Loan {
                         title: "Sternenschweif / 1 Sternenschweif - geheimnisvo".to_string(),
@@ -166,7 +168,9 @@ mod tests {
                                 availabilities: vec![],
                             },
                         },
-                        search_result_detail_url: Some("suchergebnis-detail/medium/T021001401.html".to_string()),
+                        search_result_detail_url: Some(
+                            "suchergebnis-detail/medium/T021001401.html".to_string()
+                        ),
                     },
                     Loan {
                         title: "Der kleine Wassermann".to_string(),
@@ -190,7 +194,9 @@ mod tests {
                                 availabilities: vec![],
                             },
                         },
-                        search_result_detail_url: Some("suchergebnis-detail/medium/T019494523.html".to_string()),
+                        search_result_detail_url: Some(
+                            "suchergebnis-detail/medium/T019494523.html".to_string()
+                        ),
                     },
                     Loan {
                         title: "Bambino-LÜK / [...] Tiere im Zoo : Alter 3 - 5".to_string(),
@@ -214,38 +220,43 @@ mod tests {
                                 availabilities: vec![],
                             },
                         },
-                        search_result_detail_url: Some("suchergebnis-detail/medium/T010693899.html".to_string()),
+                        search_result_detail_url: Some(
+                            "suchergebnis-detail/medium/T010693899.html".to_string()
+                        ),
                     },
                 ]
-            });
+            }
+        );
     }
 
     #[test]
     fn it_parses_loans_from_login_success_info_notice() {
-        let html = fs::read_to_string("src/fixtures/hamburg_public/login/login_success_info_notice.html")
-            .expect("Something went wrong reading the file");
+        let html =
+            fs::read_to_string("src/fixtures/hamburg_public/login/login_success_info_notice.html")
+                .expect("Something went wrong reading the file");
         let loans = LoansScraper::loans_from_html(html)
             .expect("Parsing loans should work with the given html");
 
         assert_eq!(
             loans,
             Loans {
-                loans: vec![
-                    Loan {
-                        title: "MiniLÜK / […] Lösungsgerät".to_string(),
-                        author: "".to_string(),
-                        can_renew: true,
-                        renewal_token: None,
-                        renewals_count: 0,
-                        date_due: "10.05.2025".to_string(),
-                        borrowed_at: "12.04.2025".to_string(),
-                        item_number: "M58 385 945 2".to_string(),
-                        locked_by_preorder: false,
-                        details: SearchResultDetail::new(),
-                        search_result_detail_url: Some("suchergebnis-detail/medium/T010694188.html".to_string()),
-                    }
-                ]
-            });
+                loans: vec![Loan {
+                    title: "MiniLÜK / […] Lösungsgerät".to_string(),
+                    author: "".to_string(),
+                    can_renew: true,
+                    renewal_token: None,
+                    renewals_count: 0,
+                    date_due: "10.05.2025".to_string(),
+                    borrowed_at: "12.04.2025".to_string(),
+                    item_number: "M58 385 945 2".to_string(),
+                    locked_by_preorder: false,
+                    details: SearchResultDetail::new(),
+                    search_result_detail_url: Some(
+                        "suchergebnis-detail/medium/T010694188.html".to_string()
+                    ),
+                }]
+            }
+        );
     }
 
     #[test]
