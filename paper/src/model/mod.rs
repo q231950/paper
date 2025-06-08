@@ -56,6 +56,3 @@ mod loans;
 
 pub use self::session_token::SessionToken;
 mod session_token;
-
-pub(crate) use self::renewal::RenewalTokenParser;
-mod renewal;
