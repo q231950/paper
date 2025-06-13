@@ -9,7 +9,7 @@ use async_openai::{
 use futures::future;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, uniffi::Record)]
 pub struct Recommendation {
     pub book_titles: Vec<String>,
 }
