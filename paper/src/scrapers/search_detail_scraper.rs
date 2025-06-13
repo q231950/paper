@@ -5,7 +5,6 @@ use crate::model::Availability;
 use crate::model::AvailabilityStatus;
 use crate::model::Loan;
 use crate::model::SearchResultDetail;
-use tokio::runtime::Builder;
 
 use super::opc4v2_13vzg6::Opc4v2_13Vzg6SearchDetailScraper;
 use super::public_hamburg::HamburgPublicSearchDetailScraper;
@@ -15,7 +14,7 @@ pub(crate) struct SearchDetailScraper {
     configuration: APIConfiguration,
 }
 
-#[uniffi::export]
+#[uniffi::export(async_runtime = "tokio")]
 impl SearchDetailScraper {
     #[uniffi::constructor]
     pub fn new(configuration: APIConfiguration) -> Self {
@@ -26,16 +25,7 @@ impl SearchDetailScraper {
 
     async fn details_for_url(&self, url: String) -> Result<SearchResultDetail, PaperError> {
         let client = reqwest::ClientBuilder::new().cookie_store(true).build()?;
-
-        let runtime = Builder::new_multi_thread()
-            .worker_threads(4)
-            .thread_name("fetch details")
-            .enable_io()
-            .enable_time()
-            .build()?;
-
-        return runtime
-            .block_on(async { self.details_for_url_on_current_runtime(&client, url).await });
+        self.details_for_url_on_current_runtime(&client, url).await
     }
 
     pub fn status(&self, availabilities: Vec<Availability>) -> AvailabilityStatus {
@@ -93,14 +83,10 @@ impl SearchDetailScraper {
 
         match self.configuration.api {
             crate::model::API::HamburgPublic => {
-                HamburgPublicSearchDetailScraper::search_result_detail_from(document)
-                    .await
-                    .ok_or_else(|| PaperError::ParseErrorSearchResultDetail)
+                Ok(HamburgPublicSearchDetailScraper::search_result_detail_from(document).await)
             }
             crate::model::API::Opc4v2_13Vzg6 => {
-                Opc4v2_13Vzg6SearchDetailScraper {}
-                    .search_detail_from(document)
-                    .await
+                Opc4v2_13Vzg6SearchDetailScraper {}.search_detail_from(document)
             }
         }
     }

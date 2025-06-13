@@ -7,16 +7,6 @@ pub(crate) struct OpacAuthenticator {
 }
 
 impl OpacAuthenticator {
-    pub(crate) async fn verify_credentials_opc4vs2_13vzg6(
-        &self,
-        client: &Client,
-    ) -> Result<bool, PaperError> {
-        return tokio::runtime::Builder::new_current_thread()
-            .enable_all()
-            .build()?
-            .block_on(async { self.authenticate(client).await });
-    }
-
     pub(crate) async fn authenticate(&self, client: &Client) -> Result<bool, PaperError> {
         println!("`OpacAuthenticator::authenticate`");
         let username = self.configuration.username.clone().unwrap();

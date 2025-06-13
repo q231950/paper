@@ -8,10 +8,7 @@ use crate::{error::PaperError, model::SearchResultDetail};
 pub(crate) struct Opc4v2_13Vzg6SearchDetailScraper {}
 
 impl Opc4v2_13Vzg6SearchDetailScraper {
-    pub(crate) async fn search_detail_from(
-        &self,
-        html: Html,
-    ) -> Result<SearchResultDetail, PaperError> {
+    pub(crate) fn search_detail_from(&self, html: Html) -> Result<SearchResultDetail, PaperError> {
         let mut detail = SearchResultDetail::new();
         let content_table_selector = scraper::Selector::parse(r#"body > table > tbody > tr:nth-child(7) > td.cnt > table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > table > tbody > tr"#).unwrap();
         let rows = html.select(&content_table_selector);
@@ -63,7 +60,7 @@ mod tests {
             fs::read_to_string("src/fixtures/opc4v2_13Vzg6/search/katalog_detail_book_sbb.html")
                 .expect("Something went wrong reading the file");
         let html = scraper::Html::parse_document(html_string.as_str());
-        let search_detail = sut.search_detail_from(html).await.unwrap();
+        let search_detail = sut.search_detail_from(html).unwrap();
 
         assert_eq!(
             search_detail.full_title,
@@ -83,7 +80,7 @@ mod tests {
             fs::read_to_string("src/fixtures/opc4v2_13Vzg6/search/katalog_detail_book_gbv_hh.html")
                 .expect("Something went wrong reading the file");
         let html = scraper::Html::parse_document(html_string.as_str());
-        let search_detail = sut.search_detail_from(html).await.unwrap();
+        let search_detail = sut.search_detail_from(html).unwrap();
 
         assert_eq!(
             search_detail.full_title,

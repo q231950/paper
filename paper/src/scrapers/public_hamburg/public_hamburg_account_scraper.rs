@@ -20,10 +20,10 @@ impl PublicHamburgAccountScraper {
         let html = resource.load().await?;
         let document = scraper::Html::parse_document(html.as_str());
 
-        self.scrape_document(document).await
+        self.scrape_document(document)
     }
 
-    async fn scrape_document(&self, document: Html) -> Result<Account, PaperError> {
+    fn scrape_document(&self, document: Html) -> Result<Account, PaperError> {
         let mut account = Account::new();
 
         let info_notifications_selector = Selector::parse(r#"div[class="box box-info"]"#)
@@ -130,7 +130,6 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let account = PublicHamburgAccountScraper {}
             .scrape_document(document)
-            .await
             .unwrap();
 
         assert_eq!(account.notifications.len(), 2);
@@ -152,7 +151,6 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let account = PublicHamburgAccountScraper {}
             .scrape_document(document)
-            .await
             .unwrap();
 
         assert_eq!(account.notifications.len(), 2);

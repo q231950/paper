@@ -17,7 +17,7 @@ use super::{opc4v2_13vzg6::Opc4v2_13Vzg6RenewalParser, public_hamburg::RenewalLo
 #[derive(uniffi::Object)]
 pub struct RenewalService {}
 
-#[uniffi::export]
+#[uniffi::export(async_runtime = "tokio")]
 impl RenewalService {
     #[uniffi::constructor]
     pub fn new() -> Self {
@@ -50,61 +50,55 @@ impl RenewalService {
         configuration: Configuration,
     ) -> Result<Loan, PaperError> {
         println!("opc4v2_13vzg6_renew start");
-        return tokio::runtime::Builder::new_current_thread()
-            .enable_all()
-            .build()?
-            .block_on(async {
-                let cookie_store = Arc::new(Jar::default());
-                let client_builder = ClientBuilder::new();
-                let client = client_builder
-                    .cookie_store(true)
-                    .cookie_provider(cookie_store.clone())
-                    .build()?;
+        let cookie_store = Arc::new(Jar::default());
+        let client_builder = ClientBuilder::new();
+        let client = client_builder
+            .cookie_store(true)
+            .cookie_provider(cookie_store.clone())
+            .build()?;
 
-                let authenticator = OpacAuthenticator {
-                    configuration: configuration.clone(),
-                };
-                _ = authenticator.authenticate(&client).await;
+        let authenticator = OpacAuthenticator {
+            configuration: configuration.clone(),
+        };
+        _ = authenticator.authenticate(&client).await;
 
-                let username = configuration.username.clone().unwrap();
-                let password = configuration.password.clone().unwrap();
+        let username = configuration.username.clone().unwrap();
+        let password = configuration.password.clone().unwrap();
 
-                client.get(configuration.base_url()).send().await?;
-                client.get(configuration.session_url()).send().await?;
+        client.get(configuration.base_url()).send().await?;
+        client.get(configuration.session_url()).send().await?;
 
-                let url = format!(
-                    "{}/LBS_WEB/borrower/loans.htm",
-                    configuration.api_configuration.base_url
-                );
+        let url = format!(
+            "{}/LBS_WEB/borrower/loans.htm",
+            configuration.api_configuration.base_url
+        );
 
-                let mut headers = HeaderMap::new();
-                headers.insert(
-                    "Content-Type",
-                    HeaderValue::from_str("application/x-www-form-urlencoded; charset=utf-8")
-                        .unwrap(),
-                );
+        let mut headers = HeaderMap::new();
+        headers.insert(
+            "Content-Type",
+            HeaderValue::from_str("application/x-www-form-urlencoded; charset=utf-8").unwrap(),
+        );
 
-                headers.insert(
-                    "User-Agent",
-                    HeaderValue::from_str("Flying Penguin").unwrap(),
-                );
+        headers.insert(
+            "User-Agent",
+            HeaderValue::from_str("Flying Penguin").unwrap(),
+        );
 
-                let request = client
-                    .post(url)
-                    .headers(headers)
-                    .timeout(Duration::from_secs(20))
-                    .query(&[
-                        ("volumeNumbersToRenew", renewal_token.as_str()),
-                        ("LAN", "DU"),
-                        ("username", username.as_str()),
-                        ("password", password.as_str()),
-                        ("renew", "Verlängern"),
-                    ]);
+        let request = client
+            .post(url)
+            .headers(headers)
+            .timeout(Duration::from_secs(20))
+            .query(&[
+                ("volumeNumbersToRenew", renewal_token.as_str()),
+                ("LAN", "DU"),
+                ("username", username.as_str()),
+                ("password", password.as_str()),
+                ("renew", "Verlängern"),
+            ]);
 
-                let html = request.send().await?.text().await?;
+        let html = request.send().await?.text().await?;
 
-                Opc4v2_13Vzg6RenewalParser::loan_from(html)
-            });
+        Opc4v2_13Vzg6RenewalParser::loan_from(html)
     }
 
     async fn public_hamburg_renew(

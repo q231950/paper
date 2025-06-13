@@ -6,7 +6,7 @@ use crate::scrapers::text_provider::TextProvider;
 use futures::future;
 use reqwest::Client;
 use scraper::Selector;
-use tokio::runtime::Builder;
+use std::future::Future;
 use uuid::Uuid;
 
 pub(crate) struct HamburgPublicSearchScraper {}
@@ -14,22 +14,6 @@ pub(crate) struct HamburgPublicSearchScraper {}
 impl HamburgPublicSearchScraper {
     /// https://www.buecherhallen.de/katalog-suchergebnisse.html?suchbegriff=extra+terrestrial&seite-m37=2
     pub async fn search(
-        &self,
-        text: &str,
-        next_page_url: Option<String>,
-    ) -> Result<SearchResultList, PaperError> {
-        let runtime = Builder::new_multi_thread()
-            .worker_threads(5)
-            .thread_name("search")
-            .enable_io()
-            .enable_time()
-            .build()?;
-
-        return runtime
-            .block_on(async { self.search_on_current_runtime(text, next_page_url).await });
-    }
-
-    pub(crate) async fn search_on_current_runtime(
         &self,
         text: &str,
         next_page_url: Option<String>,
@@ -47,7 +31,7 @@ impl HamburgPublicSearchScraper {
         if let Some(next_page_url) = next_page_url {
             let html = api_client.get_html_at_path(next_page_url).await?;
 
-            return self.search_result_list_from(text.to_string(), html).await;
+            return Ok(self.search_result_list_from(text.to_string(), html).await);
         }
 
         return Err(PaperError::SearchFailed);
@@ -59,15 +43,17 @@ impl HamburgPublicSearchScraper {
     ///
     /// https://www.buecherhallen.de/katalog-suchergebnisse.html?suchbegriff=extra+terrestrial&seite-m37=1
     /// https://www.buecherhallen.de/katalog-suchergebnisse.html?suchbegriff=extra+terrestrial&seite-m37=2
-    async fn search_result_list_from(
+    fn search_result_list_from(
         &self,
         text: String,
         document: scraper::Html,
-    ) -> Result<SearchResultList, PaperError> {
-        if let Ok(result_selector) = Selector::parse(r#"li[class="search-results-item"]"#) {
-            let result_items = document.select(&result_selector);
+    ) -> impl Future<Output = SearchResultList> + Send {
+        let result_selector = Selector::parse(r#"li[class="search-results-item"]"#).unwrap();
+        let result_items = document.select(&result_selector);
 
-            let items = future::join_all(result_items.into_iter().map(|item| async move {
+        let items = result_items
+            .into_iter()
+            .map(move |item| {
                 let mut list_item = SearchResultListItem::new();
                 list_item.title = item.get_text("div.search-results-text > h2");
 
@@ -84,25 +70,10 @@ impl HamburgPublicSearchScraper {
                     list_item.subtitle = Some(cleaned_text);
                 }
 
-                if let Some(url1) = item.get_attribute("data-src", "div.search-results-image > img")
-                {
-                    match APIClient::ping_url(url1.as_str()).await {
-                        Ok(status) => match status {
-                            200 => {
-                                println!("source exists: {}", status);
-                                list_item.cover_image_url = Some(url1);
-                            }
-                            _ => {
-                                println!("source does not exist: {}", status);
-                                list_item.cover_image_url = item.get_attribute(
-                                    "data-alt-src",
-                                    "div.search-results-image > img",
-                                );
-                            }
-                        },
-                        Err(e) => println!("Error checking site: {}", e),
-                    }
-                }
+                let image_url = APIClient::validate_urls([
+                    item.get_attribute("data-src", "div.search-results-image > img"),
+                    item.get_attribute("data-alt-src", "div.search-results-image > img"),
+                ]);
 
                 if let Some(item_number) = item.attr("id").map(|s| s.to_string()) {
                     list_item.detail_url = Some(
@@ -114,21 +85,29 @@ impl HamburgPublicSearchScraper {
                     list_item.item_number = Some(item_number);
                 }
 
-                list_item
-            }))
+                (list_item, image_url)
+            })
+            .collect::<Vec<_>>();
+
+        let next_page_url = document.get_attribute("href", r#"a[class="pagination-next"]"#);
+        let result_count = self.search_result_count(document);
+
+        async move {
+            let items = future::join_all(items.into_iter().map(
+                |(mut list_item, image_url)| async move {
+                    // run the network request last, such that document was already dropped since it is not Send
+                    list_item.cover_image_url = image_url.await;
+                    list_item
+                },
+            ))
             .await;
 
-            let next_page_url = document.get_attribute("href", r#"a[class="pagination-next"]"#);
-            let result_count = self.search_result_count(document);
-
-            Ok(SearchResultList {
+            SearchResultList {
                 text,
                 next_page_url,
                 result_count,
                 items,
-            })
-        } else {
-            return Err(PaperError::SearchFailed);
+            }
         }
     }
 
@@ -165,8 +144,7 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_list = sut
             .search_result_list_from("abc".to_string(), document)
-            .await
-            .unwrap();
+            .await;
 
         assert_eq!(search_result_list.items.len(), 7);
         assert_eq!(search_result_list.next_page_url, None);
@@ -189,8 +167,7 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_list = sut
             .search_result_list_from("abc".to_string(), document)
-            .await
-            .unwrap();
+            .await;
 
         assert_eq!(search_result_list.items.len(), 10);
 
@@ -219,8 +196,7 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_list = sut
             .search_result_list_from("abc".to_string(), document)
-            .await
-            .unwrap();
+            .await;
 
         assert_eq!(search_result_list.items.len(), 7);
 
@@ -243,8 +219,7 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_list = sut
             .search_result_list_from("abc".to_string(), document)
-            .await
-            .unwrap();
+            .await;
 
         assert_eq!(search_result_list.result_count, 0);
         assert_eq!(search_result_list.next_page_url, None);
@@ -260,8 +235,7 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_list = sut
             .search_result_list_from("abc".to_string(), document)
-            .await
-            .unwrap();
+            .await;
 
         assert_eq!(search_result_list.result_count, 57);
         assert_eq!(
@@ -282,8 +256,7 @@ mod tests {
         let document = scraper::Html::parse_document(html.as_str());
         let search_result_list = sut
             .search_result_list_from("abc".to_string(), document)
-            .await
-            .unwrap();
+            .await;
 
         assert_eq!(search_result_list.result_count, 3893);
         assert_eq!(

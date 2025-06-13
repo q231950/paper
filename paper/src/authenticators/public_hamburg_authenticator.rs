@@ -17,22 +17,19 @@ pub(crate) struct PublicHamburgAuthenticator {
 impl PublicHamburgAuthenticator {
     pub(crate) async fn verify_credentials_public_hamburg(&self) -> Result<String, PaperError> {
         let client = reqwest::ClientBuilder::new().cookie_store(true).build()?;
-        return tokio::runtime::Builder::new_current_thread()
-            .enable_all()
-            .build()?
-            .block_on(async {
-                self.public_hamburg_authenticate_and_get_request_access_token(&client)
-                    .await
-            });
+        self.public_hamburg_authenticate_and_get_request_access_token(&client)
+            .await
     }
 
     async fn authenticate_public_hamburg_via_cookies(
         &self,
         client: &Client,
         request_token: String,
-        configuration: Configuration,
     ) -> Result<RawLoansPage, PaperError> {
-        if let (Some(username), Some(password)) = (configuration.username, configuration.password) {
+        if let (Some(username), Some(password)) = (
+            self.configuration.username.clone(),
+            self.configuration.password.clone(),
+        ) {
             if username == "" || password == "" {
                 return Err(PaperError::CredentialsBadInput);
             }
@@ -77,7 +74,7 @@ impl PublicHamburgAuthenticator {
 
         let token = token_scraper.get_request_token(&client).await?;
         let login_result = self
-            .authenticate_public_hamburg_via_cookies(&client, token, self.configuration.clone())
+            .authenticate_public_hamburg_via_cookies(&client, token)
             .await;
 
         return match login_result {
@@ -98,11 +95,7 @@ impl PublicHamburgAuthenticator {
 
         let request_token = token_scraper.get_request_token(&client).await?;
         let result = self
-            .authenticate_public_hamburg_via_cookies(
-                &client,
-                request_token.clone(),
-                self.configuration.clone(),
-            )
+            .authenticate_public_hamburg_via_cookies(&client, request_token.clone())
             .await;
 
         return match result {
