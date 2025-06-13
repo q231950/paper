@@ -20,7 +20,7 @@ impl HamburgPublicSearchDetailScraper {
         detail.medium_title = document.get_text(r#".medium-detail-title"#);
         detail.medium_author = document.get_text(r#".medium-detail-author > a"#);
 
-        let image_url = APIClient::test_urls([
+        let image_url = APIClient::validate_urls([
             document.get_attribute("data-src", r#"img[class="b-lazy img-lazyload"]"#),
             document.get_attribute("data-alt-src", r#"img[class="b-lazy img-lazyload"]"#),
         ]);

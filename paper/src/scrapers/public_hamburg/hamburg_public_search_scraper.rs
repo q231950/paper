@@ -70,7 +70,7 @@ impl HamburgPublicSearchScraper {
                     list_item.subtitle = Some(cleaned_text);
                 }
 
-                let image_url = APIClient::test_urls([
+                let image_url = APIClient::validate_urls([
                     item.get_attribute("data-src", "div.search-results-image > img"),
                     item.get_attribute("data-alt-src", "div.search-results-image > img"),
                 ]);

@@ -31,7 +31,7 @@ impl APIClient {
     ///
     /// # Returns
     /// * `Option<String>` - The first URL that returned 200 or None
-    pub(crate) async fn test_urls(
+    pub(crate) async fn validate_urls(
         urls: impl IntoIterator<Item = Option<String>>,
     ) -> Option<String> {
         for url in urls {
