@@ -7,6 +7,12 @@ use async_openai::{
     Client,
 };
 use futures::future;
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Recommendation {
+    pub book_titles: Vec<String>,
+}
 
 #[derive(uniffi::Object)]
 pub struct Recommender {}
@@ -22,7 +28,7 @@ impl Recommender {
         &self,
         titles: Vec<String>,
         api_key: String,
-    ) -> Result<Vec<String>, PaperError> {
+    ) -> Result<Recommendation, PaperError> {
         let runtime = tokio::runtime::Builder::new_multi_thread()
             .worker_threads(4)
             .thread_name("recommendations")
@@ -44,12 +50,12 @@ impl Recommender {
                         .max_tokens(50_u16)
                         .messages([
                             ChatCompletionRequestSystemMessageArgs::default()
-                                .content("You are a helpful librarian making book recommendations.")
+                                .content("You are a helpful librarian making book recommendations. Always respond with valid JSON in the format: {\"book_titles\": [\"Title 1\", \"Title 2\", \"Title 3\"]}")
                                 .build()
                                 .expect("msg")
                                 .into(),
                             ChatCompletionRequestUserMessageArgs::default()
-                                .content(format!("Recommend books similar to '{}'.", title))
+                                .content(format!("Recommend 3-5 books similar to '{}'. Return only JSON with book_titles array.", title))
                                 .build()
                                 .expect("msg")
                                 .into(),
@@ -59,17 +65,18 @@ impl Recommender {
 
                     match value.chat().create(request).await {
                         Ok(response) => {
-                            let choices: Vec<String> = response.choices
-                                .into_iter()
-                                .filter_map(|choice| choice.message.content)
-                                .map(|content| content.trim().to_string())
-                                .collect();
-                            
-                            if choices.is_empty() {
-                                println!("No valid choices returned");
-                                Err(PaperError::GeneralError)
+                            if let Some(content) = response.choices.first().and_then(|choice| choice.message.content.as_ref()) {
+                                match serde_json::from_str::<Recommendation>(content.trim()) {
+                                    Ok(recommendation) => Ok(recommendation),
+                                    Err(e) => {
+                                        println!("JSON parsing error: {}", e);
+                                        println!("Raw content: {}", content);
+                                        Err(PaperError::GeneralError)
+                                    }
+                                }
                             } else {
-                                Ok(choices.join("\n"))
+                                println!("No content in response");
+                                Err(PaperError::GeneralError)
                             }
                         }
                         Err(e) => {
@@ -81,7 +88,18 @@ impl Recommender {
             }))
             .await;
 
-            recommendations.into_iter().collect()
+            // Combine all recommendations into a single Recommendation struct
+            let mut all_book_titles = Vec::new();
+            for result in recommendations {
+                match result {
+                    Ok(recommendation) => all_book_titles.extend(recommendation.book_titles),
+                    Err(e) => return Err(e),
+                }
+            }
+            
+            Ok(Recommendation {
+                book_titles: all_book_titles,
+            })
         })
     }
 }
