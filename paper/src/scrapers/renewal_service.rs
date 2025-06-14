@@ -108,43 +108,38 @@ impl RenewalService {
     ) -> Result<Loan, PaperError> {
         let client = reqwest::ClientBuilder::new().cookie_store(true).build()?;
 
-        return tokio::runtime::Builder::new_current_thread()
-            .enable_all()
-            .build()?
-            .block_on(async {
-                let request_token = PublicHamburgAuthenticator {
-                    configuration: configuration.clone(),
-                }
-                .public_hamburg_authenticate_and_get_request_access_token(&client)
-                .await;
+        let request_token = PublicHamburgAuthenticator {
+            configuration: configuration.clone(),
+        }
+        .public_hamburg_authenticate_and_get_request_access_token(&client)
+        .await;
 
-                if let Ok(request_token) = request_token {
-                    let mut params = HashMap::new();
-                    params.insert("FORM_SUBMIT", "tl_renewal_action".to_string());
-                    params.insert("REQUEST_TOKEN", request_token);
-                    params.insert("actionType", "renewItem".to_string());
-                    params.insert("itemId", item_number.clone());
+        if let Ok(request_token) = request_token {
+            let mut params = HashMap::new();
+            params.insert("FORM_SUBMIT", "tl_renewal_action".to_string());
+            params.insert("REQUEST_TOKEN", request_token);
+            params.insert("actionType", "renewItem".to_string());
+            params.insert("itemId", item_number.clone());
 
-                    let mut headers = HeaderMap::new();
-                    headers.append("Accept-Language", HeaderValue::from_str("en-us")?);
-                    headers.append(
-                        "User-Agent",
-                        HeaderValue::from_str("the quick sloth climbs the tree")?,
-                    );
+            let mut headers = HeaderMap::new();
+            headers.append("Accept-Language", HeaderValue::from_str("en-us")?);
+            headers.append(
+                "User-Agent",
+                HeaderValue::from_str("the quick sloth climbs the tree")?,
+            );
 
-                    let response = client
-                        .post("https://www.buecherhallen.de/entliehene-medien.html")
-                        .headers(headers)
-                        .form(&params)
-                        .send()
-                        .await?;
+            let response = client
+                .post("https://www.buecherhallen.de/entliehene-medien.html")
+                .headers(headers)
+                .form(&params)
+                .send()
+                .await?;
 
-                    let html = response.text().await?;
+            let html = response.text().await?;
 
-                    return RenewalLoanParser::loan_from(item_number, html);
-                }
+            return RenewalLoanParser::loan_from(item_number, html);
+        }
 
-                return Err(PaperError::FailedToRenew);
-            });
+        Err(PaperError::FailedToRenew)
     }
 }
