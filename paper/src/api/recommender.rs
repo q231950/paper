@@ -1,8 +1,8 @@
 use crate::error::PaperError;
 use async_openai::{
     types::{
-        ChatCompletionRequestSystemMessage, ChatCompletionRequestSystemMessageArgs,
-        ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs,
+        ChatCompletionRequestSystemMessageArgs, ChatCompletionRequestUserMessageArgs,
+        CreateChatCompletionRequestArgs,
     },
     Client,
 };
@@ -45,17 +45,19 @@ impl Recommender {
             let recommendations = future::join_all(titles.into_iter().map(|title| {
                 let value = client.clone();
                 async move {
+                    let x = r#"{"book_titles": ["Title 1", "Title 2", "Title 3"]}"#;
                     let request = CreateChatCompletionRequestArgs::default()
                         .model("gpt-4o")
                         .max_tokens(50_u16)
                         .messages([
-                            ChatCompletionRequestSystemMessageArgs::default()
-                                .content("You are a helpful librarian making book recommendations. Always respond with valid JSON in the format: {\"book_titles\": [\"Title 1\", \"Title 2\", \"Title 3\"]}")
-                                .build()
-                                .expect("msg")
-                                .into(),
                             ChatCompletionRequestUserMessageArgs::default()
-                                .content(format!("Recommend 3-5 books similar to '{}'. Return only JSON with book_titles array.", title))
+                                .content(format!(r#"
+                                    You are a helpful librarian making book recommendations.
+                                    Recommend 3 books similar to '{}'.
+                                    The books should have the same language as the examples.
+                                    Always respond with valid JSON in the format: {}.
+                                    The response itself should be valid json.
+                                    Please do not include any additional text like markdown or explanations."#, title, x))
                                 .build()
                                 .expect("msg")
                                 .into(),
@@ -96,7 +98,7 @@ impl Recommender {
                     Err(e) => return Err(e),
                 }
             }
-            
+
             Ok(Recommendation {
                 book_titles: all_book_titles,
             })
