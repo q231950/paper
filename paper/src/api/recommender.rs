@@ -50,19 +50,23 @@ impl Recommender {
                 .join("\n");
             
             let x = r#"{"book_titles": ["Title 1", "Title 2", "Title 3"]}"#;
-            let request = CreateChatCompletionRequestArgs::default()
-                .model("gpt-4o")
-                .max_tokens(50_u16)
-                .messages([
-                    ChatCompletionRequestUserMessageArgs::default()
-                        .content(format!(r#"
+            let content = format!(r#"
                             You are a helpful librarian making book recommendations.
                             Recommend 3 books similar to these titles:
                             {}
                             The books should have the same language as the examples.
                             Always respond with valid JSON in the format: {}.
                             The response itself should be valid json.
-                            Please do not include any additional text like markdown or explanations."#, titles_bullets, x))
+                            Please do not include any additional text like markdown or explanations."#, titles_bullets, x);
+            
+            println!("Request content: {}", content);
+            
+            let request = CreateChatCompletionRequestArgs::default()
+                .model("gpt-4o")
+                .max_tokens(50_u16)
+                .messages([
+                    ChatCompletionRequestUserMessageArgs::default()
+                        .content(content)
                         .build()
                         .expect("msg")
                         .into(),
