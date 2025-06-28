@@ -42,66 +42,55 @@ impl Recommender {
                     .with_api_key(api_key)
                     .with_api_base("https://openrouter.ai/api/v1"),
             );
-            let recommendations = future::join_all(titles.into_iter().map(|title| {
-                let value = client.clone();
-                async move {
-                    let x = r#"{"book_titles": ["Title 1", "Title 2", "Title 3"]}"#;
-                    let request = CreateChatCompletionRequestArgs::default()
-                        .model("gpt-4o")
-                        .max_tokens(50_u16)
-                        .messages([
-                            ChatCompletionRequestUserMessageArgs::default()
-                                .content(format!(r#"
-                                    You are a helpful librarian making book recommendations.
-                                    Recommend 3 books similar to '{}'.
-                                    The books should have the same language as the examples.
-                                    Always respond with valid JSON in the format: {}.
-                                    The response itself should be valid json.
-                                    Please do not include any additional text like markdown or explanations."#, title, x))
-                                .build()
-                                .expect("msg")
-                                .into(),
-                        ])
+            
+            // Format all titles as bullet points
+            let titles_bullets = titles.iter()
+                .map(|title| format!("• {}", title))
+                .collect::<Vec<String>>()
+                .join("\n");
+            
+            let x = r#"{"book_titles": ["Title 1", "Title 2", "Title 3"]}"#;
+            let request = CreateChatCompletionRequestArgs::default()
+                .model("gpt-4o")
+                .max_tokens(50_u16)
+                .messages([
+                    ChatCompletionRequestUserMessageArgs::default()
+                        .content(format!(r#"
+                            You are a helpful librarian making book recommendations.
+                            Recommend 3 books similar to these titles:
+                            {}
+                            The books should have the same language as the examples.
+                            Always respond with valid JSON in the format: {}.
+                            The response itself should be valid json.
+                            Please do not include any additional text like markdown or explanations."#, titles_bullets, x))
                         .build()
-                        .expect("msg");
+                        .expect("msg")
+                        .into(),
+                ])
+                .build()
+                .expect("msg");
 
-                    match value.chat().create(request).await {
-                        Ok(response) => {
-                            if let Some(content) = response.choices.first().and_then(|choice| choice.message.content.as_ref()) {
-                                match serde_json::from_str::<Recommendation>(content.trim()) {
-                                    Ok(recommendation) => Ok(recommendation),
-                                    Err(e) => {
-                                        println!("JSON parsing error: {}", e);
-                                        println!("Raw content: {}", content);
-                                        Err(PaperError::GeneralError)
-                                    }
-                                }
-                            } else {
-                                println!("No content in response");
+            match client.chat().create(request).await {
+                Ok(response) => {
+                    if let Some(content) = response.choices.first().and_then(|choice| choice.message.content.as_ref()) {
+                        match serde_json::from_str::<Recommendation>(content.trim()) {
+                            Ok(recommendation) => Ok(recommendation),
+                            Err(e) => {
+                                println!("JSON parsing error: {}", e);
+                                println!("Raw content: {}", content);
                                 Err(PaperError::GeneralError)
                             }
                         }
-                        Err(e) => {
-                            println!("API error: {}", e);
-                            Err(PaperError::GeneralError)
-                        }
+                    } else {
+                        println!("No content in response");
+                        Err(PaperError::GeneralError)
                     }
                 }
-            }))
-            .await;
-
-            // Combine all recommendations into a single Recommendation struct
-            let mut all_book_titles = Vec::new();
-            for result in recommendations {
-                match result {
-                    Ok(recommendation) => all_book_titles.extend(recommendation.book_titles),
-                    Err(e) => return Err(e),
+                Err(e) => {
+                    println!("API error: {}", e);
+                    Err(PaperError::GeneralError)
                 }
             }
-
-            Ok(Recommendation {
-                book_titles: all_book_titles,
-            })
         })
     }
 }
