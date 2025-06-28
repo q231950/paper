@@ -10,8 +10,15 @@ use futures::future;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize, uniffi::Record)]
+pub struct BookRecommendation {
+    pub title: String,
+    pub author: String,
+    pub isbn: String,
+}
+
+#[derive(Debug, Serialize, Deserialize, uniffi::Record)]
 pub struct Recommendation {
-    pub book_titles: Vec<String>,
+    pub recommendations: Vec<BookRecommendation>,
 }
 
 #[derive(uniffi::Object)]
