@@ -12,7 +12,6 @@ impl OpacAuthenticator {
         let username = self.configuration.username.clone().unwrap();
         let password = self.configuration.password.clone().unwrap();
         let login_url = self.configuration.login_url();
-        // println!("{:?}, {:?}, {:?}", username, password, login_url);
         let html_string = client
             .post(login_url)
             .query(&[

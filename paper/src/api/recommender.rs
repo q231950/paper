@@ -87,8 +87,6 @@ impl Recommender {
             titles_bullets, json_format
         );
 
-        println!("Request content: {}", content);
-
         let request = CreateChatCompletionRequestArgs::default()
             .model(config.model.identifier())
             .max_tokens(500_u16)
