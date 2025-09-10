@@ -56,3 +56,8 @@ The Swift Package is made of a binary package target which depends on a XCFramew
 You don't need to do anything except build the XCFramework to get changes in the Rust library reflected in the Swift package:
 
 `$ cd paper; make apple`
+
+For Apple builds the cargo-swift crate is used. **A matching version for the pinned version of uniffi is required**. Please checkout https://github.com/antoniusnaumann/cargo-swift?tab=readme-ov-file#installing-for-a-different-uniffi-version to see what version you need to install using `cargo install cargo-swift@<version> -f`
+
+The current version of cargo-swift compatible with uniffi is **0.9.0**. To install it, run:
+`cargo install cargo-swift@^0.9.0`

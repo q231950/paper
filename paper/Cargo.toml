@@ -28,7 +28,7 @@ anyhow = "1.0"
 thiserror = "1.0"
 scraper = "0.19.0"
 regex = "1.10.5"
-uniffi_bindgen = { version = "=0.28.0" }
+uniffi_bindgen = { workspace = true }
 chrono = "0.4.38"
 uuid = { version = "1.4", features = ["v4"] }
 roxmltree = "0.20.0"
