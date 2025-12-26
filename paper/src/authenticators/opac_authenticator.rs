@@ -8,14 +8,13 @@ pub(crate) struct OpacAuthenticator {
 
 impl OpacAuthenticator {
     pub(crate) async fn authenticate(&self, client: &Client) -> Result<bool, PaperError> {
-        println!("`OpacAuthenticator::authenticate`");
         let username = self.configuration.username.clone().unwrap();
         let password = self.configuration.password.clone().unwrap();
         let login_url = self.configuration.login_url();
         let html_string = client
-            .post(login_url)
+            .post(login_url.clone())
             .query(&[
-                ("USR", "1022"),
+                ("USR", "1000"),
                 ("BES", "1"),
                 ("LAN", "DU"),
                 ("username", username.as_str()),
@@ -25,6 +24,7 @@ impl OpacAuthenticator {
             .await?
             .text()
             .await?;
+
         let scraper = Opc4v2_13Vzg6AccountScraper {
             configuration: self.configuration.clone(),
         };

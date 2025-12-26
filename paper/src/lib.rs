@@ -43,7 +43,7 @@ impl Paper {
             .build()
             .unwrap();
         let account = scraper
-            .public_hamburg_fetch_on_current_runtime(&client)
+            .opc4v2_13vzg6_fetch_on_current_runtime(&client)
             .await
             .unwrap();
 

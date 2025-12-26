@@ -3,6 +3,10 @@ use crate::configuration::Configuration;
 use crate::error::PaperError;
 use crate::model::ValidationStatus;
 
+use reqwest::cookie::Jar;
+use reqwest::ClientBuilder;
+use std::sync::Arc;
+
 #[derive(uniffi::Object)]
 pub struct Authenticator {
     pub(crate) configuration: Configuration,
