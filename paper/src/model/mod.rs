@@ -7,9 +7,6 @@ mod api;
 pub use self::validation_status::ValidationStatus;
 mod validation_status;
 
-pub use self::api_configuration::APIConfiguration;
-mod api_configuration;
-
 pub use self::notification::Notification;
 pub use self::notification::NotificationType;
 mod notification;

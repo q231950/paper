@@ -10,11 +10,16 @@ impl OpacAuthenticator {
     pub(crate) async fn authenticate(&self, client: &Client) -> Result<bool, PaperError> {
         let username = self.configuration.username.clone().unwrap();
         let password = self.configuration.password.clone().unwrap();
-        let login_url = self.configuration.login_url();
+        let login_url = self.configuration.api_configuration.login_url().unwrap();
+        let user_query_key = self
+            .configuration
+            .api_configuration
+            .user_query_key()
+            .unwrap();
         let html_string = client
-            .post(login_url.clone())
+            .post(login_url)
             .query(&[
-                ("USR", "1000"),
+                ("USR", user_query_key.as_str()),
                 ("BES", "1"),
                 ("LAN", "DU"),
                 ("username", username.as_str()),

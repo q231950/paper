@@ -3,10 +3,6 @@ use crate::configuration::Configuration;
 use crate::error::PaperError;
 use crate::model::ValidationStatus;
 
-use reqwest::cookie::Jar;
-use reqwest::ClientBuilder;
-use std::sync::Arc;
-
 #[derive(uniffi::Object)]
 pub struct Authenticator {
     pub(crate) configuration: Configuration,
@@ -20,7 +16,7 @@ impl Authenticator {
     }
 
     async fn verify_credentials(&self) -> Result<ValidationStatus, PaperError> {
-        match self.configuration.api_configuration.api {
+        match self.configuration.api_configuration {
             crate::model::API::HamburgPublic => {
                 let authenticator = PublicHamburgAuthenticator {
                     configuration: self.configuration.clone(),
@@ -34,7 +30,7 @@ impl Authenticator {
                     },
                 };
             }
-            crate::model::API::Opc4v2_13Vzg6 => {
+            crate::model::API::Opc4v2_13Vzg6 { .. } => {
                 let opac_authenticator = OpacAuthenticator {
                     configuration: self.configuration.clone(),
                 };

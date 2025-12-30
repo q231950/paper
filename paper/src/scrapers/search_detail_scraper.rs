@@ -1,23 +1,23 @@
 use crate::api::APIClient;
 use crate::error::PaperError;
-use crate::model::APIConfiguration;
 use crate::model::Availability;
 use crate::model::AvailabilityStatus;
 use crate::model::Loan;
 use crate::model::SearchResultDetail;
+use crate::model::API;
 
 use super::opc4v2_13vzg6::Opc4v2_13Vzg6SearchDetailScraper;
 use super::public_hamburg::HamburgPublicSearchDetailScraper;
 
 #[derive(uniffi::Object)]
 pub(crate) struct SearchDetailScraper {
-    configuration: APIConfiguration,
+    configuration: API,
 }
 
 #[uniffi::export(async_runtime = "tokio")]
 impl SearchDetailScraper {
     #[uniffi::constructor]
-    pub fn new(configuration: APIConfiguration) -> Self {
+    pub fn new(configuration: API) -> Self {
         Self {
             configuration: configuration,
         }
@@ -75,17 +75,15 @@ impl SearchDetailScraper {
         client: &reqwest::Client,
         url: String,
     ) -> Result<SearchResultDetail, PaperError> {
-        let api_client = APIClient::new_with_network_client(
-            client.to_owned(),
-            self.configuration.catalog_url.to_string(),
-        );
+        let api_client =
+            APIClient::new_with_network_client(client.to_owned(), self.configuration.catalog_url());
         let document = api_client.get_html_at_path(url).await?;
 
-        match self.configuration.api {
+        match self.configuration {
             crate::model::API::HamburgPublic => {
                 Ok(HamburgPublicSearchDetailScraper::search_result_detail_from(document).await)
             }
-            crate::model::API::Opc4v2_13Vzg6 => {
+            crate::model::API::Opc4v2_13Vzg6 { .. } => {
                 Opc4v2_13Vzg6SearchDetailScraper {}.search_detail_from(document)
             }
         }

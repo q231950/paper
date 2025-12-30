@@ -161,7 +161,7 @@ impl Paper {
 #[cfg(test)]
 mod tests {
 
-    use model::{APIConfiguration, API};
+    use model::API;
 
     use super::*;
     #[test]
@@ -169,11 +169,7 @@ mod tests {
         let config = Configuration {
             username: Some("abc".to_string()),
             password: Some("123".to_string()),
-            api_configuration: APIConfiguration {
-                api: API::HamburgPublic,
-                base_url: "https://www.buecherhallen.de".to_string(),
-                catalog_url: "https://catalog.buecherhallen.de".to_string(),
-            },
+            api_configuration: API::HamburgPublic,
         };
         let paper = Paper::with_config(config);
         assert_eq!(paper.configuration.username, Some("abc".to_string()));
