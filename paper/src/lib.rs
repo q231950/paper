@@ -12,7 +12,7 @@ use crate::configuration::Configuration;
 use crate::model::{Account, SearchResultList, SearchResultListItem};
 
 extern crate indicatif;
-use crate::scrapers::public_hamburg::HamburgPublicSearchScraper;
+use crate::scrapers::SearchScraper;
 use console::{style, Term};
 use dialoguer::{theme::ColorfulTheme, Input, Select};
 use indicatif::ProgressBar;
@@ -102,7 +102,7 @@ impl Paper {
             .interact_text()
             .unwrap();
 
-        let search = HamburgPublicSearchScraper {};
+        let search = SearchScraper::new(self.configuration.api_configuration.clone());
 
         match search.search(&input, None).await {
             Ok(result) => Self::print_search_result(result),
