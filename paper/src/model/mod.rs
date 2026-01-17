@@ -53,3 +53,9 @@ mod loans;
 
 pub use self::session_token::SessionToken;
 mod session_token;
+
+pub use self::library::Library;
+mod library;
+
+pub use self::library_list::LibraryList;
+mod library_list;

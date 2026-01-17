@@ -1,4 +1,4 @@
-#[derive(uniffi::Enum, Clone, Debug)]
+#[derive(uniffi::Enum, Clone, Debug, PartialEq)]
 pub enum API {
     HamburgPublic,
     Opc4v2_13Vzg6 {
