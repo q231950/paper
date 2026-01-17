@@ -7,9 +7,6 @@ mod api;
 pub use self::validation_status::ValidationStatus;
 mod validation_status;
 
-pub use self::api_configuration::APIConfiguration;
-mod api_configuration;
-
 pub use self::notification::Notification;
 pub use self::notification::NotificationType;
 mod notification;
@@ -56,3 +53,9 @@ mod loans;
 
 pub use self::session_token::SessionToken;
 mod session_token;
+
+pub use self::library::Library;
+mod library;
+
+pub use self::library_list::LibraryList;
+mod library_list;

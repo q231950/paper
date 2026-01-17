@@ -41,13 +41,13 @@ impl LibraryScraper {
             .cookie_provider(cookie_store.clone())
             .build()?;
 
-        match self.configuration.api_configuration.api {
+        match self.configuration.api_configuration {
             crate::model::API::HamburgPublic => {
                 self.public_hamburg_fetch_on_current_runtime(&client).await
             }
-            crate::model::API::Opc4v2_13Vzg6 => {
+            crate::model::API::Opc4v2_13Vzg6 { .. } => {
                 client
-                    .get(self.configuration.session_url())
+                    .get(self.configuration.api_configuration.session_url().unwrap())
                     .query(&[("USR", "1022"), ("LAN", "DU"), ("BES", "1")])
                     .send()
                     .await?;

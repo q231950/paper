@@ -15,7 +15,7 @@ impl Opc4v2_13Vzg6AccountScraper {
 
         let api = APIClient::new_with_network_client(
             client,
-            self.configuration.api_configuration.base_url.clone(),
+            self.configuration.api_configuration.base_url().clone(),
         );
 
         let html = api
@@ -57,10 +57,10 @@ mod tests {
             configuration: crate::configuration::Configuration {
                 username: Some("".to_string()),
                 password: Some("".to_string()),
-                api_configuration: crate::model::APIConfiguration {
-                    api: crate::model::API::Opc4v2_13Vzg6,
+                api_configuration: crate::model::API::Opc4v2_13Vzg6 {
                     base_url: "".to_string(),
                     catalog_url: "".to_string(),
+                    user_query_key: "".to_string(),
                 },
             },
         };
@@ -76,10 +76,10 @@ mod tests {
             configuration: crate::configuration::Configuration {
                 username: Some("".to_string()),
                 password: Some("".to_string()),
-                api_configuration: crate::model::APIConfiguration {
-                    api: crate::model::API::Opc4v2_13Vzg6,
+                api_configuration: crate::model::API::Opc4v2_13Vzg6 {
                     base_url: "".to_string(),
                     catalog_url: "".to_string(),
+                    user_query_key: "".to_string(),
                 },
             },
         };

@@ -30,9 +30,9 @@ impl RenewalService {
         renewal_token: Option<String>,
         configuration: Configuration,
     ) -> Result<Loan, PaperError> {
-        match configuration.api_configuration.api {
+        match configuration.api_configuration {
             API::HamburgPublic => self.public_hamburg_renew(item_number, configuration).await,
-            API::Opc4v2_13Vzg6 => {
+            API::Opc4v2_13Vzg6 { .. } => {
                 if let Some(token) = renewal_token {
                     self.opc4v2_13vzg6_renew(token, configuration).await
                 } else {
@@ -65,12 +65,18 @@ impl RenewalService {
         let username = configuration.username.clone().unwrap();
         let password = configuration.password.clone().unwrap();
 
-        client.get(configuration.base_url()).send().await?;
-        client.get(configuration.session_url()).send().await?;
+        client
+            .get(configuration.api_configuration.base_url())
+            .send()
+            .await?;
+        client
+            .get(configuration.api_configuration.session_url().unwrap())
+            .send()
+            .await?;
 
         let url = format!(
             "{}/LBS_WEB/borrower/loans.htm",
-            configuration.api_configuration.base_url
+            configuration.api_configuration.base_url()
         );
 
         let mut headers = HeaderMap::new();
