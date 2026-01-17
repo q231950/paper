@@ -6,5 +6,6 @@ pub struct Library {
     pub name: String,
     pub subtitle: String,
     pub api: API,
-    pub enabled: bool,
+    pub enabled_for_search: bool,
+    pub enabled_for_login: bool,
 }
