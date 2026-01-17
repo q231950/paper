@@ -20,6 +20,7 @@ impl LibraryList {
                         catalog_url: "https://lbssbb.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "MAGDEBURG".to_string(),
@@ -30,6 +31,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-magdeburg.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "LUENEBURG".to_string(),
@@ -40,6 +42,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.leuphana.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "BRAUNSCHWEIG".to_string(),
@@ -50,6 +53,7 @@ impl LibraryList {
                         catalog_url: "https://lbsbrs.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "WOLFENBUETTEL".to_string(),
@@ -61,6 +65,7 @@ impl LibraryList {
                         catalog_url: "https://lbsbrs.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "SHLB".to_string(),
@@ -71,6 +76,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.ub.uni-kiel.de/DB=3".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "MUTHESIUS".to_string(),
@@ -81,6 +87,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.ub.uni-kiel.de/DB=6".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "KIEL".to_string(),
@@ -91,6 +98,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.ub.uni-kiel.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "ILFH".to_string(),
@@ -101,6 +109,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-ilmenau.gbv.de/DB=2".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "ILMENAU".to_string(),
@@ -111,6 +120,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-ilmenau.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HKSF".to_string(),
@@ -121,6 +131,7 @@ impl LibraryList {
                         catalog_url: "https://lbshan.gbv.de/DB=11".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HILDESHEIM".to_string(),
@@ -131,6 +142,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-hildesheim.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HFHH".to_string(),
@@ -141,6 +153,7 @@ impl LibraryList {
                         catalog_url: "https://opac.tib.eu/DB=4".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "LUH".to_string(),
@@ -151,6 +164,7 @@ impl LibraryList {
                         catalog_url: "https://opac.tib.eu/DB=12".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: false,
                 },
                 Library {
                     identifier: "HELMUTSCHMIDT".to_string(),
@@ -161,6 +175,7 @@ impl LibraryList {
                         catalog_url: "https://lbshsu.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HARBURG".to_string(),
@@ -171,6 +186,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.b.tuhh.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HAFENCITYUNI".to_string(),
@@ -181,6 +197,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.b.tuhh.de/DB=22".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HANNOVER".to_string(),
@@ -191,6 +208,7 @@ impl LibraryList {
                         catalog_url: "https://lbshan.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HAMBURG".to_string(),
@@ -201,12 +219,14 @@ impl LibraryList {
                         catalog_url: "https://kataloge.hh.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HAMBURGPUBLIC".to_string(),
                     name: "Hamburg".to_string(),
                     subtitle: "Stiftung Hamburger Öffentliche Bücherhallen".to_string(),
                     api: API::HamburgPublic,
+                    enabled: false,
                 },
                 Library {
                     identifier: "ROSTOCK".to_string(),
@@ -217,6 +237,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-rostock.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "GREIFSWALD".to_string(),
@@ -227,6 +248,7 @@ impl LibraryList {
                         catalog_url: "https://lhgrw.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: false,
                 },
                 Library {
                     identifier: "GOETTINGEN".to_string(),
@@ -237,6 +259,7 @@ impl LibraryList {
                         catalog_url: "https://opac.sub.uni-goettingen.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "WISMAR".to_string(),
@@ -247,6 +270,7 @@ impl LibraryList {
                         catalog_url: "https://lbswis.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "ERFURT".to_string(),
@@ -257,6 +281,7 @@ impl LibraryList {
                         catalog_url: "https://opac.uni-erfurt.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "HAW".to_string(),
@@ -267,6 +292,7 @@ impl LibraryList {
                         catalog_url: "https://kataloge.hh.gbv.de/DB=2".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "ANHALT".to_string(),
@@ -277,6 +303,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-anhalt.gbv.de".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: true,
                 },
                 Library {
                     identifier: "COMMERZ_HH".to_string(),
@@ -287,6 +314,7 @@ impl LibraryList {
                         catalog_url: "https://lbsvz2.gbv.de/DB=67".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    enabled: false,
                 },
             ],
         }
