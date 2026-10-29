@@ -1,6 +1,6 @@
 extern crate paper;
 
-use paper::{configuration::Configuration, model::APIConfiguration, model::API};
+use paper::{configuration::Configuration, model::API};
 
 #[macro_use]
 extern crate clap;
@@ -14,10 +14,10 @@ async fn main() {
     let mut configuration = Configuration {
         username: None,
         password: None,
-        api_configuration: APIConfiguration {
-            api: API::HamburgPublic,
-            base_url: "https://www.buecherhallen.de".to_string(),
-            catalog_url: "https://www.buecherhallen.de".to_string(),
+        api_configuration: API::Opc4v2_13Vzg6 {
+            base_url: "https://lbssbb.gbv.de".to_string(),
+            catalog_url: "https://lbssbb.gbv.de".to_string(),
+            user_query_key: "1000".to_string(),
         },
     };
 

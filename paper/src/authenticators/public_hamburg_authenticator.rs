@@ -1,9 +1,9 @@
 use super::{LoginResult, RawLoansPage};
+use crate::configuration::Configuration;
 use crate::error::PaperError;
 use crate::model::Loans;
 use crate::scrapers::public_hamburg::LoansScraper;
 use crate::token_scraper::TokenScraper;
-use crate::{configuration::Configuration};
 use reqwest::{
     header::{HeaderMap, HeaderValue},
     Client,
@@ -69,7 +69,7 @@ impl PublicHamburgAuthenticator {
         client: &Client,
     ) -> Result<Loans, PaperError> {
         let token_scraper = TokenScraper {
-            api: self.configuration.api_configuration.api.clone(),
+            api: self.configuration.api_configuration.clone(),
         };
 
         let token = token_scraper.get_request_token(&client).await?;
@@ -90,7 +90,7 @@ impl PublicHamburgAuthenticator {
         client: &Client,
     ) -> Result<String, PaperError> {
         let token_scraper = TokenScraper {
-            api: self.configuration.api_configuration.api.clone(),
+            api: self.configuration.api_configuration.clone(),
         };
 
         let request_token = token_scraper.get_request_token(&client).await?;

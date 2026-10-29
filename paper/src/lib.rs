@@ -12,7 +12,7 @@ use crate::configuration::Configuration;
 use crate::model::{Account, SearchResultList, SearchResultListItem};
 
 extern crate indicatif;
-use crate::scrapers::public_hamburg::HamburgPublicSearchScraper;
+use crate::scrapers::SearchScraper;
 use console::{style, Term};
 use dialoguer::{theme::ColorfulTheme, Input, Select};
 use indicatif::ProgressBar;
@@ -43,7 +43,7 @@ impl Paper {
             .build()
             .unwrap();
         let account = scraper
-            .public_hamburg_fetch_on_current_runtime(&client)
+            .opc4v2_13vzg6_fetch_on_current_runtime(&client)
             .await
             .unwrap();
 
@@ -102,7 +102,7 @@ impl Paper {
             .interact_text()
             .unwrap();
 
-        let search = HamburgPublicSearchScraper {};
+        let search = SearchScraper::new(self.configuration.api_configuration.clone());
 
         match search.search(&input, None).await {
             Ok(result) => Self::print_search_result(result),
@@ -161,7 +161,7 @@ impl Paper {
 #[cfg(test)]
 mod tests {
 
-    use model::{APIConfiguration, API};
+    use model::API;
 
     use super::*;
     #[test]
@@ -169,11 +169,7 @@ mod tests {
         let config = Configuration {
             username: Some("abc".to_string()),
             password: Some("123".to_string()),
-            api_configuration: APIConfiguration {
-                api: API::HamburgPublic,
-                base_url: "https://www.buecherhallen.de".to_string(),
-                catalog_url: "https://catalog.buecherhallen.de".to_string(),
-            },
+            api_configuration: API::HamburgPublic,
         };
         let paper = Paper::with_config(config);
         assert_eq!(paper.configuration.username, Some("abc".to_string()));
