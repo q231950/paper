@@ -8,6 +8,7 @@ use crate::model::API;
 
 use super::opc4v2_13vzg6::Opc4v2_13Vzg6SearchDetailScraper;
 use super::public_hamburg::HamburgPublicSearchDetailScraper;
+use super::vufind::VuFindSearchDetailScraper;
 
 #[derive(uniffi::Object)]
 pub(crate) struct SearchDetailScraper {
@@ -86,6 +87,10 @@ impl SearchDetailScraper {
             crate::model::API::Opc4v2_13Vzg6 { .. } => {
                 Opc4v2_13Vzg6SearchDetailScraper {}.search_detail_from(document)
             }
+            crate::model::API::VuFind { .. } => VuFindSearchDetailScraper {
+                base_url: self.configuration.base_url(),
+            }
+            .search_detail_from(document),
         }
     }
 }

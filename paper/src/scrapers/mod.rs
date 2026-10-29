@@ -12,6 +12,7 @@ mod search_detail_scraper;
 
 pub(crate) mod opc4v2_13vzg6;
 pub(crate) mod public_hamburg;
+pub(crate) mod vufind;
 
 pub(crate) use self::text_provider::TextProvider;
 mod text_provider;

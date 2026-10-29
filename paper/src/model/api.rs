@@ -6,6 +6,10 @@ pub enum API {
         catalog_url: String,
         user_query_key: String,
     },
+    /// A VuFind discovery system, e.g. https://stabikat.de
+    VuFind {
+        base_url: String,
+    },
 }
 
 impl API {
@@ -13,6 +17,7 @@ impl API {
         match self {
             API::HamburgPublic => "https://www.buecherhallen.de".to_string(),
             API::Opc4v2_13Vzg6 { base_url, .. } => base_url.clone(),
+            API::VuFind { base_url } => base_url.trim_end_matches('/').to_string(),
         }
     }
 
@@ -20,6 +25,7 @@ impl API {
         match self {
             API::HamburgPublic => "https://buecherhallen.de".to_string(),
             API::Opc4v2_13Vzg6 { catalog_url, .. } => catalog_url.clone(),
+            API::VuFind { .. } => self.base_url(),
         }
     }
 
@@ -27,6 +33,7 @@ impl API {
         match self {
             API::HamburgPublic => None,
             API::Opc4v2_13Vzg6 { .. } => Some(format!("{}/LBS_WEB/login", self.base_url().clone())),
+            API::VuFind { .. } => None,
         }
     }
 
@@ -38,6 +45,7 @@ impl API {
                 "{}/LBS_WEB/borrower/loans.htm",
                 self.base_url().clone()
             )),
+            API::VuFind { .. } => None,
         }
     }
 
@@ -45,6 +53,7 @@ impl API {
         match self {
             API::HamburgPublic => None,
             API::Opc4v2_13Vzg6 { user_query_key, .. } => Some(user_query_key.clone()),
+            API::VuFind { .. } => None,
         }
     }
 }
@@ -81,6 +90,19 @@ mod tests {
     fn test_user_query_key_none() {
         let api_config = API::HamburgPublic;
 
+        assert_eq!(api_config.user_query_key(), None);
+    }
+
+    #[test]
+    fn test_vufind_urls() {
+        let api_config = API::VuFind {
+            base_url: String::from("https://stabikat.de/"),
+        };
+
+        assert_eq!(api_config.base_url(), "https://stabikat.de");
+        assert_eq!(api_config.catalog_url(), "https://stabikat.de");
+        assert_eq!(api_config.login_url(), None);
+        assert_eq!(api_config.session_url(), None);
         assert_eq!(api_config.user_query_key(), None);
     }
 }

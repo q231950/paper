@@ -3,6 +3,7 @@ use crate::error::PaperError;
 use crate::model::{SearchResultList, API};
 use crate::scrapers::opc4v2_13vzg6::Opc4v2_13Vzg6SearchScraper;
 use crate::scrapers::public_hamburg::HamburgPublicSearchScraper;
+use crate::scrapers::vufind::VuFindSearchScraper;
 use reqwest::Client;
 
 #[derive(uniffi::Object)]
@@ -38,6 +39,12 @@ impl SearchScraper {
                 search_scraper
                     .search(text, next_page_url, &api_client)
                     .await
+            }
+            API::VuFind { .. } => {
+                let search_scraper = VuFindSearchScraper {
+                    base_url: self.configuration.base_url(),
+                };
+                search_scraper.search(text, next_page_url).await
             }
         }
     }

@@ -45,6 +45,8 @@ impl Authenticator {
                     Err(err) => Ok(ValidationStatus::Error(err.to_string())),
                 };
             }
+            // signing in to VuFind is not supported yet
+            crate::model::API::VuFind { .. } => Err(PaperError::NotImplementedError),
         }
     }
 }
