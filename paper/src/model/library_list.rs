@@ -24,6 +24,18 @@ impl LibraryList {
                     enabled_for_login: true,
                 },
                 Library {
+                    identifier: "STABIKAT".to_string(),
+                    name: "Berlin".to_string(),
+                    subtitle: "StabiKat – Staatsbibliothek zu Berlin".to_string(),
+                    // stabikat.de puts its VuFind behind a human verification, the K10plus SRU
+                    // interface serves the same catalog
+                    api: API::K10plusSru {
+                        database: "opac-de-1".to_string(),
+                    },
+                    enabled_for_search: true,
+                    enabled_for_login: false,
+                },
+                Library {
                     identifier: "MAGDEBURG".to_string(),
                     name: "Magdeburg".to_string(),
                     subtitle: "Universitätsbibliothek".to_string(),

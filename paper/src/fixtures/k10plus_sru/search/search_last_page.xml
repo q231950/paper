@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/"><zs:version>1.1</zs:version><zs:numberOfRecords>11</zs:numberOfRecords><zs:records><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22     2c 4500</leader>
+  <controlfield tag="001">656320168</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250217214143.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">110413s1819    gw |||||o     00| ||und c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3628406307</subfield>
+    <subfield code="9">3-628-40630-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)656320168</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9656320166</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV656320168</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Friedrich, Theodor Heinrich</subfield>
+    <subfield code="d">1776-1819</subfield>
+    <subfield code="0">(DE-588)116807385</subfield>
+    <subfield code="0">(DE-627)133830926</subfield>
+    <subfield code="0">(DE-576)168433729</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Erzählungen und Mährchen aus dem Reiche des Wunderbaren und Schauerlichen</subfield>
+    <subfield code="c">von T. H. Friedrich</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin</subfield>
+    <subfield code="b">Schüppel</subfield>
+    <subfield code="c">1819</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">247 S</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="533" ind1=" " ind2=" ">
+    <subfield code="a">Reproduktion</subfield>
+    <subfield code="d">2009</subfield>
+    <subfield code="e">Online-Ressource</subfield>
+    <subfield code="f">Corvey Digital Collection : Literature of the 18th and 19th Centuries</subfield>
+    <subfield code="7">|2009||||||||||</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Mikroform</subfield>
+    <subfield code="a">Friedrich, Theodor H.</subfield>
+    <subfield code="t">Erzählungen und Mährchen aus dem Reiche des Wunderbaren und Schauerlichen</subfield>
+    <subfield code="b">[Mikrofiche-Ausg.]</subfield>
+    <subfield code="d">Berlin : Schüppel, 1819</subfield>
+    <subfield code="h">247 S</subfield>
+    <subfield code="z">3628406307</subfield>
+    <subfield code="w">(DE-627)046803459</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://www.gbv.de/dms/belser/dllm/40630-1.pdf</subfield>
+    <subfield code="m">B:Belser</subfield>
+    <subfield code="q">application/pdf</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Volltext</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CDC</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">1273290593</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="h">5:INTERN</subfield>
+    <subfield code="k">http://erf.sbb.spk-berlin.de/han/657053732/www.gbv.de/dms/belser/dllm/40630-1.pdf</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>11</zs:recordPosition></zs:record></zs:records><zs:echoedSearchRetrieveRequest><zs:version>1.1</zs:version><zs:query>pica.xall="trauriger tiger"</zs:query><zs:startRecord>11</zs:startRecord><zs:maximumRecords>5</zs:maximumRecords><zs:recordPacking>xml</zs:recordPacking><zs:recordSchema>marcxml</zs:recordSchema></zs:echoedSearchRetrieveRequest></zs:searchRetrieveResponse>

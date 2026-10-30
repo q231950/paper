@@ -1,0 +1,15 @@
+{
+   "message" : [
+      {
+         "lang" : "en",
+         "errno" : "1",
+         "content" : "failed to get PICA record (500): Received invalid PICA+ while fetching record from dbsid \"1\" on host \"lbssbb.gbv.de:8080\":\n\n<B>IDXNOTFOUND</B> not found at lib/GBV/App/DAIA/Core.pm line 193.\n"
+      }
+   ],
+   "institution" : {
+      "content" : "",
+      "id" : "http://uri.gbv.de/organization/isil/DE-1"
+   },
+   "version" : "0.5",
+   "timestamp" : "2026-10-30T10:08:04Z"
+}

@@ -6,8 +6,10 @@ use crate::model::Loan;
 use crate::model::SearchResultDetail;
 use crate::model::API;
 
+use super::k10plus_sru::K10plusSruSearchDetailScraper;
 use super::opc4v2_13vzg6::Opc4v2_13Vzg6SearchDetailScraper;
 use super::public_hamburg::HamburgPublicSearchDetailScraper;
+use super::vufind::VuFindSearchDetailScraper;
 
 #[derive(uniffi::Object)]
 pub(crate) struct SearchDetailScraper {
@@ -77,14 +79,31 @@ impl SearchDetailScraper {
     ) -> Result<SearchResultDetail, PaperError> {
         let api_client =
             APIClient::new_with_network_client(client.to_owned(), self.configuration.catalog_url());
-        let document = api_client.get_html_at_path(url).await?;
 
         match self.configuration {
             crate::model::API::HamburgPublic => {
+                let document = api_client.get_html_at_path(url).await?;
                 Ok(HamburgPublicSearchDetailScraper::search_result_detail_from(document).await)
             }
             crate::model::API::Opc4v2_13Vzg6 { .. } => {
+                let document = api_client.get_html_at_path(url).await?;
                 Opc4v2_13Vzg6SearchDetailScraper {}.search_detail_from(document)
+            }
+            crate::model::API::VuFind { .. } => {
+                let document = api_client.get_html_at_path(url).await?;
+                VuFindSearchDetailScraper {
+                    base_url: self.configuration.base_url(),
+                }
+                .search_detail_from(document)
+            }
+            // the SRU interface returns MARC XML instead of HTML
+            crate::model::API::K10plusSru { ref database } => {
+                let xml = api_client.get_xml(url).await?;
+                K10plusSruSearchDetailScraper {
+                    database: database.clone(),
+                }
+                .search_detail(client, xml)
+                .await
             }
         }
     }

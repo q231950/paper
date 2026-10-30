@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/"><zs:version>1.1</zs:version><zs:numberOfRecords>175503</zs:numberOfRecords><zs:records><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22     2c 4500</leader>
+  <controlfield tag="001">1986846954</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20261015105150.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">261015s2027    xxu|||||o     00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781003786405</subfield>
+    <subfield code="q">electronic bk.</subfield>
+    <subfield code="9">978-1-003-78640-5</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">9781041331636</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">1041331630</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">9781041331667</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">1041331665</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1986846954</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KEP128138122</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(EbpS)4470204</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627-1)128138122</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">QA76.9.Q36</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Skubis, Ida</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/no2025091782</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Human-AI collaboration in research</subfield>
+    <subfield code="b">practical applications, ethical frameworks, and future directions</subfield>
+    <subfield code="c">Ida Skubis, Daniel Xerri and Mladen Adamovic</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">First edition</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Boca Raton</subfield>
+    <subfield code="b">CRC Press</subfield>
+    <subfield code="c">2027</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2=" ">
+    <subfield code="a">The role and ethics of humanoid robots in contemporary research contexts -- Facilitating teacher-researchers' reflection on classroom inquiry through generative artificial intelligence -- Using ChatGPT in management research : a practical guide for scholars -- The future of human-AI collaboration in research : redesigning inquiry through symbiotic partnerships.</subfield>
+  </datafield>
+  <datafield tag="532" ind1="8" ind2=" ">
+    <subfield code="a">"EBSCO evaluates our products based on the Web Content Accessibility Guidelines (WCAG) and the related Section 508 and EN 301 549 regulations in the US and EU. Most EBSCO products are substantially conformant with WCAG 2.2 level AA." Source: https://connect.ebsco.com/s/article/EBSCO-VPATs?language=en_US. Last accessed April 22, 2025.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Quantitative research</subfield>
+    <subfield code="x">Data processing</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Human-computer interaction</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artificial intelligence</subfield>
+    <subfield code="x">Industrial applications</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artificial intelligence</subfield>
+    <subfield code="x">Moral and ethical aspects</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Xerri, Daniel</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2009078409</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Adamovic, Mladen</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2026529190</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="n">Online-Ausgabe</subfield>
+    <subfield code="a">Skubis, Ida</subfield>
+    <subfield code="t">Human-AI collaboration in research</subfield>
+    <subfield code="b">First edition</subfield>
+    <subfield code="d">Boca Raton : CRC Press, 2027</subfield>
+    <subfield code="z">9781003786405</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="z">9781041331636</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=4470204</subfield>
+    <subfield code="m">X:EBSCO</subfield>
+    <subfield code="x">Aggregator</subfield>
+    <subfield code="z">lizenzpflichtig</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">GBV-4-NLEBK-SBB</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-4-NLEBK</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">505539255X</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">e</subfield>
+    <subfield code="h">5:REMOTE</subfield>
+    <subfield code="k">http://erf.sbb.spk-berlin.de/han/1000702200/search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=4470204</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>1</zs:recordPosition></zs:record><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22     2c 4500</leader>
+  <controlfield tag="001">1986846865</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20261015105149.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">261015s2027    xxu|||||o     00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781003626558</subfield>
+    <subfield code="q">electronic bk.</subfield>
+    <subfield code="9">978-1-003-62655-8</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1003626556</subfield>
+    <subfield code="q">electronic bk.</subfield>
+    <subfield code="9">1-003-62655-6</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">9781041040408</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">1041040407</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1986846865</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KEP128848812</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(EbpS)4470581</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627-1)128848812</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">PN4784.F27</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">070.43</subfield>
+    <subfield code="2">23</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Combating misinformation in the age of generative AI</subfield>
+    <subfield code="b">current trends and future challenges</subfield>
+    <subfield code="c">edited by Mohamed Lahby, Satu Elisa Schaeffer, Yassine Maleh, and Jyoti Sekhar Banerjee</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Boca Raton</subfield>
+    <subfield code="a">Abingdon</subfield>
+    <subfield code="b">CRC Press</subfield>
+    <subfield code="c">2027</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (xvi, 278 pages)</subfield>
+    <subfield code="b">illustrations</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index</subfield>
+  </datafield>
+  <datafield tag="532" ind1="8" ind2=" ">
+    <subfield code="a">"EBSCO evaluates our products based on the Web Content Accessibility Guidelines (WCAG) and the related Section 508 and EN 301 549 regulations in the US and EU. Most EBSCO products are substantially conformant with WCAG 2.2 level AA." Source: https://connect.ebsco.com/s/article/EBSCO-VPATs?language=en_US. Last accessed April 22, 2025.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fake news</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Misinformation</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Digital media</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Generative artificial intelligence</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artificial intelligence</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lahby, Mohamed</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2023051802</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schaeffer, Satu Elisa</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2026004423</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Maleh, Yassine</subfield>
+    <subfield code="d">1987-</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="0">(worldcat)E39PCjwxcfTJMmgYPcPC7cGCgq</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2018000153</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Banerjee, Jyoti Sekhar</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2022038464</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="n">Online-Ausgabe</subfield>
+    <subfield code="t">Combating misinformation in the age of generative AI</subfield>
+    <subfield code="b">First edition</subfield>
+    <subfield code="d">Boca Raton : CRC Press, 2026</subfield>
+    <subfield code="z">9781003626558</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="z">9781041040408</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=4470581</subfield>
+    <subfield code="m">X:EBSCO</subfield>
+    <subfield code="x">Aggregator</subfield>
+    <subfield code="z">lizenzpflichtig</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">GBV-4-NLEBK-SBB</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-4-NLEBK</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">5055392460</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">e</subfield>
+    <subfield code="h">5:REMOTE</subfield>
+    <subfield code="k">http://erf.sbb.spk-berlin.de/han/1000702200/search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=4470581</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>2</zs:recordPosition></zs:record><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">1983549592</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260929213334.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">260908s2027    xxu|||||o     00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781003615989</subfield>
+    <subfield code="q">ebook</subfield>
+    <subfield code="9">978-1-003-61598-9</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1983549592</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1983549592</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">GN345.6</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Intercultural communication in an age of disruption</subfield>
+    <subfield code="c">edited by Haynes Collins and Ramzi Merabet</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York</subfield>
+    <subfield code="a">London</subfield>
+    <subfield code="b">Routledge</subfield>
+    <subfield code="c">2027</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (x, 234 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Routledge studies in language and intercultural communication</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"This edited volume is grounded in the recognition that we are living in an age of disruption, evident on multiple fronts including rising global inequality, environmental degradation, war, the unchecked growth of generative AI, the mining of our attention by digital tech corporations and increasingly polarised political discourse. Representing a diverse range of voices, disciplines and contexts, the contributors to this book respond to this current state by considering its effects on their working environment and practices and how their understanding of interculturality is transformed in relation to these global conditions. Through engaging with these contributors who actively research and critically interrogate interculturality as a core concept, this book makes a significant contribution to the field of intercultural communication, arguing that the future relevance and theoretical potential of interculturality is contingent on maintaining a critical approach to the concept while preserving an open perspective to social interaction which emphasises interdependence. This book will be essential for academics, postgraduate researchers, and teachers working in intercultural studies and related fields"-- Provided by publisher</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Intercultural communication</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85067222</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Globalization</subfield>
+    <subfield code="x">Social aspects</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008115204</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Social interaction</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85123965</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Collins, Haynes</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2026512745</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Merabet, Ramzi</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n2026512746</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="776" ind1="1" ind2=" ">
+    <subfield code="z">9781041016892</subfield>
+    <subfield code="c">hbk</subfield>
+  </datafield>
+  <datafield tag="776" ind1="1" ind2=" ">
+    <subfield code="z">9781041016939</subfield>
+    <subfield code="c">pbk</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="n">Druck-Ausgabe</subfield>
+    <subfield code="a">Collins, Haynes</subfield>
+    <subfield code="t">Intercultural communication in an age of disruption</subfield>
+    <subfield code="d">New York, NY : Routledge, 2027</subfield>
+    <subfield code="h">x, 234 pages</subfield>
+    <subfield code="z">9781041016892</subfield>
+    <subfield code="w">(DE-627)1968050701</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=4469809</subfield>
+    <subfield code="x">Aggregator</subfield>
+    <subfield code="z">lizenzpflichtig</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-4-NLEBK</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">5031634146</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">e</subfield>
+    <subfield code="h">5:REMOTE</subfield>
+    <subfield code="k">http://erf.sbb.spk-berlin.de/han/1000702200/search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=4469809</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>3</zs:recordPosition></zs:record></zs:records><zs:echoedSearchRetrieveRequest><zs:version>1.1</zs:version><zs:query>pica.xall="AI"</zs:query><zs:startRecord>1</zs:startRecord><zs:maximumRecords>3</zs:maximumRecords><zs:recordPacking>xml</zs:recordPacking><zs:recordSchema>marcxml</zs:recordSchema></zs:echoedSearchRetrieveRequest></zs:searchRetrieveResponse>

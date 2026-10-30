@@ -1,0 +1,41 @@
+{
+   "timestamp" : "2026-10-30T10:08:02Z",
+   "version" : "0.5",
+   "institution" : {
+      "id" : "http://uri.gbv.de/organization/isil/DE-1",
+      "content" : ""
+   },
+   "document" : [
+      {
+         "item" : [
+            {
+               "unavailable" : [
+                  {
+                     "service" : "interloan",
+                     "href" : "http://lbssbb.gbv.de:8080/loan/RES?EPN=4398075666&MTR=mon&BES=1",
+                     "expected" : "2026-11-09",
+                     "queue" : "1"
+                  },
+                  {
+                     "service" : "presentation",
+                     "href" : "http://lbssbb.gbv.de:8080/loan/RES?EPN=4398075666&MTR=mon&BES=1",
+                     "expected" : "2026-11-09",
+                     "queue" : "1"
+                  },
+                  {
+                     "service" : "loan",
+                     "expected" : "2026-11-09",
+                     "href" : "http://lbssbb.gbv.de:8080/loan/RES?EPN=4398075666&MTR=mon&BES=1",
+                     "queue" : "1"
+                  }
+               ],
+               "label" : "1 B 206295",
+               "href" : "http://lbssbb.gbv.de:8080/DB=1/PPNSET?PPN=1848581882",
+               "id" : "http://uri.gbv.de/document/opac-de-1:epn:4398075666"
+            }
+         ],
+         "id" : "http://uri.gbv.de/document/opac-de-1:ppn:1848581882",
+         "href" : "http://lbssbb.gbv.de:8080/DB=1/PPNSET?PPN=1848581882"
+      }
+   ]
+}

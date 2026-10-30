@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/"><zs:version>1.1</zs:version><zs:numberOfRecords>1</zs:numberOfRecords><zs:records><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">1848581882</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251201103720.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">230609s2023    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2022041656</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780691206417</subfield>
+    <subfield code="q">paperback</subfield>
+    <subfield code="9">978-0-691-20641-7</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780691203928</subfield>
+    <subfield code="q">hardcover</subfield>
+    <subfield code="9">978-0-691-20392-8</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1848581882</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1848581882</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">QC52</subfield>
+  </datafield>
+  <datafield tag="072" ind1=" " ind2="7">
+    <subfield code="a">SCI040000</subfield>
+    <subfield code="a">COM094000</subfield>
+    <subfield code="2">bisacsh</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">530.0285</subfield>
+    <subfield code="q">DLC</subfield>
+    <subfield code="2">23/eng20230422</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">UC 600</subfield>
+    <subfield code="q">DE-16</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/145524:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">33.06</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">39.20</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">54.72</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Acquaviva, Viviana</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Machine learning for physics and astronomy</subfield>
+    <subfield code="c">Viviana Acquaviva</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Princeton</subfield>
+    <subfield code="a">Oxford</subfield>
+    <subfield code="b">Princeton University Press</subfield>
+    <subfield code="c">[2023]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">© 2023</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">xvi, 259 Seiten</subfield>
+    <subfield code="b">Illustrationen, Diagramme</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Literaturverzeichnis: Seiten 249-256</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"A hands-on introduction to machine learning and its applications to the physical sciences. As the size and complexity of data continue to grow exponentially across the physical sciences, machine learning is helping scientists to sift through and analyze this information while driving breathtaking advances in quantum physics, astronomy, cosmology, and beyond. This incisive textbook covers the basics of building, diagnosing, optimizing, and deploying machine learning methods to solve research problems in physics and astronomy, with an emphasis on critical thinking and the scientific method. Using a hands-on approach to learning, Machine Learning for Physics and Astronomy draws on real-world, publicly available data as well as examples taken directly from the frontiers of research, from identifying galaxy morphology from images to identifying the signature of standard model particles in simulations at the Large Hadron Collider. Introduces readers to best practices in data-driven problem-solving, from preliminary data exploration and cleaning to selecting the best method for a given task. Each chapter is accompanied by Jupyter Notebook worksheets in Python that enable students to explore key conceptsIncludes a wealth of review questions and quizzesIdeal for advanced undergraduate and early graduate students in STEM disciplines such as physics, computer science, engineering, and applied mathematics. Accessible to self-learners with a basic knowledge of linear algebra and calculus. Slides and assessment questions (available only to instructors)."</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Physics</subfield>
+    <subfield code="x">Data processing</subfield>
+    <subfield code="v">Textbooks</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Astrophysics</subfield>
+    <subfield code="x">Data processing</subfield>
+    <subfield code="v">Textbooks</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Astronomy</subfield>
+    <subfield code="x">Data processing</subfield>
+    <subfield code="v">Textbooks</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Machine learning</subfield>
+    <subfield code="v">Textbooks</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">SCIENCE / Physics / Mathematical &amp; Computational</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">COMPUTERS / Data Science / Machine Learning</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Astronomie, Raum und Zeit</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Astronomy, space &amp; time</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Astrophysik</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">COM094000</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Maschinelles Lernen</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Physik</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">SCIENCE / Astronomy</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">SCIENCE / Astrophysics &amp; Space Science</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">SCIENCE / Mathematical Physics</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">SCIENCE / Research &amp; Methodology</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4045956-1</subfield>
+    <subfield code="0">(DE-627)106199900</subfield>
+    <subfield code="0">(DE-576)209067276</subfield>
+    <subfield code="a">Physik</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4003311-9</subfield>
+    <subfield code="0">(DE-627)106389963</subfield>
+    <subfield code="0">(DE-576)208851119</subfield>
+    <subfield code="a">Astronomie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4193754-5</subfield>
+    <subfield code="0">(DE-627)105224782</subfield>
+    <subfield code="0">(DE-576)21008944X</subfield>
+    <subfield code="a">Maschinelles Lernen</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="776" ind1="1" ind2=" ">
+    <subfield code="z">9780691249537</subfield>
+    <subfield code="c">ebook</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="n">Online-Ausgabe</subfield>
+    <subfield code="a">Acquaviva, Viviana</subfield>
+    <subfield code="t">Machine learning for physics and astronomy</subfield>
+    <subfield code="d">Princeton : Princeton University Press, 2023</subfield>
+    <subfield code="z">9780691249537</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://www.dietmardreier.de/annot/426F6F6B446174617C7C393738303639313230333932387C7C434F50.jpg?sq=1</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Cover</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://www.gbv.de/dms/tib-ub-hannover/1848581882.pdf</subfield>
+    <subfield code="m">V:DE-601</subfield>
+    <subfield code="m">B:DE-89</subfield>
+    <subfield code="q">pdf/application</subfield>
+    <subfield code="v">2025-01-16</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4398075666</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1 B 206295</subfield>
+    <subfield code="h">2</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">UC 600</subfield>
+    <subfield code="b">EDV in der Physik allgemein</subfield>
+    <subfield code="k">Physik</subfield>
+    <subfield code="k">Enzyklopädien und Lehrbücher</subfield>
+    <subfield code="k">EDV in der Physik allgemein</subfield>
+    <subfield code="0">(DE-627)1271534746</subfield>
+    <subfield code="0">(DE-625)rvk/145524:</subfield>
+    <subfield code="0">(DE-576)201534746</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">33.06</subfield>
+    <subfield code="j">Mathematische Methoden der Physik</subfield>
+    <subfield code="0">(DE-627)106407937</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">39.20</subfield>
+    <subfield code="j">Theoretische Astronomie: Allgemeines</subfield>
+    <subfield code="0">(DE-627)106407031</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">54.72</subfield>
+    <subfield code="j">Künstliche Intelligenz</subfield>
+    <subfield code="0">(DE-627)10641240X</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>1</zs:recordPosition></zs:record></zs:records><zs:echoedSearchRetrieveRequest><zs:version>1.1</zs:version><zs:query>pica.xppn=1848581882</zs:query><zs:maximumRecords>1</zs:maximumRecords><zs:recordPacking>xml</zs:recordPacking><zs:recordSchema>marcxml</zs:recordSchema></zs:echoedSearchRetrieveRequest></zs:searchRetrieveResponse>
