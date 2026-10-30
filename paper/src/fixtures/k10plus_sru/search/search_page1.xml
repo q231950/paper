@@ -1,0 +1,1317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/"><zs:version>1.1</zs:version><zs:numberOfRecords>11</zs:numberOfRecords><zs:records><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">1886167923</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20241031003844.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">240417s2024    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">24,N16</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">1325846570</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783423284226</subfield>
+    <subfield code="q">EUR 24.00 (DE), EUR 24.70 (AT), circa CHF 32.50 (freier Preis)</subfield>
+    <subfield code="9">978-3-423-28422-6</subfield>
+  </datafield>
+  <datafield tag="024" ind1="3" ind2=" ">
+    <subfield code="a">9783423284226</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1886167923</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)DNB1325846570</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="h">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE-BY</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">360</subfield>
+    <subfield code="q">DE-101</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Zba</subfield>
+    <subfield code="2">asb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">ZAA</subfield>
+    <subfield code="2">ssd</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">S</subfield>
+    <subfield code="2">sfb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">R 11</subfield>
+    <subfield code="2">kab</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">IH 96000</subfield>
+    <subfield code="q">DE-24/24sred</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/59116:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">18.23</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">17.97</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Sinno, Neige</subfield>
+    <subfield code="d">1977-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1089873697</subfield>
+    <subfield code="0">(DE-627)853669309</subfield>
+    <subfield code="0">(DE-576)460466348</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Triste tigre</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Trauriger Tiger</subfield>
+    <subfield code="c">Neige Sinno ; aus dem Französischen von Michaela Meßner</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">München</subfield>
+    <subfield code="b">dtv</subfield>
+    <subfield code="c">2024</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">299 Seiten</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Hier auch später erschienene, unveränderte Nachdrucke</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Erlebnisbericht</subfield>
+    <subfield code="0">(DE-588)4133254-4</subfield>
+    <subfield code="0">(DE-627)105681490</subfield>
+    <subfield code="0">(DE-576)209642378</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Meßner, Michaela</subfield>
+    <subfield code="d">1962-</subfield>
+    <subfield code="e">ÜbersetzerIn</subfield>
+    <subfield code="0">(DE-588)137657846</subfield>
+    <subfield code="0">(DE-627)594518717</subfield>
+    <subfield code="0">(DE-576)304520527</subfield>
+    <subfield code="4">trl</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://deposit.dnb.de/cgi-bin/dokserv?id=efa527695d0e48e7a0254eca499a31ed&amp;prov=M&amp;dok_var=1&amp;dok_ext=htm</subfield>
+    <subfield code="m">X:MVB</subfield>
+    <subfield code="q">text/html</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltstext</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://d-nb.info/1325846570/04</subfield>
+    <subfield code="m">B:DE-101</subfield>
+    <subfield code="q">application/pdf</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4578850269</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">10 A 186926</subfield>
+    <subfield code="h">2</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">IH 96000</subfield>
+    <subfield code="b">Autoren des 21. Jahrhunderts (geb. ab 1975)</subfield>
+    <subfield code="k">Romanistik</subfield>
+    <subfield code="k">Französische Literatur im 20. und 21. Jahrhundert</subfield>
+    <subfield code="k">Französische Literatur im 21. Jahrhundert</subfield>
+    <subfield code="k">Literaturgeschichte</subfield>
+    <subfield code="k">Autoren des 21. Jahrhunderts (geb. ab 1975)</subfield>
+    <subfield code="0">(DE-627)1337286982</subfield>
+    <subfield code="0">(DE-625)rvk/59116:</subfield>
+    <subfield code="0">(DE-576)267286988</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">18.23</subfield>
+    <subfield code="j">Französische Literatur</subfield>
+    <subfield code="0">(DE-627)106405411</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">17.97</subfield>
+    <subfield code="j">Texte eines einzelnen Autors</subfield>
+    <subfield code="0">(DE-627)181571714</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>1</zs:recordPosition></zs:record><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">766866998</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260721162158.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">130904s2013    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">12,N51</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">1028771207</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783779504337</subfield>
+    <subfield code="q"> : EUR 14.90</subfield>
+    <subfield code="9">978-3-7795-0433-7</subfield>
+  </datafield>
+  <datafield tag="024" ind1="3" ind2=" ">
+    <subfield code="a">9783779504337</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)766866998</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)380936976</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV766866998</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)841553592</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1080911304</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1083841698</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE-NW</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">K</subfield>
+    <subfield code="q">DNB</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">1</subfield>
+    <subfield code="2">asb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">1</subfield>
+    <subfield code="2">ssd</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">1.2</subfield>
+    <subfield code="2">sfb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">I J 0</subfield>
+    <subfield code="2">kab</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">GE 6919</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/39237:</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Budde, Nadia</subfield>
+    <subfield code="d">1967-</subfield>
+    <subfield code="0">(DE-588)121048993</subfield>
+    <subfield code="0">(DE-627)081053606</subfield>
+    <subfield code="0">(DE-576)181847086</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Und außerdem sind Borsten schön</subfield>
+    <subfield code="c">Nadia Budde</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">2. Aufl.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Wuppertal</subfield>
+    <subfield code="b">Hammer</subfield>
+    <subfield code="c">2013</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[16] Bl.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="385" ind1=" " ind2=" ">
+    <subfield code="a">Kind</subfield>
+    <subfield code="0">(DE-588)4030550-8</subfield>
+    <subfield code="0">(DE-627)104360100</subfield>
+    <subfield code="0">(DE-576)208988165</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"Papas Kumpel Roderick/ findet sich am Hals zu dick". Und "seine schöne Frau Brigitte/ möchte eine dünne Mitte". Gereimtes Unbehagen mit ihrem Äusseren zeigen noch weitere Akteure, die auf farbig grundierten Seiten in witziger Überzeichnung vorgestellt werden. Vom Onkel Archibald, der gern "nur halb so alt" wäre bis zu Omas Pudel Helios, den seine Flecken stören, notieren die einfallsreich-vergnügten Reime ein vielstimmiges Missvergnügen an der eigenen Optik. Dann aber tritt Onkel Parzival auf, dem sein Äusseres egal ist. Mit erhobenem Zeigefinger steht er der Schar der Querulanten gegenüber. "Und er findet: eins ist wichtig .../ wie du bist, so bist du richtig!" N. Budde, Jugendliteraturpreisträgerin 2000, die zuletzt von unheimlichen Begegnungen erzählte, ist eine Spezialistin für kreativen Nonsens und pfiffige Wortspielereien. Erneut besticht ihre Gabe, witzige Inhalte mit kräftigem Strich durch kühne Bildszenen zu ergänzen, die die Eigenheiten der Akteure brillant betonen. Ein in Wort und Bild bestechendes Buch mit einleuchtender Quintessenz. Für alle empfohlen. Ab 4</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20240324</subfield>
+    <subfield code="f">DE-4165</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20260307</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">2</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bilderbuch</subfield>
+    <subfield code="0">(DE-588)4006604-6</subfield>
+    <subfield code="0">(DE-627)106376934</subfield>
+    <subfield code="0">(DE-576)208866299</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4257596-5</subfield>
+    <subfield code="0">(DE-627)104675519</subfield>
+    <subfield code="0">(DE-576)210565195</subfield>
+    <subfield code="a">Eitelkeit</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4054392-4</subfield>
+    <subfield code="0">(DE-627)10616290X</subfield>
+    <subfield code="0">(DE-576)209108509</subfield>
+    <subfield code="a">Selbstbewusstsein</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4128410-0</subfield>
+    <subfield code="0">(DE-627)105717517</subfield>
+    <subfield code="0">(DE-576)209601868</subfield>
+    <subfield code="a">Schönheitsideal</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://deposit.dnb.de/cgi-bin/dokserv?id=4205192&amp;prov=M&amp;dok_var=1&amp;dok_ext=htm</subfield>
+    <subfield code="m">X:MVB</subfield>
+    <subfield code="q">text/html</subfield>
+    <subfield code="3">Inhaltstext</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.perlentaucher.de/buch/nadia-budde/und-ausserdem-sind-borsten-schoen.html</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Rezension</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1424716446</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">53 BB 7730</subfield>
+    <subfield code="h">1:KJAMAG</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">Blocktest</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">GE 6919</subfield>
+    <subfield code="b">Kinderbücher (Textsammlungen und einzelne Autoren)</subfield>
+    <subfield code="k">Germanistik. Niederlandistik. Skandinavistik</subfield>
+    <subfield code="k">Deutsche Literatur</subfield>
+    <subfield code="k">Literaturgeschichte</subfield>
+    <subfield code="k">Textsammlungen</subfield>
+    <subfield code="k">Sammlungen nach Gattungen</subfield>
+    <subfield code="k">Kinderbücher (Textsammlungen und einzelne Autoren)</subfield>
+    <subfield code="0">(DE-627)1270860224</subfield>
+    <subfield code="0">(DE-625)rvk/39237:</subfield>
+    <subfield code="0">(DE-576)200860224</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>2</zs:recordPosition></zs:record><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">734167431</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240923211835.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">130116s2013    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">13,N03</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">1029522189</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783941087859</subfield>
+    <subfield code="q"> : EUR 18.00</subfield>
+    <subfield code="9">978-3-941087-85-9</subfield>
+  </datafield>
+  <datafield tag="024" ind1="3" ind2=" ">
+    <subfield code="a">9783941087859</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)734167431</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)973416743X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)DNB1029522189</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-Rt5)3513800</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE-BE</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">K</subfield>
+    <subfield code="q">DNB</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">6.7/Uhm 32</subfield>
+    <subfield code="2">asb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">6.7/UHM</subfield>
+    <subfield code="2">ssd</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">6/Bio 432</subfield>
+    <subfield code="2">sfb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">III N 72</subfield>
+    <subfield code="2">kab</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">DX 4310</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/20316:227</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Budde, Nadia</subfield>
+    <subfield code="d">1967-</subfield>
+    <subfield code="0">(DE-588)121048993</subfield>
+    <subfield code="0">(DE-627)081053606</subfield>
+    <subfield code="0">(DE-576)181847086</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Großstadttiere</subfield>
+    <subfield code="c">aufgescheucht, aufgeschreckt, (auf)ges. von Nadia Budde</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin</subfield>
+    <subfield code="b">Jacoby &amp; Stuart</subfield>
+    <subfield code="c">2013</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[66] Bl.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+    <subfield code="c">25 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="385" ind1=" " ind2=" ">
+    <subfield code="a">Kind</subfield>
+    <subfield code="0">(DE-588)4030550-8</subfield>
+    <subfield code="0">(DE-627)104360100</subfield>
+    <subfield code="0">(DE-576)208988165</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Die Wörter "aufgescheucht" und "aufgeschreckt" in der Verf.-Angabe sind in der Vorlage durchgestrichen</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Die kunstvoll-schrägen Bilderbücher der preisgekrönten Illustratorin Nadia Budde lassen sich nicht so leicht in eine Schublade stecken. Wie zuletzt "Und ausserdem sind Borsten schön" ist auch "Grossstadttiere" mit einer ordentlichen Portion Selbstironie nicht nur für Kinder, sondern auch für Erwachsene ein echter Leckerbissen. Mit gewohnt assoziativem Sprachwitz (Pariser Ratten wohnen oft da, wo es rattert) und mit geradezu parodistischen Gesellschaftsbeobachtungen lädt der Titel augenzwinkernd zum Schmunzeln ein: Mit beginnendem Grauhaar wird bei den menschlichen Grossstadtbewohnern häufig zur Haarfärbung in den verschiedensten Rot-Schattierungen gegriffen - wohingegen es bei den Eichhörnchen andersherum ist, und die kräftigen grauen Eichhörnhen die schwächeren roten mehr und mehr verdrängen. Auf diesen Vergleich muss man erst mal kommen ... Die ureigene Art der Illustration tut ihr Übriges. Neben dem weichgespülten Bilderbucheinerlei eine künstlerische Bereicherung für die Kinderbibliothek. Ich empfehle: ein bisschen Nonsens für alle. Ab 4</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20240324</subfield>
+    <subfield code="f">DE-4165</subfield>
+    <subfield code="z">3</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bilderbuch</subfield>
+    <subfield code="0">(DE-588)4006604-6</subfield>
+    <subfield code="0">(DE-627)106376934</subfield>
+    <subfield code="0">(DE-576)208866299</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4022233-0</subfield>
+    <subfield code="0">(DE-627)106309943</subfield>
+    <subfield code="0">(DE-576)20894253X</subfield>
+    <subfield code="a">Großstadt</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4060087-7</subfield>
+    <subfield code="0">(DE-627)106140914</subfield>
+    <subfield code="0">(DE-576)209133716</subfield>
+    <subfield code="a">Tiere</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://deposit.dnb.de/cgi-bin/dokserv?id=4227679&amp;prov=M&amp;dok_var=1&amp;dok_ext=htm</subfield>
+    <subfield code="m">X: MVB</subfield>
+    <subfield code="q">text/html</subfield>
+    <subfield code="v">2013-05-01</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltstext</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1424729904</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">53 MA 25345</subfield>
+    <subfield code="h">1:KJAMAG</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">DX 4310</subfield>
+    <subfield code="b">Primärliteratur</subfield>
+    <subfield code="k">Pädagogik</subfield>
+    <subfield code="k">Jugendliteratur</subfield>
+    <subfield code="k">Erzählungen für Kinder</subfield>
+    <subfield code="k">Erzählungen mit und von Tieren</subfield>
+    <subfield code="k">Primärliteratur</subfield>
+    <subfield code="0">(DE-627)1271663880</subfield>
+    <subfield code="0">(DE-625)rvk/20316:227</subfield>
+    <subfield code="0">(DE-576)201663880</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>3</zs:recordPosition></zs:record><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">545545943</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250208050300.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">070926s2007    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">07,N41,0055</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">985739169</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3937383506</subfield>
+    <subfield code="q">Gh. : EUR 4.00</subfield>
+    <subfield code="9">3-937383-50-6</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783937383507</subfield>
+    <subfield code="q"> : Gh. : EUR 4.00</subfield>
+    <subfield code="9">978-3-937383-50-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)545545943</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)DNB985739169</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE-BE</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">330</subfield>
+    <subfield code="a">360</subfield>
+    <subfield code="q">BSZ</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">004</subfield>
+    <subfield code="a">650</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">QM 000</subfield>
+    <subfield code="q">BSZ</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/141766:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">83.79</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Zehle, Soenke</subfield>
+    <subfield code="0">(DE-588)1096209551</subfield>
+    <subfield code="0">(DE-627)856606316</subfield>
+    <subfield code="0">(DE-576)467918988</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Unsichtbare Kosten</subfield>
+    <subfield code="b">ungleiche Verteilung ökologischer Risiken in der globalen Computerindustrie</subfield>
+    <subfield code="c">Soenke Zehle; Lotte Arndt; Sarah Bormann</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">August 2007</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin</subfield>
+    <subfield code="b">WEED</subfield>
+    <subfield code="c">2007</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">48 S.</subfield>
+    <subfield code="b">Ill.</subfield>
+    <subfield code="c">297 mm x 210 mm, 140 gr.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.1\x</subfield>
+    <subfield code="a">Computer</subfield>
+    <subfield code="0">(DE-627)091353955</subfield>
+    <subfield code="0">(DE-2867)14751-6</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.2\x</subfield>
+    <subfield code="a">Computerindustrie</subfield>
+    <subfield code="0">(DE-627)09135403X</subfield>
+    <subfield code="0">(DE-2867)13072-3</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.3\x</subfield>
+    <subfield code="a">Umweltbelastung</subfield>
+    <subfield code="0">(DE-627)091395933</subfield>
+    <subfield code="0">(DE-2867)15763-1</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.4\x</subfield>
+    <subfield code="a">Produktionswirtschaft</subfield>
+    <subfield code="0">(DE-627)091384559</subfield>
+    <subfield code="0">(DE-2867)12712-5</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.5\x</subfield>
+    <subfield code="a">Schrott</subfield>
+    <subfield code="0">(DE-627)091388465</subfield>
+    <subfield code="0">(DE-2867)14273-2</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.6\x</subfield>
+    <subfield code="a">Abfallentsorgung</subfield>
+    <subfield code="0">(DE-627)091345421</subfield>
+    <subfield code="0">(DE-2867)24621-6</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.7\x</subfield>
+    <subfield code="a">Stoffstrommanagement</subfield>
+    <subfield code="0">(DE-627)091392802</subfield>
+    <subfield code="0">(DE-2867)19561-0</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.8\x</subfield>
+    <subfield code="a">Nachhaltige Entwicklung</subfield>
+    <subfield code="0">(DE-627)091379121</subfield>
+    <subfield code="0">(DE-2867)18325-3</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="8">1.9\x</subfield>
+    <subfield code="a">Welt</subfield>
+    <subfield code="0">(DE-627)09140004X</subfield>
+    <subfield code="0">(DE-2867)16809-5</subfield>
+    <subfield code="2">stw</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Elektronikschrott</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Entsorgung</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Ressourcenpolitik</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Umweltbewußtsein/Verhalten</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="0">(DE-206)34</subfield>
+    <subfield code="a">Graue Literatur</subfield>
+    <subfield code="5">DE-206</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4043207-5</subfield>
+    <subfield code="0">(DE-627)104434910</subfield>
+    <subfield code="0">(DE-576)209054700</subfield>
+    <subfield code="a">Ökologie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4148256-6</subfield>
+    <subfield code="0">(DE-627)104393319</subfield>
+    <subfield code="0">(DE-576)209763116</subfield>
+    <subfield code="a">Computerindustrie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4557997-0</subfield>
+    <subfield code="0">(DE-627)302297111</subfield>
+    <subfield code="0">(DE-576)213686155</subfield>
+    <subfield code="a">Globalisierung</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Arndt, Lotte</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bormann, Sarah</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.gbv.de/dms/hbz/toc/ht015357907.pdf</subfield>
+    <subfield code="m">V:DE-605</subfield>
+    <subfield code="q">pdf/application</subfield>
+    <subfield code="v">2008-11-15</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="y">Inhaltsverzeichnis</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">858047101</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1 B 115680</subfield>
+    <subfield code="h">2</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">QM 000</subfield>
+    <subfield code="b">Allgemeines (reale und monetäre Aspekte)</subfield>
+    <subfield code="k">Wirtschaftswissenschaften</subfield>
+    <subfield code="k">Internationaler Handel. Zahlungsbilanz und Wechselkurse</subfield>
+    <subfield code="k">Allgemeines (reale und monetäre Aspekte)</subfield>
+    <subfield code="0">(DE-627)127087778X</subfield>
+    <subfield code="0">(DE-625)rvk/141766:</subfield>
+    <subfield code="0">(DE-576)20087778X</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">83.79</subfield>
+    <subfield code="j">Wirtschaftssektoren: Sonstiges</subfield>
+    <subfield code="0">(DE-627)10642033X</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>4</zs:recordPosition></zs:record><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">512652910</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20201104152601.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">060601s2007    gw ||||| m    00| ||ger c</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2007416962</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783412058067</subfield>
+    <subfield code="q">gb. : EUR 44.90 (D), EUR 46.20 (A), sFr 77.00</subfield>
+    <subfield code="9">978-3-412-05806-7</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3412058068</subfield>
+    <subfield code="9">3-412-05806-8</subfield>
+  </datafield>
+  <datafield tag="024" ind1="3" ind2=" ">
+    <subfield code="a">9783412058067</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)512652910</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)254969569</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV512652910</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)85842908</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+    <subfield code="c">XA-AT</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">HM636</subfield>
+  </datafield>
+  <datafield tag="060" ind1=" " ind2="0">
+    <subfield code="a">2007 D-669</subfield>
+  </datafield>
+  <datafield tag="060" ind1=" " ind2="0">
+    <subfield code="a">HM 636</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">306.46130949409033</subfield>
+    <subfield code="q">OCLC</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">300</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">8</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">MR 6800</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/123536:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">NN 5110</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/126951:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">08.36</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">15.08</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">15.60</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">73.94</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">a</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Piller, Gudrun</subfield>
+    <subfield code="d">1968-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1081741120</subfield>
+    <subfield code="0">(DE-627)846576767</subfield>
+    <subfield code="0">(DE-576)454746059</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Private Körper</subfield>
+    <subfield code="b">Spuren des Leibes in Selbstzeugnissen des 18. Jahrhunderts</subfield>
+    <subfield code="c">Gudrun Piller</subfield>
+  </datafield>
+  <datafield tag="263" ind1=" " ind2=" ">
+    <subfield code="a">EUR 44.90</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Köln</subfield>
+    <subfield code="a">Weimar</subfield>
+    <subfield code="a">Wien</subfield>
+    <subfield code="b">Böhlau Verlag</subfield>
+    <subfield code="c">[2007]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">IX, 354 Seiten</subfield>
+    <subfield code="c">25 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Selbstzeugnisse der Neuzeit</subfield>
+    <subfield code="v">Band 17</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Quellen und Literaturverzeichnis: Seite 285-349</subfield>
+  </datafield>
+  <datafield tag="502" ind1=" " ind2=" ">
+    <subfield code="b">Dissertation</subfield>
+    <subfield code="c">Universität Basel</subfield>
+    <subfield code="d">2007</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">Human Body</subfield>
+    <subfield code="z">Switzerland</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">Autobiography</subfield>
+    <subfield code="z">Switzerland</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">History, 18th Century</subfield>
+    <subfield code="z">Switzerland</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">Self Concept</subfield>
+    <subfield code="z">Switzerland</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Quelle</subfield>
+    <subfield code="0">(DE-588)4135952-5</subfield>
+    <subfield code="0">(DE-627)105661236</subfield>
+    <subfield code="0">(DE-576)209665084</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Hochschulschrift</subfield>
+    <subfield code="0">(DE-588)4113937-9</subfield>
+    <subfield code="0">(DE-627)105825778</subfield>
+    <subfield code="0">(DE-576)209480580</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">g</subfield>
+    <subfield code="0">(DE-588)4070352-6</subfield>
+    <subfield code="0">(DE-627)106100440</subfield>
+    <subfield code="0">(DE-576)209180331</subfield>
+    <subfield code="a">Deutsche Schweiz</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4137718-7</subfield>
+    <subfield code="0">(DE-627)105647950</subfield>
+    <subfield code="0">(DE-576)209679972</subfield>
+    <subfield code="a">Körperbild</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="A">z</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="a">Sozialgeschichte 1700-1800</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2="0">
+    <subfield code="D">g</subfield>
+    <subfield code="0">(DE-588)4070352-6</subfield>
+    <subfield code="0">(DE-627)106100440</subfield>
+    <subfield code="0">(DE-576)209180331</subfield>
+    <subfield code="a">Deutsche Schweiz</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4120582-0</subfield>
+    <subfield code="0">(DE-627)105775460</subfield>
+    <subfield code="0">(DE-576)209536330</subfield>
+    <subfield code="a">Körpererfahrung</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2="2">
+    <subfield code="A">z</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="a">Sozialgeschichte 1700-1800</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4045798-9</subfield>
+    <subfield code="0">(DE-627)106200232</subfield>
+    <subfield code="0">(DE-576)20906689X</subfield>
+    <subfield code="a">Philosophische Anthropologie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4031575-7</subfield>
+    <subfield code="0">(DE-627)106264915</subfield>
+    <subfield code="0">(DE-576)208993282</subfield>
+    <subfield code="a">Körper</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4026482-8</subfield>
+    <subfield code="0">(DE-627)106288199</subfield>
+    <subfield code="0">(DE-576)208966544</subfield>
+    <subfield code="a">Identität</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="3">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4020754-7</subfield>
+    <subfield code="0">(DE-627)104658827</subfield>
+    <subfield code="0">(DE-576)208934650</subfield>
+    <subfield code="a">Gesundheit</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="4">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4123104-1</subfield>
+    <subfield code="0">(DE-627)104636912</subfield>
+    <subfield code="0">(DE-576)209556919</subfield>
+    <subfield code="a">Ehe</subfield>
+    <subfield code="g">Motiv</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="5">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4152054-3</subfield>
+    <subfield code="0">(DE-627)105541133</subfield>
+    <subfield code="0">(DE-576)209792477</subfield>
+    <subfield code="a">Elternschaft</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="6">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4069418-5</subfield>
+    <subfield code="0">(DE-627)106103504</subfield>
+    <subfield code="0">(DE-576)209176725</subfield>
+    <subfield code="a">Bewegungserziehung</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2="7">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4032844-2</subfield>
+    <subfield code="0">(DE-627)104493895</subfield>
+    <subfield code="0">(DE-576)208998896</subfield>
+    <subfield code="a">Krankheit</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="2" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="751" ind1=" " ind2=" ">
+    <subfield code="a">Basel</subfield>
+    <subfield code="0">(DE-588)4004617-5</subfield>
+    <subfield code="0">(DE-627)10638497X</subfield>
+    <subfield code="0">(DE-576)208856919</subfield>
+    <subfield code="4">uvp</subfield>
+  </datafield>
+  <datafield tag="787" ind1="0" ind2="8">
+    <subfield code="i">Rezension</subfield>
+    <subfield code="a">Hilmes, Carola</subfield>
+    <subfield code="t">[Rezension von: Piller, Gudrun, Private Körper, Spuren des Leibes in Selbstzeugnissen des 18. Jahrhunderts]</subfield>
+    <subfield code="d">2007</subfield>
+    <subfield code="w">(DE-627)602678773</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Selbstzeugnisse der Neuzeit</subfield>
+    <subfield code="v">Band 17</subfield>
+    <subfield code="9">17</subfield>
+    <subfield code="w">(DE-627)476731879</subfield>
+    <subfield code="w">(DE-576)048321249</subfield>
+    <subfield code="w">(DE-600)2173233-4</subfield>
+    <subfield code="x">2748-7482</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="u">http://hsozkult.geschichte.hu-berlin.de/rezensionen/2007-3-239</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.gbv.de/dms/hbz/toc/ht014749640.pdf</subfield>
+    <subfield code="m">V:DE-605</subfield>
+    <subfield code="q">pdf/application</subfield>
+    <subfield code="v">2008-11-15</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="y">Inhaltsverzeichnis</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://d-nb.info/980421594/04</subfield>
+    <subfield code="m">B:DE-604</subfield>
+    <subfield code="q">application/pdf</subfield>
+    <subfield code="v">20130501</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.h-net.org/reviews/showrev.php?id=21359</subfield>
+    <subfield code="v">2016-07-13</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="y">Book review (H-Net)</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://bvbr.bib-bvb.de:8991/F?func=service&amp;doc_library=BVB01&amp;doc_number=014878081&amp;line_number=0001&amp;func_code=DB_RECORDS&amp;service_type=MEDIA</subfield>
+    <subfield code="m">V:DE-604</subfield>
+    <subfield code="q">application/pdf</subfield>
+    <subfield code="v">20090731000000</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://www.hsozkult.de/publicationreview/id/rezbuecher-8497</subfield>
+    <subfield code="m">V:DE-576;X:HSozKult</subfield>
+    <subfield code="q">text/html</subfield>
+    <subfield code="v">20180418145248</subfield>
+    <subfield code="3">Rezension</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.sehepunkte.de/2007/05/11195.html</subfield>
+    <subfield code="m">V:DE-576;X:Sehepunkte</subfield>
+    <subfield code="q">text/html</subfield>
+    <subfield code="v">20180424124227</subfield>
+    <subfield code="3">Rezension</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">SSG-OPC-ang</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">809550180</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1 A 627682</subfield>
+    <subfield code="h">2</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">sf</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">Blocktest</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">MR 6800</subfield>
+    <subfield code="b">Kultur und Persönlichkeit (auch Sozial-, Nationalcharakter)</subfield>
+    <subfield code="k">Soziologie</subfield>
+    <subfield code="k">Sozialwissenschaftliche Theorien und Methoden</subfield>
+    <subfield code="k">Psychologische Ansätze</subfield>
+    <subfield code="k">Kultur und Persönlichkeit (auch Sozial-, Nationalcharakter)</subfield>
+    <subfield code="0">(DE-627)1271428431</subfield>
+    <subfield code="0">(DE-625)rvk/123536:</subfield>
+    <subfield code="0">(DE-576)201428431</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">NN 5110</subfield>
+    <subfield code="b">Kulturgeschichte</subfield>
+    <subfield code="k">Geschichte</subfield>
+    <subfield code="k">Neuere Geschichte</subfield>
+    <subfield code="k">Zeitalter des Absolutismus (1648 - 1789)</subfield>
+    <subfield code="k">Aufklärung</subfield>
+    <subfield code="k">Kulturgeschichte</subfield>
+    <subfield code="0">(DE-627)1271466651</subfield>
+    <subfield code="0">(DE-625)rvk/126951:</subfield>
+    <subfield code="0">(DE-576)201466651</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">08.36</subfield>
+    <subfield code="j">Philosophische Anthropologie</subfield>
+    <subfield code="0">(DE-627)106403060</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">15.08</subfield>
+    <subfield code="j">Sozialgeschichte</subfield>
+    <subfield code="0">(DE-627)181571005</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">15.60</subfield>
+    <subfield code="j">Schweiz</subfield>
+    <subfield code="j">Österreich-Ungarn</subfield>
+    <subfield code="j">Österreich</subfield>
+    <subfield code="x">Geschichte</subfield>
+    <subfield code="0">(DE-627)181571633</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">73.94</subfield>
+    <subfield code="j">Volkswissen</subfield>
+    <subfield code="j">Kulturtechniken</subfield>
+    <subfield code="x">Volkskunde</subfield>
+    <subfield code="0">(DE-627)181570920</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>5</zs:recordPosition></zs:record></zs:records><zs:echoedSearchRetrieveRequest><zs:version>1.1</zs:version><zs:query>pica.xall="trauriger tiger"</zs:query><zs:startRecord>1</zs:startRecord><zs:maximumRecords>5</zs:maximumRecords><zs:recordPacking>xml</zs:recordPacking><zs:recordSchema>marcxml</zs:recordSchema></zs:echoedSearchRetrieveRequest></zs:searchRetrieveResponse>

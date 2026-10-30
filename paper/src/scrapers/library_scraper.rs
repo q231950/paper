@@ -54,8 +54,10 @@ impl LibraryScraper {
 
                 self.opc4v2_13vzg6_fetch_on_current_runtime(&client).await
             }
-            // signing in to VuFind is not supported yet
-            crate::model::API::VuFind { .. } => Err(PaperError::NotImplementedError),
+            // signing in to VuFind or the K10plus SRU interface is not supported
+            crate::model::API::VuFind { .. } | crate::model::API::K10plusSru { .. } => {
+                Err(PaperError::NotImplementedError)
+            }
         }
     }
 }

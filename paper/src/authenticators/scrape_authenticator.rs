@@ -45,8 +45,10 @@ impl Authenticator {
                     Err(err) => Ok(ValidationStatus::Error(err.to_string())),
                 };
             }
-            // signing in to VuFind is not supported yet
-            crate::model::API::VuFind { .. } => Err(PaperError::NotImplementedError),
+            // signing in to VuFind or the K10plus SRU interface is not supported
+            crate::model::API::VuFind { .. } | crate::model::API::K10plusSru { .. } => {
+                Err(PaperError::NotImplementedError)
+            }
         }
     }
 }

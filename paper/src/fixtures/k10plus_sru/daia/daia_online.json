@@ -1,0 +1,20 @@
+{
+   "document" : [
+      {
+         "item" : [
+            {
+               "href" : "http://lbssbb.gbv.de:8080/DB=1/PPNSET?PPN=1986846954",
+               "id" : "http://uri.gbv.de/document/opac-de-1:epn:505539255X"
+            }
+         ],
+         "href" : "http://lbssbb.gbv.de:8080/DB=1/PPNSET?PPN=1986846954",
+         "id" : "http://uri.gbv.de/document/opac-de-1:ppn:1986846954"
+      }
+   ],
+   "timestamp" : "2026-10-30T10:08:03Z",
+   "version" : "0.5",
+   "institution" : {
+      "id" : "http://uri.gbv.de/organization/isil/DE-1",
+      "content" : ""
+   }
+}

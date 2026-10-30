@@ -39,8 +39,8 @@ impl RenewalService {
                     Err(PaperError::MissingRenewalToken)
                 }
             }
-            // signing in to VuFind is not supported yet
-            API::VuFind { .. } => Err(PaperError::NotImplementedError),
+            // signing in to VuFind or the K10plus SRU interface is not supported
+            API::VuFind { .. } | API::K10plusSru { .. } => Err(PaperError::NotImplementedError),
         }
     }
 

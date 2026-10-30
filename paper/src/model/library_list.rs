@@ -27,8 +27,10 @@ impl LibraryList {
                     identifier: "STABIKAT".to_string(),
                     name: "Berlin".to_string(),
                     subtitle: "StabiKat – Staatsbibliothek zu Berlin".to_string(),
-                    api: API::VuFind {
-                        base_url: "https://stabikat.de".to_string(),
+                    // stabikat.de puts its VuFind behind a human verification, the K10plus SRU
+                    // interface serves the same catalog
+                    api: API::K10plusSru {
+                        database: "opac-de-1".to_string(),
                     },
                     enabled_for_search: true,
                     enabled_for_login: false,

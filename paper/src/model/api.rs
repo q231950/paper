@@ -10,6 +10,11 @@ pub enum API {
     VuFind {
         base_url: String,
     },
+    /// A database of the K10plus SRU interface, e.g. `opac-de-1` of the Staatsbibliothek zu Berlin
+    /// https://wiki.k10plus.de/display/K10PLUS/SRU
+    K10plusSru {
+        database: String,
+    },
 }
 
 impl API {
@@ -18,6 +23,7 @@ impl API {
             API::HamburgPublic => "https://www.buecherhallen.de".to_string(),
             API::Opc4v2_13Vzg6 { base_url, .. } => base_url.clone(),
             API::VuFind { base_url } => base_url.trim_end_matches('/').to_string(),
+            API::K10plusSru { .. } => "https://sru.k10plus.de".to_string(),
         }
     }
 
@@ -25,7 +31,7 @@ impl API {
         match self {
             API::HamburgPublic => "https://buecherhallen.de".to_string(),
             API::Opc4v2_13Vzg6 { catalog_url, .. } => catalog_url.clone(),
-            API::VuFind { .. } => self.base_url(),
+            API::VuFind { .. } | API::K10plusSru { .. } => self.base_url(),
         }
     }
 
@@ -33,7 +39,7 @@ impl API {
         match self {
             API::HamburgPublic => None,
             API::Opc4v2_13Vzg6 { .. } => Some(format!("{}/LBS_WEB/login", self.base_url().clone())),
-            API::VuFind { .. } => None,
+            API::VuFind { .. } | API::K10plusSru { .. } => None,
         }
     }
 
@@ -45,7 +51,7 @@ impl API {
                 "{}/LBS_WEB/borrower/loans.htm",
                 self.base_url().clone()
             )),
-            API::VuFind { .. } => None,
+            API::VuFind { .. } | API::K10plusSru { .. } => None,
         }
     }
 
@@ -53,7 +59,7 @@ impl API {
         match self {
             API::HamburgPublic => None,
             API::Opc4v2_13Vzg6 { user_query_key, .. } => Some(user_query_key.clone()),
-            API::VuFind { .. } => None,
+            API::VuFind { .. } | API::K10plusSru { .. } => None,
         }
     }
 }
@@ -101,6 +107,19 @@ mod tests {
 
         assert_eq!(api_config.base_url(), "https://stabikat.de");
         assert_eq!(api_config.catalog_url(), "https://stabikat.de");
+        assert_eq!(api_config.login_url(), None);
+        assert_eq!(api_config.session_url(), None);
+        assert_eq!(api_config.user_query_key(), None);
+    }
+
+    #[test]
+    fn test_k10plus_sru_urls() {
+        let api_config = API::K10plusSru {
+            database: String::from("opac-de-1"),
+        };
+
+        assert_eq!(api_config.base_url(), "https://sru.k10plus.de");
+        assert_eq!(api_config.catalog_url(), "https://sru.k10plus.de");
         assert_eq!(api_config.login_url(), None);
         assert_eq!(api_config.session_url(), None);
         assert_eq!(api_config.user_query_key(), None);
