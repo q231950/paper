@@ -31,13 +31,13 @@ pub struct RecommenderConfig {
 
 #[derive(uniffi::Enum)]
 pub enum Model {
-    GPT4_1,
+    GptLunaLatest,
 }
 
 impl Model {
     pub fn identifier(&self) -> String {
         match self {
-            Model::GPT4_1 => "openai/gpt-4.1".to_string(),
+            Model::GptLunaLatest => "openai/gpt-4.1".to_string(),
         }
     }
 }
