@@ -87,13 +87,10 @@ impl Recommender {
             titles_bullets, json_format
         );
 
-        // `max_tokens` is deprecated in favour of `max_completion_tokens`; keep sending it so the
-        // request body stays the same for the configured OpenAI-compatible API base.
-        #[allow(deprecated)]
         let request = CreateChatCompletionRequestArgs::default()
             .model(config.model.identifier())
             .user("BTLB Recommender")
-            .max_tokens(500_u32)
+            .max_completion_tokens(500_u32)
             .response_format(ResponseFormat::JsonObject)
             .messages([ChatCompletionRequestUserMessageArgs::default()
                 .content(content)
