@@ -1,8 +1,8 @@
 use crate::error::PaperError;
 use async_openai::{
-    types::{
-        ChatCompletionRequestUserMessageArgs, ChatCompletionResponseFormat,
-        ChatCompletionResponseFormatType, CreateChatCompletionRequestArgs,
+    config::OpenAIConfig,
+    types::chat::{
+        ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs, ResponseFormat,
     },
     Client,
 };
@@ -31,13 +31,13 @@ pub struct RecommenderConfig {
 
 #[derive(uniffi::Enum)]
 pub enum Model {
-    GPT4_1,
+    GptLunaLatest,
 }
 
 impl Model {
     pub fn identifier(&self) -> String {
         match self {
-            Model::GPT4_1 => "openai/gpt-4.1".to_string(),
+            Model::GptLunaLatest => "~openai/gpt-luna-latest".to_string(),
         }
     }
 }
@@ -55,7 +55,7 @@ impl Recommender {
         config: RecommenderConfig,
     ) -> Result<Recommendation, PaperError> {
         let client = Client::with_config(
-            async_openai::config::OpenAIConfig::new()
+            OpenAIConfig::new()
                 .with_api_key(config.api_key)
                 .with_api_base(config.api_base),
         );
@@ -89,10 +89,9 @@ impl Recommender {
 
         let request = CreateChatCompletionRequestArgs::default()
             .model(config.model.identifier())
-            .max_tokens(500_u16)
-            .response_format(ChatCompletionResponseFormat {
-                r#type: ChatCompletionResponseFormatType::JsonObject,
-            })
+            .user("BTLB Recommender")
+            .max_completion_tokens(500_u32)
+            .response_format(ResponseFormat::JsonObject)
             .messages([ChatCompletionRequestUserMessageArgs::default()
                 .content(content)
                 .build()
