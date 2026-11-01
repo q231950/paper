@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/"><zs:version>1.1</zs:version><zs:numberOfRecords>1</zs:numberOfRecords><zs:records><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22     2c 4500</leader>
+  <controlfield tag="001">1937442705</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251120101807.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">250930s2025    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2025018334</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780807184516</subfield>
+    <subfield code="q">cloth</subfield>
+    <subfield code="9">978-0-8071-8451-6</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1937442705</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1937442705</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">U429.L68</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Drez, Ronald J.</subfield>
+    <subfield code="d">1940-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(uri)http://id.loc.gov/authorities/names/n93104312</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The long purple line</subfield>
+    <subfield code="b">the military history of LSU and the heroism of its cadets and associates</subfield>
+    <subfield code="c">Ronald J. Drez</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Military history of LSU and the heroism of its cadets and associates</subfield>
+  </datafield>
+  <datafield tag="263" ind1=" " ind2=" ">
+    <subfield code="a">2509</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Baton Rouge</subfield>
+    <subfield code="b">Louisiana State University Press</subfield>
+    <subfield code="c">[2025]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">pages cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2=" ">
+    <subfield code="a">1. The Ole War Skule -- 2. Awkward and Untutored -- 3. Reunion at Manassas -- 4. The Flush of Victory and the Seminary -- 5. Tigers in the Valley -- 6. Raphael Semmes: Sumter and Alabama -- 7. John Archer Lejeune: A Cadet at the New War Skule -- Graves Blanchard Erskine: Belleau Wood Lieutenant, Iwo Jima General -- 9. Arthur Abramson: Sinking the Rising Sun -- 10. Major General Troy Middleton: Tiger in the Ardennes -- 11. Claire Lee Chennault: The Flying Tigers -- 12. Robert Hilliard Barrow: From the Cadet Corps to War Below Zero -- 13. Conspicuous Gallantry and Heroism of the Ole War Skule.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"The Long Purple Line chronicles the military history of Louisiana State University from its founding in 1860 through all wars to the present. Ronald J. Drez unfolds that history through the actions and testimony of those who were there and who stepped out onto this nation's battlefields to create a military legend that would rival the famous Long Gray Line at West Point. As a land-grant university with a military commitment in the form of a Cadet Corps, LSU was destined to become a major contributor of distinguished military personnel in all of this country's engagements. LSU formed one of the first federal officer training units and has supplied an impressive array of military officers for all the armed services. During World War II, only West Point, the Naval Academy, and Texas A&amp;M fielded more officers for the war effort. Two generals hailing from LSU would become Commandants of the Marine Corps. And LSU's own William T. Sherman's credentials place him among the top generals in United States history. As the drama of each chapter's action unfolds, readers will find themselves caught up in the roar of the battlefield, witnessing moments of gallantry by LSU cadets, alums, teachers, and associates. Drez highlights the extraordinary courage of LSU servicemen and women-a prerequisite on the battlefield and the very essence of the high standard of LSU's military history and tradition"-- Provided by publisher</subfield>
+  </datafield>
+  <datafield tag="610" ind1="1" ind2="0">
+    <subfield code="a">Louisiana State University (Baton Rouge, La.)</subfield>
+    <subfield code="b">Army ROTC</subfield>
+    <subfield code="x">History</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="610" ind1="1" ind2="0">
+    <subfield code="a">Louisiana State University (Baton Rouge, La.)</subfield>
+    <subfield code="b">Army ROTC</subfield>
+    <subfield code="v">Biography</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Military cadets</subfield>
+    <subfield code="z">Louisiana</subfield>
+    <subfield code="v">Biography</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Generals</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Biography</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008105089</subfield>
+    <subfield code="2">DLC</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">GBV-EBSCO-SBB-DDA</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4811177525</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="k">http://staatsbibliothek-berlin.de/anschaffungsvorschlag/1937442705</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>1</zs:recordPosition></zs:record></zs:records><zs:echoedSearchRetrieveRequest><zs:version>1.1</zs:version><zs:query>pica.xppn=1937442705</zs:query><zs:maximumRecords>1</zs:maximumRecords><zs:recordPacking>xml</zs:recordPacking><zs:recordSchema>marcxml</zs:recordSchema></zs:echoedSearchRetrieveRequest></zs:searchRetrieveResponse>

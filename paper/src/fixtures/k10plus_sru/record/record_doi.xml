@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/"><zs:version>1.1</zs:version><zs:numberOfRecords>1</zs:numberOfRecords><zs:records><zs:record><zs:recordSchema>marcxml</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22      c 4500</leader>
+  <controlfield tag="001">1984454579</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20261019164612.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">260921s2026    gw |||||o     00| ||ger c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783406850448</subfield>
+    <subfield code="q">PDF</subfield>
+    <subfield code="9">978-3-406-85044-8</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783406850424</subfield>
+    <subfield code="q">epub</subfield>
+    <subfield code="9">978-3-406-85042-4</subfield>
+  </datafield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">10.17104/9783406850448</subfield>
+    <subfield code="2">doi</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1984454579</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1984454579</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(INLIBRA)9783406850448</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627-1)132834456</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="h">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE-BY</subfield>
+  </datafield>
+  <datafield tag="072" ind1=" " ind2="7">
+    <subfield code="a">1554</subfield>
+    <subfield code="2">wsb</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">900</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">940</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Jones, Dan</subfield>
+    <subfield code="d">1981-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1070474096</subfield>
+    <subfield code="0">(DE-627)823898539</subfield>
+    <subfield code="0">(DE-576)430059361</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Henry V</subfield>
+    <subfield code="b">der perfekte König : ein gnadenloses Leben</subfield>
+    <subfield code="c">Dan Jones ; aus dem Englischen von Heike Schlatterer und Karin Schuler</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">5 fünf</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">München</subfield>
+    <subfield code="b">C.H. Beck</subfield>
+    <subfield code="c">[2026]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">© 2026</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (447 Seiten)</subfield>
+    <subfield code="b">Illustrationen, 4 Karten</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Dan Jones erzählt kraftvoll und einfühlsam von einem Leben, in dem Scheitern keine Option ist. Es beginnt 1386 in Wales und endet 1422 unweit von Paris. Dazwischen liegt das gnadenlose Leben eines Mannes, den die Zeitgenossen verehren, nachfolgende Generationen vergöttern und Shakespeare zu seinem Helden macht. Doch Henry V ist mehr als der charismatische Stratege, der den Traum von der französischen Krone Wirklichkeit werden lässt: Er ist der faszinierendste englische König des Mittelalters - wenn nicht "der größte Mann, der England je regierte". "Der Arzt ist nervös. John Bradmore ist der beste Chirurg in ganz England. Seine Praxis in London ist berühmt. Zu seinen reichen und mächtigen Patienten zählt sogar der König. Er verfügt über das außerordentliche Selbstvertrauen - man könnte schon fast von Arroganz sprechen -, das herausragende Ärzte seit der griechischen Antike auszeichnet. Aber dieser Fall ist anders. Selbst wenn er alles richtig macht, sind die Erfolgsaussichten gering. Und wenn er sich auch nur den kleinsten Fehler leistet, wird er als der Mann in die Geschichte eingehen, der den ältesten der vier Söhne des Königs tötete und die englische Thronfolge durcheinanderbrachte. Die Folgen eines Scheiterns sind klar. Doch was Bradmore nicht absehen kann, sind die Folgen, wenn sein Eingriff Erfolg hat. Denn er weiß nicht - weil das niemand wissen kann, auch nicht der Patient selbst -, dass der schwer verletzte Sechzehnjährige zu einem ganz besonderen Menschen heranwachsen wird. Er wird der König sein, den nachfolgende Generationen als den größten mittelalterlichen Herrscher einstufen werden, den England je hatte."</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Monarchie</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Mittelalter</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Henry V</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Herrschaft</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Biografie</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">England</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Englische Geschichte</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">König</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Schlacht von Azincourt</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Heinrich V</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Richard II</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Kriegsgeschichte</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Politik</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Hundertjähriger Krieg</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Dynastie</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Militärgeschichte</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">früher Tod</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Frankreich</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Königsherrschaft</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Biographie</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Staatsmann</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118548182</subfield>
+    <subfield code="0">(DE-627)141711957</subfield>
+    <subfield code="0">(DE-576)208953582</subfield>
+    <subfield code="a">Heinrich</subfield>
+    <subfield code="b">V.</subfield>
+    <subfield code="c">England, König</subfield>
+    <subfield code="d">1387-1422</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schlatterer, Heike</subfield>
+    <subfield code="d">1970-</subfield>
+    <subfield code="e">ÜbersetzerIn</subfield>
+    <subfield code="0">(DE-588)142292230</subfield>
+    <subfield code="0">(DE-627)635218283</subfield>
+    <subfield code="0">(DE-576)329969617</subfield>
+    <subfield code="4">trl</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schuler, Karin</subfield>
+    <subfield code="d">1965-</subfield>
+    <subfield code="e">ÜbersetzerIn</subfield>
+    <subfield code="0">(DE-588)114963584</subfield>
+    <subfield code="0">(DE-627)618892818</subfield>
+    <subfield code="0">(DE-576)318728451</subfield>
+    <subfield code="4">trl</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Verlag C.H. Beck</subfield>
+    <subfield code="e">Verlag</subfield>
+    <subfield code="0">(DE-588)1023902869</subfield>
+    <subfield code="0">(DE-627)718722590</subfield>
+    <subfield code="0">(DE-576)367624842</subfield>
+    <subfield code="4">pbl</subfield>
+  </datafield>
+  <datafield tag="776" ind1="1" ind2=" ">
+    <subfield code="z">9783406850424</subfield>
+  </datafield>
+  <datafield tag="776" ind1="1" ind2=" ">
+    <subfield code="z">3406850421</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="n">Druck-Ausgabe</subfield>
+    <subfield code="a">Jones, Dan *1981-*</subfield>
+    <subfield code="t">Henry V</subfield>
+    <subfield code="d">München : C.H.Beck, 2026</subfield>
+    <subfield code="h">447 Seiten, 16 unnummerierte Bildseiten</subfield>
+    <subfield code="z">9783406850424</subfield>
+    <subfield code="w">(DE-627)1967195064</subfield>
+    <subfield code="w">(DE-600)gnd/1070474096</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://doi.org/10.17104/9783406850448</subfield>
+    <subfield code="m">X:INLIBRA</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">lizenzpflichtig</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://www.inlibra.com/10.17104/9783406850448</subfield>
+    <subfield code="m">X:INLIBRA</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">lizenzpflichtig</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://d-nb.info/1393609260/04</subfield>
+    <subfield code="m">B:DE-101</subfield>
+    <subfield code="q">application/pdf</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://deposit.dnb.de/cgi-bin/dokserv?id=875369d8023a4278b9211faaaffb3330</subfield>
+    <subfield code="m">X:MVB</subfield>
+    <subfield code="q">text/html</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltstext</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-342-150</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">GBV-18-NOL</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-342-142</subfield>
+    <subfield code="b">2026</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-342-143</subfield>
+    <subfield code="b">2026</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-342-150</subfield>
+    <subfield code="b">2026</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-342-205</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">GBV-342-SBB</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">EBS-18-LSW</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">5056502634</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">e</subfield>
+    <subfield code="h">5:REMOTE</subfield>
+    <subfield code="k">http://erf.sbb.spk-berlin.de/han/1943026408/doi.org/10.17104/9783406850448</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record></zs:recordData><zs:recordPosition>1</zs:recordPosition></zs:record></zs:records><zs:echoedSearchRetrieveRequest><zs:version>1.1</zs:version><zs:query>pica.xppn=1984454579</zs:query><zs:maximumRecords>1</zs:maximumRecords><zs:recordPacking>xml</zs:recordPacking><zs:recordSchema>marcxml</zs:recordSchema></zs:echoedSearchRetrieveRequest></zs:searchRetrieveResponse>

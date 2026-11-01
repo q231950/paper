@@ -31,6 +31,7 @@ impl LibraryList {
                     // interface serves the same catalog
                     api: API::K10plusSru {
                         database: "opac-de-1".to_string(),
+                        record_page_url: Some("https://stabikat.de/Record/{ppn}".to_string()),
                     },
                     enabled_for_search: true,
                     enabled_for_login: false,

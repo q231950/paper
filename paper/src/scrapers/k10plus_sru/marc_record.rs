@@ -18,10 +18,20 @@ pub(crate) struct Holding {
 }
 
 impl Holding {
-    /// The call number of a printed copy or "Online" for an electronic copy
+    /// Whether the holding stands for a title the library buys on request, its URL links to a
+    /// purchase suggestion instead of a copy
+    pub(crate) fn is_purchase_suggestion(&self) -> bool {
+        self.url
+            .as_deref()
+            .is_some_and(|url| url.contains("anschaffungsvorschlag"))
+    }
+
+    /// The call number of a printed copy, "Anschaffungsvorschlag" for a title the library buys
+    /// on request or "Online" for an electronic copy
     pub(crate) fn name(&self) -> String {
         match (&self.call_number, &self.url) {
             (Some(call_number), _) => call_number.clone(),
+            (None, Some(_)) if self.is_purchase_suggestion() => "Anschaffungsvorschlag".to_string(),
             (None, Some(_)) => "Online".to_string(),
             (None, None) => "Bestand".to_string(),
         }
@@ -114,6 +124,31 @@ impl<'a, 'input> MarcRecord<'a, 'input> {
                     .any(|label| label == "Cover")
             })
             .and_then(|field| Self::subfields_of(field, 'u').into_iter().next())
+    }
+
+    /// The links in 856 whose `$3` is one of `labels`, e.g. ("Inhaltsverzeichnis", URL)
+    pub(crate) fn links(&self, labels: &[&str]) -> Vec<(String, String)> {
+        self.data_fields("856")
+            .filter_map(|field| {
+                let label = Self::subfields_of(field, '3')
+                    .into_iter()
+                    .find(|label| labels.contains(&label.as_str()))?;
+                let url = Self::subfields_of(field, 'u').into_iter().next()?;
+
+                Some((label, url))
+            })
+            .collect()
+    }
+
+    /// The DOI in 024 with `$2 doi`
+    pub(crate) fn doi(&self) -> Option<String> {
+        self.data_fields("024")
+            .find(|field| {
+                Self::subfields_of(*field, '2')
+                    .iter()
+                    .any(|source| source == "doi")
+            })
+            .and_then(|field| Self::subfields_of(field, 'a').into_iter().next())
     }
 
     pub(crate) fn holdings(&self) -> Vec<Holding> {
