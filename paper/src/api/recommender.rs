@@ -37,7 +37,7 @@ pub enum Model {
 impl Model {
     pub fn identifier(&self) -> String {
         match self {
-            Model::GptLunaLatest => "openai/gpt-4.1".to_string(),
+            Model::GptLunaLatest => "~openai/gpt-luna-latest".to_string(),
         }
     }
 }
@@ -92,6 +92,7 @@ impl Recommender {
         #[allow(deprecated)]
         let request = CreateChatCompletionRequestArgs::default()
             .model(config.model.identifier())
+            .user("BTLB Recommender")
             .max_tokens(500_u32)
             .response_format(ResponseFormat::JsonObject)
             .messages([ChatCompletionRequestUserMessageArgs::default()
