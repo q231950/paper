@@ -20,21 +20,14 @@ impl LibraryList {
                         catalog_url: "https://lbssbb.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
-                    enabled_for_search: true,
-                    enabled_for_login: true,
-                },
-                Library {
-                    identifier: "STABIKAT".to_string(),
-                    name: "Berlin".to_string(),
-                    subtitle: "StabiKat – Staatsbibliothek zu Berlin".to_string(),
-                    // stabikat.de puts its VuFind behind a human verification, the K10plus SRU
-                    // interface serves the same catalog
-                    api: API::K10plusSru {
+                    // the K10plus SRU interface serves the catalog of the Staatsbibliothek, its
+                    // StabiKat (https://stabikat.de) puts its VuFind behind a human verification
+                    search_api: Some(API::K10plusSru {
                         database: "opac-de-1".to_string(),
                         record_page_url: Some("https://stabikat.de/Record/{ppn}".to_string()),
-                    },
+                    }),
                     enabled_for_search: true,
-                    enabled_for_login: false,
+                    enabled_for_login: true,
                 },
                 Library {
                     identifier: "MAGDEBURG".to_string(),
@@ -45,6 +38,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-magdeburg.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -57,6 +51,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.leuphana.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -69,6 +64,7 @@ impl LibraryList {
                         catalog_url: "https://lbsbrs.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -82,6 +78,7 @@ impl LibraryList {
                         catalog_url: "https://lbsbrs.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -94,6 +91,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.ub.uni-kiel.de/DB=3".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -106,6 +104,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.ub.uni-kiel.de/DB=6".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -118,6 +117,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.ub.uni-kiel.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -130,6 +130,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-ilmenau.gbv.de/DB=2".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -142,6 +143,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-ilmenau.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -154,6 +156,7 @@ impl LibraryList {
                         catalog_url: "https://lbshan.gbv.de/DB=11".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -166,6 +169,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-hildesheim.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -178,6 +182,7 @@ impl LibraryList {
                         catalog_url: "https://opac.tib.eu/DB=4".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -190,6 +195,7 @@ impl LibraryList {
                         catalog_url: "https://opac.tib.eu/DB=12".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: false,
                     enabled_for_login: true,
                 },
@@ -202,6 +208,7 @@ impl LibraryList {
                         catalog_url: "https://lbshsu.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -214,6 +221,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.b.tuhh.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -226,6 +234,7 @@ impl LibraryList {
                         catalog_url: "https://katalog.b.tuhh.de/DB=22".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -238,6 +247,7 @@ impl LibraryList {
                         catalog_url: "https://lbshan.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -250,6 +260,7 @@ impl LibraryList {
                         catalog_url: "https://kataloge.hh.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -258,6 +269,7 @@ impl LibraryList {
                     name: "Hamburg".to_string(),
                     subtitle: "Stiftung Hamburger Öffentliche Bücherhallen".to_string(),
                     api: API::HamburgPublic,
+                    search_api: None,
                     enabled_for_search: false,
                     enabled_for_login: false,
                 },
@@ -270,6 +282,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-rostock.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -282,6 +295,7 @@ impl LibraryList {
                         catalog_url: "https://lhgrw.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: false,
                     enabled_for_login: true,
                 },
@@ -294,6 +308,7 @@ impl LibraryList {
                         catalog_url: "https://opac.sub.uni-goettingen.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -306,6 +321,7 @@ impl LibraryList {
                         catalog_url: "https://lbswis.gbv.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -318,6 +334,7 @@ impl LibraryList {
                         catalog_url: "https://opac.uni-erfurt.de/DB=1".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -330,6 +347,7 @@ impl LibraryList {
                         catalog_url: "https://kataloge.hh.gbv.de/DB=2".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -342,6 +360,7 @@ impl LibraryList {
                         catalog_url: "https://opac.lbs-anhalt.gbv.de".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: true,
                     enabled_for_login: true,
                 },
@@ -354,6 +373,7 @@ impl LibraryList {
                         catalog_url: "https://lbsvz2.gbv.de/DB=67".to_string(),
                         user_query_key: "1000".to_string(),
                     },
+                    search_api: None,
                     enabled_for_search: false,
                     enabled_for_login: true,
                 },
@@ -370,5 +390,55 @@ impl LibraryList {
 
     pub fn libraries(&self) -> Vec<Library> {
         self.libraries.clone()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::LibraryList;
+    use crate::model::API;
+
+    #[test]
+    fn berlin_searches_k10plus_and_signs_in_to_its_opac() {
+        let berlin = LibraryList::new().library_for_identifier("BERLIN").unwrap();
+
+        assert!(matches!(
+            berlin.api,
+            API::Opc4v2_13Vzg6 { ref base_url, .. } if base_url == "https://lbssbb.gbv.de"
+        ));
+        assert_eq!(
+            berlin.search_api(),
+            API::K10plusSru {
+                database: "opac-de-1".to_string(),
+                record_page_url: Some("https://stabikat.de/Record/{ppn}".to_string()),
+            }
+        );
+        assert!(berlin.enabled_for_search);
+        assert!(berlin.enabled_for_login);
+    }
+
+    #[test]
+    fn stabikat_is_not_a_separate_library() {
+        assert_eq!(LibraryList::new().library_for_identifier("STABIKAT"), None);
+    }
+
+    #[test]
+    fn libraries_without_search_api_search_with_their_api() {
+        let hamburg = LibraryList::new()
+            .library_for_identifier("HAMBURG")
+            .unwrap();
+
+        assert_eq!(hamburg.search_api, None);
+        assert_eq!(hamburg.search_api(), hamburg.api);
+    }
+
+    #[test]
+    fn library_identifiers_are_unique() {
+        let libraries = LibraryList::new().libraries();
+        let mut identifiers: Vec<_> = libraries.iter().map(|l| l.identifier.clone()).collect();
+        identifiers.sort();
+        identifiers.dedup();
+
+        assert_eq!(identifiers.len(), libraries.len());
     }
 }
