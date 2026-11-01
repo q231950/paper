@@ -32,7 +32,7 @@ uniffi_bindgen = { workspace = true }
 chrono = "0.4.38"
 uuid = { version = "1.4", features = ["v4"] }
 roxmltree = "0.20.0"
-async-openai = "0.16.1"
+async-openai = { version = "0.43.0", features = ["chat-completion"] }
 
 [build-dependencies]
 uniffi = { workspace = true, features = ["build"] }

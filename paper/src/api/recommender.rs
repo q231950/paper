@@ -1,8 +1,8 @@
 use crate::error::PaperError;
 use async_openai::{
-    types::{
-        ChatCompletionRequestUserMessageArgs, ChatCompletionResponseFormat,
-        ChatCompletionResponseFormatType, CreateChatCompletionRequestArgs,
+    config::OpenAIConfig,
+    types::chat::{
+        ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs, ResponseFormat,
     },
     Client,
 };
@@ -55,7 +55,7 @@ impl Recommender {
         config: RecommenderConfig,
     ) -> Result<Recommendation, PaperError> {
         let client = Client::with_config(
-            async_openai::config::OpenAIConfig::new()
+            OpenAIConfig::new()
                 .with_api_key(config.api_key)
                 .with_api_base(config.api_base),
         );
@@ -87,12 +87,13 @@ impl Recommender {
             titles_bullets, json_format
         );
 
+        // `max_tokens` is deprecated in favour of `max_completion_tokens`; keep sending it so the
+        // request body stays the same for the configured OpenAI-compatible API base.
+        #[allow(deprecated)]
         let request = CreateChatCompletionRequestArgs::default()
             .model(config.model.identifier())
-            .max_tokens(500_u16)
-            .response_format(ChatCompletionResponseFormat {
-                r#type: ChatCompletionResponseFormatType::JsonObject,
-            })
+            .max_tokens(500_u32)
+            .response_format(ResponseFormat::JsonObject)
             .messages([ChatCompletionRequestUserMessageArgs::default()
                 .content(content)
                 .build()
