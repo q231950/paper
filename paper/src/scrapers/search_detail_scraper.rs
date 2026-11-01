@@ -97,10 +97,14 @@ impl SearchDetailScraper {
                 .search_detail_from(document)
             }
             // the SRU interface returns MARC XML instead of HTML
-            crate::model::API::K10plusSru { ref database } => {
+            crate::model::API::K10plusSru {
+                ref database,
+                ref record_page_url,
+            } => {
                 let xml = api_client.get_xml(url).await?;
                 K10plusSruSearchDetailScraper {
                     database: database.clone(),
+                    record_page_url: record_page_url.clone(),
                 }
                 .search_detail(client, xml)
                 .await

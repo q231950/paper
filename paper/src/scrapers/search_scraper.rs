@@ -47,7 +47,7 @@ impl SearchScraper {
                 };
                 search_scraper.search(text, next_page_url).await
             }
-            API::K10plusSru { ref database } => {
+            API::K10plusSru { ref database, .. } => {
                 let search_scraper = K10plusSruSearchScraper {
                     base_url: self.configuration.base_url(),
                     database: database.clone(),

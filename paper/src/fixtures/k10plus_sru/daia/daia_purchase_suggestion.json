@@ -1,0 +1,31 @@
+{
+   "document" : [
+      {
+         "href" : "http://lbssbb.gbv.de:8080/DB=1/PPNSET?PPN=1937442705",
+         "id" : "http://uri.gbv.de/document/opac-de-1:ppn:1937442705",
+         "item" : [
+            {
+               "available" : [
+                  {
+                     "service" : "interloan"
+                  },
+                  {
+                     "service" : "loan"
+                  },
+                  {
+                     "service" : "presentation"
+                  }
+               ],
+               "id" : "http://uri.gbv.de/document/opac-de-1:epn:4811177525",
+               "href" : "http://lbssbb.gbv.de:8080/DB=1/PPNSET?PPN=1937442705"
+            }
+         ]
+      }
+   ],
+   "timestamp" : "2026-11-01T00:22:38Z",
+   "version" : "0.5",
+   "institution" : {
+      "content" : "",
+      "id" : "http://uri.gbv.de/organization/isil/DE-1"
+   }
+}

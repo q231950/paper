@@ -12,8 +12,12 @@ pub enum API {
     },
     /// A database of the K10plus SRU interface, e.g. `opac-de-1` of the Staatsbibliothek zu Berlin
     /// https://wiki.k10plus.de/display/K10PLUS/SRU
+    ///
+    /// `record_page_url` is the URL of a record's page in the library's catalog, `{ppn}` stands
+    /// for its PPN, e.g. `https://stabikat.de/Record/{ppn}`
     K10plusSru {
         database: String,
+        record_page_url: Option<String>,
     },
 }
 
@@ -116,6 +120,7 @@ mod tests {
     fn test_k10plus_sru_urls() {
         let api_config = API::K10plusSru {
             database: String::from("opac-de-1"),
+            record_page_url: None,
         };
 
         assert_eq!(api_config.base_url(), "https://sru.k10plus.de");
